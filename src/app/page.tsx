@@ -6,6 +6,7 @@ import Herosection from "@/components/Herosection";
 import StickyScrollSplit from "@/components/StickyScrollSection";
 import Faq from "@/components/Faq";
 import NewsSection from "@/components/NewsSection";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function Home() {
   return (
@@ -35,12 +36,12 @@ export default function Home() {
       <motion.section>
         <StickyScrollSplit />
       </motion.section>
-      <motion.section>
+      <AnimatedSection>
         <Faq />
-      </motion.section>
-      <motion.section>
+      </AnimatedSection>
+      <AnimatedSection>
         <NewsSection />
-      </motion.section>
+      </AnimatedSection>
     </div>
   );
 }
