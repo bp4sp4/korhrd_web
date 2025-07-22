@@ -4,6 +4,8 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import { motion } from "framer-motion";
 import Herosection from "@/components/Herosection";
 import StickyScrollSplit from "@/components/StickyScrollSection";
+import Faq from "@/components/Faq";
+import NewsSection from "@/components/NewsSection";
 
 export default function Home() {
   return (
@@ -32,6 +34,12 @@ export default function Home() {
       </motion.section>
       <motion.section>
         <StickyScrollSplit />
+      </motion.section>
+      <motion.section>
+        <Faq />
+      </motion.section>
+      <motion.section>
+        <NewsSection />
       </motion.section>
     </div>
   );

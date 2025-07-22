@@ -3,12 +3,13 @@
     width: 100%;
     min-height: 100vh;
     display: flex;
-    background-color: #f9fafb;
+    background-color: #ffffff;
     /* bg-gray-50 */
 }
 
 .left {
     display: none;
+
 }
 
 @media (min-width: 1024px) {
@@ -17,7 +18,7 @@
         width: 50%;
         justify-content: center;
         padding-top: 320px;
-        background: linear-gradient(135deg, #2b7fff 0%, #38bdf8 100%);
+        background: linear-gradient(135deg, #091d3b 0%, #3d7c98 100%);
         position: sticky;
         top: 0;
         height: 100vh;
@@ -47,9 +48,10 @@
 
 .leftButton {
     margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
+    width: 236px;
+    height: 56px;
     background: #fff;
-    color: #06b6d4;
+    color: black;
     font-weight: 600;
     border-radius: 9999px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -59,15 +61,16 @@
 }
 
 .leftButton:hover {
-    background: #e0f2fe;
+    background: #2B7FFF;
+    color: white;
 }
 
 .right {
     width: 100%;
     display: flex;
     flex-direction: column;
-
-    padding: 5rem 2rem;
+    padding-top: 300px;
+    margin-left: 60px;
 }
 
 @media (min-width: 1024px) {
@@ -81,18 +84,8 @@
 
 }
 
-.rightTitle {
-    font-size: 26px;
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 1rem;
-}
 
-.rightDesc {
-    color: #374151;
-    margin-bottom: 2rem;
-    font-size: 20px;
-}
+
 
 .card {
     border-radius: 1rem;
@@ -102,8 +95,7 @@
 
 
 .widthedu {
-    width: 560px;
-    object-fit: cover;
+
     border-radius: 20px;
     margin-bottom: 100px;
 }

@@ -9,20 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const items = [
   {
-    title: "함께할수록, 더 성장하는 교육",
-    description:
-      "혼자 공부하는 것도 좋지만, 함께할 때 배움의 깊이와 속도는 달라집니다. <br /> 언제 어디서든 쉽고 체계적으로, 실전 중심의 교육을 경험해보세요.",
-    image: "/images/main/withedu.png",
+    image: "/images/main/step1.png",
   },
   {
-    title: "실무 중심 프로젝트",
-    description: "실제 업무에 바로 적용 가능한 실전 프로젝트 수행",
-    image: "/images/main/withedu.png",
+    image: "/images/main/step2.png",
   },
   {
-    title: "성장 데이터 제공",
-    description: "성과가 입증된 데이터로 교육 효과를 직접 확인하세요.",
-    image: "/images/main/withedu.png",
+    image: "/images/main/step3.png",
   },
 ];
 
@@ -67,18 +60,8 @@ export default function StickyScrollSplit() {
       <div className={styles.right}>
         {items.map((item, idx) => (
           <div key={idx} className={`${styles.card} fade-up`}>
-            <div className={styles.rightHeader}>
-              <h2 className={styles.rightTitle}>{item.title}</h2>
-              <p
-                className={styles.rightDesc}
-                dangerouslySetInnerHTML={{ __html: item.description }}
-              />
-            </div>
-            <img
-              className={styles.widthedu}
-              src={item.image}
-              alt={item.title}
-            />
+            <div className={styles.rightHeader}></div>
+            <img className={styles.widthedu} src={item.image} />
           </div>
         ))}
       </div>

@@ -1,0 +1,102 @@
+.footer {
+    background-color: #ffffff;
+    color: #4b5563;
+    padding: 3rem 1rem;
+    font-size: 0.875rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footerMain {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.brandContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo {
+    height: 25px;
+    width: auto;
+}
+
+.brandName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+}
+
+.companyInfo p {
+    margin: 0.3rem 0;
+    line-height: 1.6;
+}
+
+.familySiteContainer {
+    position: relative;
+}
+
+.familySiteSelect {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    width: 220px;
+    font-size: 0.9rem;
+    -webkit-appearance: none;
+    /* Remove default arrow */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'%3e%3cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25em 1.25em;
+    font-weight: 700;
+}
+
+.footerBottom {
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    font-size: 0.875rem;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.socialLink {
+    color: #6b7280;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+    color: #111827;
+}
