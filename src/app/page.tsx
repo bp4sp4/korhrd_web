@@ -2,11 +2,11 @@
 
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { motion } from "framer-motion";
-import Herosection from "@/components/Herosection";
-import StickyScrollSplit from "@/components/StickyScrollSection";
-import Faq from "@/components/Faq";
-import NewsSection from "@/components/NewsSection";
-import AnimatedSection from "@/components/AnimatedSection";
+import Herosection from "@/components/Herosection/index";
+import StickyScrollSplit from "@/components/StickyScrollSection/index";
+import Faq from "@/components/Faq/index";
+import NewsSection from "@/components/NewsSection/index";
+import AnimatedSection from "@/components/AnimatedSection/index";
 
 export default function Home() {
   return (
@@ -42,6 +42,7 @@ export default function Home() {
       <AnimatedSection>
         <NewsSection />
       </AnimatedSection>
+      <SimpleBarChart />
     </div>
   );
 }
