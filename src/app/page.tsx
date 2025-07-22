@@ -3,6 +3,7 @@
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { motion } from "framer-motion";
 import Herosection from "@/components/Herosection";
+import StickyScrollSplit from "@/components/StickyScrollSection";
 
 export default function Home() {
   return (
@@ -18,16 +19,19 @@ export default function Home() {
           }}
           className="gap-4 px-10 w-[1280px]"
         >
-          <div className="text-3xl tracking-[-1.5px]  md:text-[45px] font-bold dark:text-white ">
-            대한민국 교육의 새로운
+          <div className="text-3xl tracking-[-1.5px]  md:text-[60px] font-bold dark:text-white ">
+            대한민국 교육의
           </div>
-          <div className="text-3xl tracking-[-1.5px] md:text-[45px] font-bold dark:text-white">
-            방향을 제시합니다.
+          <div className="text-3xl tracking-[-1.5px] md:text-[60px] font-bold dark:text-white">
+            새로운 방향성의 제시하다
           </div>
         </motion.div>
       </AuroraBackground>
       <motion.section>
         <Herosection />
+      </motion.section>
+      <motion.section>
+        <StickyScrollSplit />
       </motion.section>
     </div>
   );
