@@ -189,6 +189,7 @@ function Page({ className, areas = defaultAreas }: BusinessAreasSectionProps) {
                       <Link
                         href={area.link}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className={styles.button}
                       >
                         자세히 보기
