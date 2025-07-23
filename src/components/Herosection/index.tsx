@@ -7,7 +7,7 @@ const Herosection = () => {
       <TextParallaxContent
         imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="품질"
-        heading="타협하지 않는."
+        heading="완벽을 기준으로."
       >
         <ExampleContent />
       </TextParallaxContent>
@@ -16,7 +16,7 @@ const Herosection = () => {
         subheading="브랜딩"
         heading="최고를 위한 준비."
       >
-        <ExampleContent />
+        <ExampleContent2 />
       </TextParallaxContent>
     </div>
   );
@@ -125,14 +125,34 @@ const OverlayCopy = ({ subheading, heading }: OverlayCopyProps) => {
 const ExampleContent = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
     <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
-      더 많은 정보
+      평생교육
+      <br />
+      컨설팅
     </h2>
     <div className="col-span-1 md:col-span-8">
       <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-        이곳에 각 섹션에 대한 추가적인 설명을 작성할 수 있습니다.
+        각종 교육제도를 이용하여 평생교육을 전문적으로 받을 수 있게
       </p>
       <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-        각각의 패럴랙스 섹션 아래에 나타날 내용입니다.
+        컨설팅해 주는 사업을 꾸준하게 진행하고 있습니다.
+      </p>
+    </div>
+  </div>
+);
+
+const ExampleContent2 = () => (
+  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
+    <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
+      평생교육
+      <br />
+      플랫폼 구축
+    </h2>
+    <div className="col-span-1 md:col-span-8">
+      <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
+        평생교육과정의 다양한 콘텐츠와 전문 인력을 함께 양성하여,
+      </p>
+      <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
+        양질의 평생교육을 제공하는 전문가 플랫폼을 구축하였습니다.
       </p>
     </div>
   </div>
