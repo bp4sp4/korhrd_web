@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./StickyScrollSection.module.css";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,7 +62,7 @@ export default function StickyScrollSplit() {
         {items.map((item, idx) => (
           <div key={idx} className={`${styles.card} fade-up`}>
             <div className={styles.rightHeader}></div>
-            <img className={styles.widthedu} src={item.image} />
+            <Image className={styles.widthedu} src={item.image} alt="Step Image" width={500} height={300} />
           </div>
         ))}
       </div>

@@ -42,7 +42,6 @@ export default function Home() {
       <AnimatedSection>
         <NewsSection />
       </AnimatedSection>
-      <SimpleBarChart />
     </div>
   );
 }

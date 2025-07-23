@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./NewsSection.module.css";
+import Image from "next/image";
 
 const newsData = [
   {
@@ -55,9 +56,11 @@ export default function NewsSection() {
               className={styles.newsCard}
             >
               <div className={styles.thumbnailContainer}>
-                <img
+                <Image
                   src={item.thumbnail}
                   alt={item.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
                   className={styles.thumbnail}
                 />
               </div>

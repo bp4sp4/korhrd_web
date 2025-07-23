@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
@@ -50,8 +51,9 @@ const Header = () => {
           }`}
         >
             <span>
-              <img
-                width="30"
+              <Image
+                width={30}
+                height={30}
                 src="/logo2.png"
                 alt="로고"
                 className={styles.logoImage}

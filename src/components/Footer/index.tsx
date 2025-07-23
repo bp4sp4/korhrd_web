@@ -1,9 +1,7 @@
 "use client";
 
-"use client";
-
-import Link from "next/link";
 import styles from "./Footer.module.css";
+import Image from "next/image";
 
 export default function Footer() {
   const handleFamilySiteChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -19,9 +17,11 @@ export default function Footer() {
         <div className={styles.footerTop}>
           <div className={styles.footerMain}>
             <div className={styles.brandContainer}>
-              <img
+              <Image
                 src="/logo2.png"
                 alt="한평생교육그룹 로고"
+                width={100}
+                height={100}
                 className={styles.logo}
               />
               <h2 className={styles.brandName}>한평생교육그룹</h2>

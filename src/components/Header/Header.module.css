@@ -32,7 +32,7 @@
 }
 
 .scrolledHeader {
-  background-color: #fff;
+  background-color: #ffffffe9;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
@@ -53,10 +53,7 @@
   /* 투명 배경일 때 로고 색상 */
 }
 
-.scrolledLogo {
-  color: #4b5563;
-  /* 스크롤 시 로고 색상 (회색) */
-}
+.scrolledLogo {}
 
 .navList {
   display: flex;
@@ -81,10 +78,10 @@
 }
 
 .scrolledNavLink {
-  color: #4b5563;
+
   /* 스크롤 시 링크 색상 (회색) */
 }
 
 .navLink:hover {
-  color: #2563eb;
+  color: #2B7FFF;
 }
