@@ -27,12 +27,12 @@ const CeoMessage = () => {
               CEO Message
             </div>
             <div className="text-white text-base md:text-lg leading-relaxed ">
-              한평생에듀바이저스 홈페이지에 방문해 주신
+              한평생교육그룹 홈페이지에 방문해 주신
               <br /> 모든 분께 감사의 말씀을 전합니다.
               <br />
               <br />
               <strong>
-                한평생에듀바이저스는 학생들의 성장과 성공을 최우선으로 생각하며
+                한평생교육그룹은 학생들의 성장과 성공을 최우선으로 생각하며
                 <br />
                 실질적이고 현장감 있는 교육, 그리고 내일을 바꾸는 서비스를
                 제공합니다.
@@ -70,12 +70,12 @@ const CeoMessage = () => {
               CEO Message
             </div>
             <div className="text-white text-[14px] md:text-lg leading-relaxed mb-8">
-              한평생에듀바이저스 홈페이지에 방문해 주신
+              한평생교육그룹 홈페이지에 방문해 주신
               <br /> 모든 분께 감사의 말씀을 전합니다.
               <br />
               <br />
               <strong>
-                한평생에듀바이저스는 학생들의 성장과 성공을
+                한평생교육그룹 학생들의 성장과 성공을
                 <br />
                 최우선으로 생각하며 실질적이고 현장감 있는 교육,
                 <br />

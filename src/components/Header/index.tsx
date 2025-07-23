@@ -42,14 +42,14 @@ const Header = () => {
       <div className={styles.headerContent}>
         <Link href="/">
           <div
-          className={`${styles.logo} ${
-            isHomePage
-              ? scrolled
-                ? styles.scrolledLogo
-                : styles.transparentLogo
-              : styles.scrolledLogo
-          }`}
-        >
+            className={`${styles.logo} ${
+              isHomePage
+                ? scrolled
+                  ? styles.scrolledLogo
+                  : styles.transparentLogo
+                : styles.scrolledLogo
+            }`}
+          >
             <span>
               <Image
                 width={30}
@@ -67,7 +67,8 @@ const Header = () => {
         <nav>
           <ul className={styles.navList}>
             <li>
-              <Link href="/about"
+              <Link
+                href="/about"
                 className={`${styles.navLink} ${
                   isHomePage
                     ? scrolled
@@ -81,7 +82,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="business"
                 className={`${styles.navLink} ${
                   isHomePage
                     ? scrolled

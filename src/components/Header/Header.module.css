@@ -53,8 +53,6 @@
   /* 투명 배경일 때 로고 색상 */
 }
 
-.scrolledLogo {}
-
 .navList {
   display: flex;
   list-style: none;

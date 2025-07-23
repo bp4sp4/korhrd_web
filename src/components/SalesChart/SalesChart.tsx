@@ -13,18 +13,21 @@ import {
 } from "recharts";
 import "./sale.css";
 
+interface StatsItem {
+  value: string;
+  label: string;
+}
+
 const data = [
   { name: "2023", 매출: 130000, 성장률: 5 },
-  {
-    name: "2024",
-    매출: 350000,
-    매출성장액: 220000, // 350000 - 130000
-    성장률: 200,
-  },
-  {
-    name: "2025~진행중",
-    매출: 270000,
-  },
+  { name: "2024", 매출: 350000, 매출성장액: 220000, 성장률: 200 },
+  { name: "2025~진행중", 매출: 270000 },
+];
+
+const statsData: StatsItem[] = [
+  { value: "13억원+", label: "2023년도" },
+  { value: "35억원+", label: "2024년도" },
+  { value: "200%", label: "회사성장률" },
 ];
 
 const SalesChart = () => {
@@ -48,8 +51,21 @@ const SalesChart = () => {
           transition={{ duration: 0.8 }}
           className="text-[20px] md:text-4xl font-bold mb-12 text-center text-[#1e1e1e]"
         >
-          한평생교육은 빠르게 성장하고 있습니다.
+          <span className="text-[#2B7FFF]">한평생교육</span>은 빠르게 성장하고
+          있습니다.
         </motion.h3>
+
+        {/* 통계 수치 */}
+        <div className="flex justify-around text-center py-10">
+          {statsData.map((item, index) => (
+            <div key={index}>
+              <div className="text-2xl font-bold">{item.value}</div>
+              <div className="text-gray-500 mt-1">{item.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* 차트 영역 */}
         <motion.div
           ref={chartRef}
           initial={{ opacity: 0, y: 50 }}
@@ -60,47 +76,26 @@ const SalesChart = () => {
           <ResponsiveContainer width="100%" height={500}>
             <ComposedChart
               data={data}
-              margin={{
-                top: 20,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
+              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
             >
               <XAxis
                 dataKey="name"
                 axisLine={false}
                 tickLine={false}
-                tick={{ dy: 10 }} // 레이블을 아래로 10px 이동
+                tick={{ dy: 10 }}
               />
-              <motion.div
-                initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  paddingLeft: 100,
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <Legend
-                  verticalAlign="top"
-                  align="left"
-                  wrapperStyle={{
-                    fontWeight: 700,
-                  }}
-                  className="legend-wrapper"
-                />
-              </motion.div>
+
+              <Legend
+                verticalAlign="top"
+                align="left"
+                wrapperStyle={{ fontWeight: 700 }}
+              />
+
               <Bar
                 yAxisId="left"
                 dataKey="매출"
-                fill="#84B4FC" // 막대 색상 변경
-                barSize={80} // 막대 두께 증가
+                fill="#84B4FC"
+                barSize={80}
                 isAnimationActive={hasChartAnimated}
                 animationDuration={1500}
               >
@@ -114,12 +109,13 @@ const SalesChart = () => {
                   }
                 />
               </Bar>
+
               <Line
                 yAxisId="right"
                 type="monotone"
                 dataKey="성장률"
-                stroke="#f94239" // 선 색상 변경
-                strokeWidth={7} // 선 두께 증가
+                stroke="#f94239"
+                strokeWidth={7}
                 activeDot={{ r: 8 }}
                 label={{
                   position: "top",
@@ -127,8 +123,8 @@ const SalesChart = () => {
                     fontSize: "1.2em",
                     fill: "#f94239",
                     fontWeight: "700",
-                  }, // 글씨 색상 변경
-                  offset: -140, // 레이블을 아래로 이동
+                  },
+                  offset: -140,
                   dx: -200,
                   formatter: (value: React.ReactNode) => {
                     if (typeof value === "number") {

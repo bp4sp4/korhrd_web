@@ -34,21 +34,26 @@ const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <section className="bg-white py-[30px]">
       <div className="max-w-4xl mx-auto">
-        <h3 className="tm__title text-[20px] md:text-4xl font-bold mb-12 text-center text-[#1e1e1e]">
-          한평생교육은 빠르게 변화하고 있습니다.
+        <h3 className="tm__title text-[20px] md:text-4xl font-bold mb-12 mt-12 text-center text-[#1e1e1e]">
+          <span className="text-[#2B7FFF]">한평생교육</span>은 빠르게 변화하고
+          있습니다.
         </h3>
         <div className="w-full font-sans md:px-10" ref={containerRef}>
           <div ref={ref} className="relative max-w-4xl mx-auto pb-20">
             {data.map((item: TimelineEntry, index: number) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="flex justify-start pt-10 md:pt-30 md:gap-10"
               >
                 <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
                   <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full  flex items-center justify-center">
                     <div className="h-4 w-4 rounded-full bg-blue-500 border border-blue-600 p-2" />
                   </div>
-                  <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-blue-400">
+                  <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-[#2B7FFF]">
                     {item.year}
                   </h3>
                 </div>
@@ -78,7 +83,7 @@ const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
             <div
               style={{
