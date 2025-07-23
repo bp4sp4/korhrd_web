@@ -62,7 +62,13 @@ export default function StickyScrollSplit() {
         {items.map((item, idx) => (
           <div key={idx} className={`${styles.card} fade-up`}>
             <div className={styles.rightHeader}></div>
-            <Image className={styles.widthedu} src={item.image} alt="Step Image" width={500} height={300} />
+            <Image
+              className={styles.widthedu}
+              src={item.image}
+              alt="Step Image"
+              width={600}
+              height={300}
+            />
           </div>
         ))}
       </div>
