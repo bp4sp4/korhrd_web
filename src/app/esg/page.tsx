@@ -118,13 +118,17 @@ const ESG: React.FC = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative h-[70vh] bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/api/placeholder/1920/1080')",
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-black/20">
+          <video
+            src="/images/esg/tree.mp4"
+            muted
+            autoPlay
+            playsInline
+            loop
+            className="h-full w-full object-cover"
+          />
+        </div>
+
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             ESG 경영
