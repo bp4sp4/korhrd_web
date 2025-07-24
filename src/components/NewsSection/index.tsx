@@ -1,96 +1,78 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import styles from "./NewsSection.module.css";
+import Image from "next/image";
 
-interface NewsItem {
-  id: number;
-  title: string;
-  date: string;
-  description: string;
-  link: string;
-}
+const newsData = [
+  {
+    title:
+      "한평생교육, 교육컨설팅 브랜드 ‘에듀바이저스’ 출범… 커리어 설계 중심 서비스 강화",
+    date: "2025.07.22",
+    link: "https://www.ksilbo.co.kr/news/articleView.html?idxno=1032547",
+    thumbnail: "/images/main/news1.jpg",
+  },
 
-const newsData: NewsItem[] = [
   {
-    id: 1,
-    title: "한평생교육그룹, 2024년 상반기 교육 성과 발표",
-    date: "2024-07-15",
-    description:
-      "한평생교육그룹이 2024년 상반기 교육 성과를 발표하며, 전년 대비 괄목할 만한 성장을 기록했다고 밝혔습니다. 특히 온라인 교육 플랫폼 '에듀바이저스'의 활약이 두드러졌습니다.",
-    link: "#",
+    title: "한평생교육, 교육컨설팅 브랜드 '에듀바이저스' 출범",
+    date: "2024.07.21",
+    link: "https://www.nbntv.co.kr/news/articleView.html?idxno=4005015",
+    thumbnail: "/images/main/news2.jpg", // Example thumbnail
   },
   {
-    id: 2,
-    title: "한평생직업훈련센터, 신규 자격증 과정 3종 개설",
-    date: "2024-07-10",
-    description:
-      "급변하는 산업 트렌드에 맞춰 한평생직업훈련센터가 인공지능, 빅데이터, 클라우드 분야의 신규 자격증 과정을 개설했습니다. 전문가 양성에 박차를 가할 예정입니다.",
-    link: "#",
+    title: "한평생교육, 교육컨설팅 전문 브랜드 '에듀바이저스' 출범",
+    date: "2024.07.17",
+    link: "http://www.kdpress.co.kr/news/articleView.html?idxno=139430",
+    thumbnail: "/images/main/news4.png", // Example thumbnail
   },
   {
-    id: 3,
-    title: "한평생실습지원센터, 사회복지 현장실습 설명회 성료",
-    date: "2024-07-05",
-    description:
-      "사회복지학과 학생들을 대상으로 한 한평생실습지원센터의 현장실습 설명회가 성황리에 마무리되었습니다. 실습생들의 궁금증을 해소하고 성공적인 실습을 지원하기 위한 자리였습니다.",
-    link: "#",
+    title: "한평생교육, 교육컨설팅 브랜드 ‘에듀바이저스’ 공식 출범",
+    date: "2024.07.18",
+    link: "https://www.gokorea.kr/news/articleView.html?idxno=833065",
+    thumbnail: "/images/main/news3.jpg", // Example thumbnail
   },
+
   {
-    id: 4,
-    title: "에듀바이저스, 교육기관 파트너십 100개 돌파 기념 이벤트",
-    date: "2024-06-28",
-    description:
-      "혁신적인 교육 플랫폼 에듀바이저스가 교육기관 파트너십 100개 돌파를 기념하여 특별 이벤트를 진행합니다. 더 많은 교육기관과의 협력을 통해 교육 생태계를 확장할 계획입니다.",
-    link: "#",
+    title:
+      "한평생교육, 교육컨설팅 브랜드 ‘에듀바이저스’ 출범… 커리어 설계 중심 서비스 강화",
+    date: "2024.07.16",
+    link: "https://www.siminilbo.co.kr/news/newsview.php?ncode=1160287540055868",
+    thumbnail: "/images/main/news5.jpg", // Example thumbnail
   },
 ];
 
-const NewsSection: React.FC = () => {
+export default function NewsSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-12"
-        >
-          새로운 소식
-        </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {newsData.map((news, index) => (
-            <motion.div
-              key={news.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-gray-50 rounded-lg shadow-md overflow-hidden"
+    <section className={styles.newsSection}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>
+          언론 속 <span className={styles.subtitle}>한평생교육그룹</span>
+        </h2>
+        <div className={styles.newsGrid}>
+          {newsData.map((item, index) => (
+            <a
+              key={index}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.newsCard}
             >
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {news.title}
-                </h3>
-                <p className="text-sm text-gray-500 mb-4">{news.date}</p>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  {news.description}
-                </p>
-                <a
-                  href={news.link}
-                  className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
-                >
-                  자세히 보기 &rarr;
-                </a>
+              <div className={styles.thumbnailContainer}>
+                <Image
+                  src={item.thumbnail}
+                  alt={item.title}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className={styles.thumbnail}
+                />
               </div>
-            </motion.div>
+              <div className={styles.newsContent}>
+                <h3 className={styles.newsTitle}>{item.title}</h3>
+                <p className={styles.newsDate}>{item.date}</p>
+              </div>
+            </a>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default NewsSection;
+}

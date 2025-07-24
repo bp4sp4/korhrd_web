@@ -90,12 +90,15 @@
 .card {
     border-radius: 1rem;
     margin: 0 88px;
+    position: relative;
+    /* Add this line */
 }
 
 
 
-.widthedu {
 
+.widthedu {
     border-radius: 20px;
     margin-bottom: 100px;
+    object-fit: contain;
 }
