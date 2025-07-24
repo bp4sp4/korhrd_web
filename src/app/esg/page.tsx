@@ -30,37 +30,6 @@ interface ESGInitiative {
 }
 
 const ESG: React.FC = () => {
-  const esgMetrics: ESGMetric[] = [
-    {
-      title: "탄소 배출 감소",
-      value: "35",
-      unit: "%",
-      icon: <Leaf className="w-6 h-6" />,
-      color: "text-green-600",
-    },
-    {
-      title: "재생 에너지 사용",
-      value: "78",
-      unit: "%",
-      icon: <Globe className="w-6 h-6" />,
-      color: "text-blue-600",
-    },
-    {
-      title: "직원 만족도",
-      value: "92",
-      unit: "%",
-      icon: <Users className="w-6 h-6" />,
-      color: "text-purple-600",
-    },
-    {
-      title: "ESG 등급",
-      value: "A+",
-      unit: "",
-      icon: <Award className="w-6 h-6" />,
-      color: "text-orange-600",
-    },
-  ];
-
   const initiatives: ESGInitiative[] = [
     {
       category: "Environmental",
@@ -130,55 +99,11 @@ const ESG: React.FC = () => {
         </div>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            ESG 경영
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-            지속가능한 미래를 위한 우리의 약속
+          <p className="text-xl md:text-[50px] text-[#121212] font-bold  mb-10 leading-[63px]">
+            책임 있는 교육을 위한
+            <br />
+            한평생교육의 실천
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4">
-              ESG 보고서 다운로드
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4">
-              자세히 보기
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Metrics Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              ESG 성과 지표
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              지속가능한 경영을 위한 우리의 노력과 성과
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {esgMetrics.map((metric, index) => (
-              <Card
-                key={index}
-                className="p-8 text-center hover:shadow-lg transition-shadow border-border"
-              >
-                <div className={`${metric.color} mb-4 flex justify-center`}>
-                  {metric.icon}
-                </div>
-                <div className="text-4xl font-bold text-foreground mb-2">
-                  {metric.value}
-                  <span className="text-2xl">{metric.unit}</span>
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">
-                  {metric.title}
-                </h3>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
