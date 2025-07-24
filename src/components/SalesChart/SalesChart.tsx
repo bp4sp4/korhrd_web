@@ -19,9 +19,9 @@ interface StatsItem {
 }
 
 const data = [
-  { name: "2023", 매출: 130000, 성장률: 5 },
-  { name: "2024", 매출: 350000, 매출성장액: 220000, 성장률: 200 },
-  { name: "2025~진행중", 매출: 270000 },
+  { name: "2023년", 매출: 130000, 성장률: 5 },
+  { name: "202년4", 매출: 350000, 매출성장액: 220000, 성장률: 35 },
+  { name: "2025~진행중", 매출: 550000, 성장률: 55 },
 ];
 
 const statsData: StatsItem[] = [
@@ -40,6 +40,36 @@ const SalesChart = () => {
       setHasChartAnimated(true);
     }
   }, [isInView]);
+
+  const CustomLabel = (props: any) => {
+    const { x, y, value, name } = props; // Destructure name directly from props
+
+    if (typeof value !== "number") {
+      return null;
+    }
+
+    const formattedValue = `${value / 10000}억`;
+    let textToDisplay = formattedValue;
+
+    if (name === "2025~진행중") {
+      // Use name directly from props
+      textToDisplay = `예상 ${formattedValue}`;
+    }
+
+    return (
+      <text
+        x={x + 40}
+        y={y}
+        dy={-30}
+        fill="#666"
+        fontSize="1.2em"
+        fontWeight="700"
+        textAnchor="middle"
+      >
+        {textToDisplay}
+      </text>
+    );
+  };
 
   return (
     <section className="bg-white py-[100px]">
@@ -104,15 +134,13 @@ const SalesChart = () => {
                   position="top"
                   style={{ fontSize: "1.2em", fontWeight: "700" }}
                   offset={30}
-                  formatter={(value: React.ReactNode) =>
-                    typeof value === "number" ? `${value / 10000}억` : ""
-                  }
+                  content={<CustomLabel />}
                 />
               </Bar>
 
               <Line
                 yAxisId="right"
-                type="monotone"
+                type="natural"
                 dataKey="성장률"
                 stroke="#f94239"
                 strokeWidth={7}
@@ -124,14 +152,9 @@ const SalesChart = () => {
                     fill: "#f94239",
                     fontWeight: "700",
                   },
-                  offset: -140,
-                  dx: -200,
+                  offset: 50, // Adjusted offset
+                  dx: 50, // Adjusted dx
                   formatter: (value: React.ReactNode) => {
-                    if (typeof value === "number") {
-                      if (value === 0) return "";
-                      if (value % 1 === 0) return `${value}% 증가`;
-                      return `${value.toFixed(2)}% 증가`;
-                    }
                     return "";
                   },
                 }}
