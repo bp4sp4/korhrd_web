@@ -5,7 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import styles from "./Business.module.css"; // ❗ 필요 시 위치 조정
+import styles from "./Business.module.css";
 
 interface BusinessArea {
   title: string;
