@@ -30,6 +30,13 @@ const statsData: StatsItem[] = [
   { value: "200%", label: "회사성장률" },
 ];
 
+interface CustomLabelProps {
+  x?: string | number;
+  y?: string | number;
+  value?: string | number;
+  index?: number;
+}
+
 const SalesChart = () => {
   const chartRef = useRef(null);
   const isInView = useInView(chartRef, { once: true });
@@ -41,25 +48,40 @@ const SalesChart = () => {
     }
   }, [isInView]);
 
-  const CustomLabel = (props: any) => {
-    const { x, y, value, name } = props; // Destructure name directly from props
+  const CustomLabel = (props: CustomLabelProps) => {
+    const { x, y, value, index } = props;
 
-    if (typeof value !== "number") {
+    if (
+      x === undefined ||
+      y === undefined ||
+      value === undefined ||
+      index === undefined
+    ) {
       return null;
     }
 
-    const formattedValue = `${value / 10000}억`;
+    const numericX = typeof x === "string" ? parseFloat(x) : x;
+    const numericY = typeof y === "string" ? parseFloat(y) : y;
+    const numericValue = typeof value === "string" ? parseFloat(value) : value;
+
+    if (isNaN(numericX) || isNaN(numericY) || isNaN(numericValue)) {
+      return null;
+    }
+
+    const dataPoint = data[index];
+    const name = dataPoint ? dataPoint.name : "";
+
+    const formattedValue = `${numericValue / 10000}억`;
     let textToDisplay = formattedValue;
 
     if (name === "2025~진행중") {
-      // Use name directly from props
       textToDisplay = `예상 ${formattedValue}`;
     }
 
     return (
       <text
-        x={x + 40}
-        y={y}
+        x={numericX + 40}
+        y={numericY}
         dy={-30}
         fill="#666"
         fontSize="1.2em"
@@ -134,7 +156,7 @@ const SalesChart = () => {
                   position="top"
                   style={{ fontSize: "1.2em", fontWeight: "700" }}
                   offset={30}
-                  content={<CustomLabel />}
+                  content={CustomLabel}
                 />
               </Bar>
 
