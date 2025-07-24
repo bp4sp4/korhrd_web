@@ -58,7 +58,7 @@ const defaultAreas: BusinessArea[] = [
       "실습 서류 작성 및 첨삭 도우미",
       "실습일정 꼼꼼한 관리 및 안내",
     ],
-    link: "http://www.korhrdsup.kr/",
+    link: "https://pf.kakao.com/_inxaTn",
   },
 ];
 
