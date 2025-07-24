@@ -60,7 +60,10 @@ const defaultAreas: BusinessArea[] = [
   },
 ];
 
-function Page({ className, areas = defaultAreas }: BusinessAreasSectionProps) {
+export default function BusinessAreasSection({
+  className,
+  areas = defaultAreas,
+}: BusinessAreasSectionProps) {
   return (
     <section className={cn("py-16 md:py-24 bg-background", className)}>
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -218,5 +221,3 @@ function Page({ className, areas = defaultAreas }: BusinessAreasSectionProps) {
     </section>
   );
 }
-
-export default Page;
