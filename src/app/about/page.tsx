@@ -8,6 +8,7 @@ import TimelineSection from "@/components/Timeline/Timeline";
 import SalesChart from "@/components/SalesChart/SalesChart";
 
 import CeoMessage from "@/components/CeoMessage/CeoMessage";
+import Faq from "@/components/Faq";
 
 export default function AboutPage() {
   return (
@@ -41,6 +42,7 @@ export default function AboutPage() {
       </div>
 
       <CeoMessage />
+      <Faq />
     </>
   );
 }
