@@ -82,7 +82,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="business"
+                href="/business"
                 className={`${styles.navLink} ${
                   isHomePage
                     ? scrolled
@@ -96,7 +96,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/esg"
                 className={`${styles.navLink} ${
                   isHomePage
                     ? scrolled

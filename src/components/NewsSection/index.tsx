@@ -16,19 +16,19 @@ const newsData = [
     title: "한평생교육, 교육컨설팅 브랜드 '에듀바이저스' 출범",
     date: "2024.07.21",
     link: "https://www.nbntv.co.kr/news/articleView.html?idxno=4005015",
-    thumbnail: "/images/main/news2.jpg", // Example thumbnail
+    thumbnail: "/images/main/news2.jpg",
   },
   {
     title: "한평생교육, 교육컨설팅 전문 브랜드 '에듀바이저스' 출범",
     date: "2024.07.17",
     link: "http://www.kdpress.co.kr/news/articleView.html?idxno=139430",
-    thumbnail: "/images/main/news4.png", // Example thumbnail
+    thumbnail: "/images/main/news4.png",
   },
   {
     title: "한평생교육, 교육컨설팅 브랜드 ‘에듀바이저스’ 공식 출범",
     date: "2024.07.18",
     link: "https://www.gokorea.kr/news/articleView.html?idxno=833065",
-    thumbnail: "/images/main/news3.jpg", // Example thumbnail
+    thumbnail: "/images/main/news3.jpg",
   },
 
   {
@@ -36,7 +36,14 @@ const newsData = [
       "한평생교육, 교육컨설팅 브랜드 ‘에듀바이저스’ 출범… 커리어 설계 중심 서비스 강화",
     date: "2024.07.16",
     link: "https://www.siminilbo.co.kr/news/newsview.php?ncode=1160287540055868",
-    thumbnail: "/images/main/news5.jpg", // Example thumbnail
+    thumbnail: "/images/main/news5.jpg",
+  },
+  {
+    title:
+      "한평생교육, ‘에듀바이저스’ 공식 출범… 교육서비스에 커리어 컨설팅 접목",
+    date: "2024.07.23",
+    link: "https://www.siminilbo.co.kr/news/newsview.php?ncode=1160287540055868",
+    thumbnail: "/images/main/news6.jpg",
   },
 ];
 

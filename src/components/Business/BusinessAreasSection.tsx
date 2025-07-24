@@ -1,4 +1,3 @@
-// src/components/BusinessAreasSection.tsx
 "use client";
 
 import React from "react";
@@ -6,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import styles from "./Business.module.css";
+import RecruitSection from "../recruitSection/recruitSection";
 
 interface BusinessArea {
   title: string;
@@ -74,7 +74,7 @@ export default function BusinessAreasSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 mt-15"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             사업분야{" "}
@@ -86,7 +86,7 @@ export default function BusinessAreasSection({
           </p>
         </motion.div>
 
-        <div className="space-y-24 md:space-y-32">
+        <div className="space-y-24 md:space-y-32 mb-20">
           {areas.map((area, index) => {
             const isEven = index % 2 === 1;
 
@@ -99,7 +99,7 @@ export default function BusinessAreasSection({
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className={cn(
                   "flex flex-col gap-8 md:gap-12 lg:gap-16",
-                  isEven ? "md:flex-row-reverse" : "md:flex-row"
+                  isEven ? "md:flex-row-reverse" : "md:flex-row "
                 )}
               >
                 {/* 이미지 */}
@@ -222,6 +222,7 @@ export default function BusinessAreasSection({
           })}
         </div>
       </div>
+      <RecruitSection />
     </section>
   );
 }
