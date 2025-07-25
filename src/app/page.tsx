@@ -22,10 +22,10 @@ export default function Home() {
           }}
           className="gap-4 px-10 max-w-6xl"
         >
-          <div className="text-3xl tracking-[-1.5px]  md:text-[60px] font-bold dark:text-white ">
+          <div className="text-[33px] tracking-[-1.5px]  md:text-[60px] font-bold dark:text-white ">
             대한민국 교육의
           </div>
-          <div className="text-3xl tracking-[-1.5px] md:text-[60px] font-bold dark:text-white">
+          <div className="text-[33px] tracking-[-1.5px] md:text-[60px] font-bold dark:text-white">
             새로운 방향성의 제시하다
           </div>
         </motion.div>

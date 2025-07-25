@@ -127,7 +127,7 @@ const ExampleContent = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
     <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
       평생교육
-      <br />
+      <br className="hidden md:block" />
       컨설팅
     </h2>
     <div className="col-span-1 md:col-span-8">
@@ -144,8 +144,8 @@ const ExampleContent = () => (
 const ExampleContent2 = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
     <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
-      평생교육
-      <br />
+      평생교육&nbsp;
+      <br className="hidden md:block" />
       플랫폼 구축
     </h2>
     <div className="col-span-1 md:col-span-8">
