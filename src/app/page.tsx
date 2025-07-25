@@ -17,10 +17,10 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
             delay: 0.3,
-            duration: 0.8,
+            duration: 0.1,
             ease: "easeInOut",
           }}
-          className="gap-4 px-10 w-[1280px]"
+          className="gap-4 px-10 max-w-6xl"
         >
           <div className="text-3xl tracking-[-1.5px]  md:text-[60px] font-bold dark:text-white ">
             대한민국 교육의

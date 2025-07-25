@@ -1,212 +1,29 @@
-/* 공통 헤더 스타일 */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform; /* Improve fixed positioning performance on mobile */
-  transform: translateZ(0); /* Force hardware acceleration */
+.header__container {
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
 }
 
-.headerContent {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  height: 64px;
-  width: 100%;
-  max-width: 1280px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.25rem;
-  padding: 0 1rem;
+.header__logo {
+  letter-spacing: 1px;
 }
 
-/* 헤더 배경 상태 */
-.transparentHeader {
-  background-color: transparent;
-  box-shadow: none;
-}
-
-.scrolledHeader {
-  background-color: #ffffffe9;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-/* 로고 */
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.logo>span>img {
-  margin-right: 0.5rem;
-}
-
-.transparentLogo {
-  color: #ffffff;
-}
-
-.scrolledLogo {
-  color: #333333;
-}
-
-/* 데스크탑 네비게이션 */
-.desktopNav {
-  display: flex;
-}
-
-.navList {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 1.5rem;
-}
-
-.navLink {
-  font-size: 1.125rem;
-  font-weight: 500;
+.header__nav-link {
+  color: #334155;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s;
 }
 
-.transparentNavLink {
-  color: #ffffff;
+.header__nav-link:hover {
+  color: #2563eb;
 }
 
-.scrolledNavLink {
-  color: #333333;
+.header__cta-btn {
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
 }
 
-.navLink:hover {
-  color: #2B7FFF;
-}
-
-/* 햄버거 메뉴 - 기본은 안보이게 */
-.hamburger {
-  display: none;
-}
-
-/* 모바일 메뉴 오버레이 */
-.mobileMenuOverlay {
-  display: none;
-}
-
-/* 반응형 (모바일 기준) */
-@media (max-width: 800px) {
-  .headerContent {
-    height: 60px;
-    padding: 0 3rem; /* Increased padding for more space from edges */
-    justify-content: flex-start; /* Align logo to the left */
-    max-width: 100%;
-    position: relative; /* For absolute positioning of hamburger */
-  }
-
-  .logo {
-    font-size: 1.2rem;
-    margin: 0; /* Ensure no extra margin */
-    padding: 0; /* Ensure no extra padding */
-  }
-
-  .desktopNav {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 24px;
-    height: 20px;
-    cursor: pointer;
-    z-index: 1100;
-    position: absolute; /* Absolute positioning */
-    right: 3rem; /* Position from the right edge of headerContent, matching padding */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    margin: 0; /* Ensure no extra margin */
-    padding: 0; /* Ensure no extra padding */
-  }
-
-  .hamburgerLine {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #333;
-    transition: all 0.3s ease;
-    transform-origin: center;
-  }
-
-  .transparentHamburger .hamburgerLine {
-    background-color: #ffffff;
-  }
-
-  .scrolledHamburger .hamburgerLine {
-    background-color: #333333;
-  }
-
-  /* 햄버거 열릴 때 애니메이션 */
-  .hamburger.open .hamburgerLine:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-  }
-
-  .hamburger.open .hamburgerLine:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.open .hamburgerLine:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-  }
-
-  .mobileMenuOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 1050;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .mobileMenuOverlay.open {
-    transform: translateX(0);
-  }
-
-  .mobileMenuOverlay nav {
-    width: 100%;
-    text-align: center;
-  }
-
-  .mobileMenuOverlay .navList {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0;
-    margin: 0;
-  }
-
-  .mobileMenuOverlay .navLink {
-    color: #ffffff;
-    font-size: 1.5rem;
-    padding: 0.75rem 0;
-    display: block;
-  }
-
-  .mobileMenuOverlay .navLink:hover {
-    color: #2B7FFF;
-  }
+.header__menu-btn {
+  font-size: 1.5rem;
+  color: #334155;
+  background: none;
+  border: none;
 }
