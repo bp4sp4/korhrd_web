@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./StickyScrollSection.module.css";
-import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -12,6 +12,12 @@
 
 }
 
+.leftInnerMobile {
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
 @media (min-width: 1024px) {
     .left {
         display: flex;
@@ -23,7 +29,11 @@
         top: 0;
         height: 100vh;
     }
+    .leftInnerMobile {
+        display: none;
+    }
 }
+
 
 .leftInner {
     display: flex;
@@ -69,13 +79,15 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 300px;
-    margin-left: 60px;
+    padding-top: 100px;
+    margin-left: 0;
 }
 
 @media (min-width: 1024px) {
     .right {
         width: 50%;
+        padding-top: 300px;
+        margin-left: 60px;
     }
 }
 
@@ -89,10 +101,11 @@
 
 .card {
     border-radius: 1rem;
-    margin: 0 88px;
+    margin: 0 20px;
     position: relative;
     /* Add this line */
 }
+
 
 
 
@@ -101,4 +114,21 @@
     border-radius: 20px;
     margin-bottom: 100px;
     object-fit: contain;
+}
+
+.leftInnerMobile .leftTitle {
+    color: #000;
+}
+
+.leftInnerMobile .leftHeading {
+    color: #000;
+}
+
+.leftInnerMobile .leftButton {
+    background: #2B7FFF;
+    color: white;
+}
+
+.leftInnerMobile .leftButton:hover {
+    background: #0056b3;
 }

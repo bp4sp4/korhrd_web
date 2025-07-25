@@ -8,12 +8,12 @@ import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        // 50px 이상 스크롤 시
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -22,10 +22,25 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
 
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.body.style.overflow = ''; // Clean up on unmount
     };
-  }, []);
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   const isHomePage = pathname === "/";
 
@@ -40,7 +55,7 @@ const Header = () => {
       }`}
     >
       <div className={styles.headerContent}>
-        <Link href="/">
+        <Link href="/" onClick={closeMobileMenu}>
           <div
             className={`${styles.logo} ${
               isHomePage
@@ -63,8 +78,26 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Navigation Links */}
-        <nav>
+        {/* 햄버거 메뉴 아이콘 */}
+        <div
+          className={`${styles.hamburger} ${
+            isMobileMenuOpen ? styles.open : ""
+          } ${
+            isHomePage
+              ? scrolled
+                ? styles.scrolledHamburger
+                : styles.transparentHamburger
+              : styles.scrolledHamburger
+          }`}
+          onClick={toggleMobileMenu}
+        >
+          <span className={styles.hamburgerLine}></span>
+          <span className={styles.hamburgerLine}></span>
+          <span className={styles.hamburgerLine}></span>
+        </div>
+
+        {/* 데스크탑 내비게이션 */}
+        <nav className={styles.desktopNav}>
           <ul className={styles.navList}>
             <li>
               <Link
@@ -81,7 +114,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/business"
                 className={`${styles.navLink} ${
                   isHomePage
@@ -92,10 +125,10 @@ const Header = () => {
                 }`}
               >
                 사업분야
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/esg"
                 className={`${styles.navLink} ${
                   isHomePage
@@ -106,7 +139,46 @@ const Header = () => {
                 }`}
               >
                 ESG경영
-              </a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      {/* 모바일 메뉴 오버레이 */}
+      <div
+        className={`${styles.mobileMenuOverlay} ${
+          isMobileMenuOpen ? styles.open : ""
+        }`}
+      >
+        <nav>
+          <ul className={styles.navList}>
+            <li>
+              <Link
+                href="/about"
+                className={styles.navLink}
+                onClick={closeMobileMenu}
+              >
+                회사소개
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/business"
+                className={styles.navLink}
+                onClick={closeMobileMenu}
+              >
+                사업분야
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/esg"
+                className={styles.navLink}
+                onClick={closeMobileMenu}
+              >
+                ESG경영
+              </Link>
             </li>
           </ul>
         </nav>
