@@ -35,8 +35,9 @@ const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <section className="bg-white py-[30px]">
       <div className="max-w-4xl mx-auto">
         <h3 className="tm__title text-[20px] md:text-4xl font-bold mb-12 mt-12 text-center text-[#1e1e1e]">
-          <span className="text-[#2B7FFF]">한평생교육</span>은 빠르게 변화하고
-          있습니다.
+          <span className="text-[#2B7FFF]">한평생교육</span>
+          은 빠르게
+          <br className="block md:hidden" /> 변화하고 있습니다.
         </h3>
         <div className="w-full font-sans md:px-10" ref={containerRef}>
           <div ref={ref} className="relative max-w-4xl mx-auto pb-20">

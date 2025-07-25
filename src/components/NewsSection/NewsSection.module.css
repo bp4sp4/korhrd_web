@@ -73,3 +73,15 @@
     font-size: 0.9rem;
     color: #6b7280;
 }
+
+
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 35px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #111827;
+    }
+}

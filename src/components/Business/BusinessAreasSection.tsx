@@ -76,13 +76,15 @@ export default function BusinessAreasSection({
           transition={{ duration: 0.6 }}
           className="text-center mb-16 mt-15"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-[36px] lg:text-5xl font-bold text-foreground mb-4">
             사업분야{" "}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            평생교육 진흥의 사명감을가지고 사업을 진행하고 있습니다.
+            평생교육 진흥의 사명감을가지고
+            <br className="md:hidden block" /> 사업을 진행하고 있습니다.
             <br />
-            한평생교육그룹이 진행하고 있는 교육사업을 소개합니다.
+            한평생교육그룹이 진행하고 있는 <br className="md:hidden block" />{" "}
+            교육사업을 소개합니다.
           </p>
         </motion.div>
 

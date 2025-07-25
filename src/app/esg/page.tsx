@@ -68,16 +68,16 @@ const ESG: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-[70vh] bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/20">
+      <section className="relative h-[70vh] bg-black/50 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 ">
           <img
             src="/images/esg/image001.png"
             className="h-full w-full object-cover esgbanner"
           />
         </div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-          <p className="text-xl md:text-[50px] text-[#121212] font-bold  mb-10 leading-[63px]">
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6 ">
+          <p className="md:text-[60px] text-[35px] text-white font-bold md:leading-[80px] leading-[45px]">
             책임 있는 교육을 위한
             <br />
             한평생교육의 실천
@@ -90,10 +90,12 @@ const ESG: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-bold text-[36px] mb-4 leading-[45px]">
-              한평생교육원은 환경보존과 사회공헌,
-              <br /> 사회적 가치를 함께 가르칩니다.
+              한평생교육원은
+              <br className="block md:hidden" /> 환경보존과 사회공헌,
+              <br /> 사회적 가치를
+              <br className="block md:hidden" /> 함께 가르칩니다.
             </h2>
-            <p className="text-[20px] text-muted-foreground">
+            <p className="md:text-[20px] text-[16px]  text-muted-foreground">
               한평생교육원은 지속 가능한 미래를 위해 ESG 가치를 교육의 중심에
               두고 있습니다.
               <br /> 교육기관으로서 사회적 책임을 다하며, 더 나은 세상을 위한

@@ -46,7 +46,8 @@
 }
 
 .answer.open {
-    max-height: 200px; /* Adjust as needed */
+    max-height: 200px;
+    /* Adjust as needed */
 }
 
 .answer p {
@@ -54,4 +55,14 @@
     color: #374151;
     font-size: 1.1rem;
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 44px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #111827;
+    }
 }

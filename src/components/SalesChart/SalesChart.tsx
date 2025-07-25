@@ -20,7 +20,7 @@ interface StatsItem {
 
 const data = [
   { name: "2023년", 매출: 130000, 성장률: 5 },
-  { name: "202년4", 매출: 350000, 매출성장액: 220000, 성장률: 35 },
+  { name: "2024년", 매출: 350000, 매출성장액: 220000, 성장률: 35 },
   { name: "2025~진행중", 매출: 550000, 성장률: 55 },
 ];
 
@@ -41,6 +41,16 @@ const SalesChart = () => {
   const chartRef = useRef(null);
   const isInView = useInView(chartRef, { once: true });
   const [hasChartAnimated, setHasChartAnimated] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     if (isInView) {
@@ -101,10 +111,10 @@ const SalesChart = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-[20px] md:text-4xl font-bold mb-12 text-center text-[#1e1e1e]"
+          className="text-[35px] md:text-4xl font-bold mb-12 text-center text-[#1e1e1e]"
         >
-          <span className="text-[#2B7FFF]">한평생교육</span>은 빠르게 성장하고
-          있습니다.
+          <span className="text-[#2B7FFF] ">한평생교육</span>은 빠르게
+          <br className="md:hidden block" /> 성장하고 있습니다.
         </motion.h3>
 
         {/* 통계 수치 */}
@@ -128,7 +138,12 @@ const SalesChart = () => {
           <ResponsiveContainer width="100%" height={500}>
             <ComposedChart
               data={data}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              margin={{
+                top: 20,
+                right: isMobile ? 0 : 40,
+                left: isMobile ? 0 : 30,
+                bottom: 5,
+              }}
             >
               <XAxis
                 dataKey="name"
@@ -137,11 +152,13 @@ const SalesChart = () => {
                 tick={{ dy: 10 }}
               />
 
-              <Legend
-                verticalAlign="top"
-                align="left"
-                wrapperStyle={{ fontWeight: 700 }}
-              />
+              {!isMobile && (
+                <Legend
+                  verticalAlign="top"
+                  align="left"
+                  wrapperStyle={{ fontWeight: 700 }}
+                />
+              )}
 
               <Bar
                 yAxisId="left"

@@ -1,3 +1,14 @@
 .tm__title {
     line-height: 67px;
 }
+
+@media (max-width: 768px) {
+
+    .tm__title {
+        font-size: 35px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem;
+
+    }
+}
