@@ -67,11 +67,15 @@ export default function Header() {
             height={28}
             className="header__logo-img w-[23px] h-[23px] md:w-[28px] md:h-[28px]"
           />
-          <span className={`font-bold text-[20px] md:text-[28px] ${textColorClass}`}>
+          <span
+            className={`font-bold text-[20px] md:text-[28px] ${textColorClass}`}
+          >
             한평생교육그룹
           </span>
         </Link>
-        <nav className={`header__nav hidden md:flex gap-3 items-center ${textColorClass}`}>
+        <nav
+          className={`header__nav hidden md:flex gap-3 items-center ${textColorClass}`}
+        >
           <Link href="/about" className="group">
             <span className="header__nav-link text-[15px] px-4 py-2 rounded-[8px] transition-colors duration-150 group-hover:bg-[rgba(0,0,0,0.05)]">
               회사소개
@@ -129,14 +133,14 @@ export default function Header() {
                   className="w-full py-3 text-lg font-normal text-black hover:bg-gray-100 rounded transition"
                   onClick={() => setMenuOpen(false)}
                 >
-                  회사 소개
+                  회사소개
                 </Link>
                 <Link
                   href="/business"
                   className="w-full py-3 text-lg font-normal text-black hover:bg-gray-100 rounded transition"
                   onClick={() => setMenuOpen(false)}
                 >
-                  교육서비스
+                  사업분야
                 </Link>
 
                 <Link
@@ -144,7 +148,7 @@ export default function Header() {
                   className="w-full py-3 text-lg font-normal text-black hover:bg-gray-100 rounded transition"
                   onClick={() => setMenuOpen(false)}
                 >
-                  설계사 채용
+                  ESG경영
                 </Link>
               </nav>
             </div>
