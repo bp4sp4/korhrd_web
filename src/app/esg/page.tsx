@@ -80,7 +80,7 @@ const ESG: React.FC = () => {
           <p className="md:text-[60px] text-[35px] text-white font-bold md:leading-[80px] leading-[45px]">
             책임 있는 교육을 위한
             <br />
-            한평생교육의 실천
+            한평생교육그룹의 실천
           </p>
         </div>
       </section>
@@ -90,13 +90,13 @@ const ESG: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-bold text-[36px] mb-4 leading-[45px]">
-              한평생교육원은
+              한평생교육그룹은
               <br className="block md:hidden" /> 환경보존과 사회공헌,
               <br /> 사회적 가치를
               <br className="block md:hidden" /> 함께 가르칩니다.
             </h2>
             <p className="md:text-[20px] text-[16px]  text-muted-foreground">
-              한평생교육원은 지속 가능한 미래를 위해 ESG 가치를 교육의 중심에
+              한평생교육그룹은 지속 가능한 미래를 위해 ESG 가치를 교육의 중심에
               두고 있습니다.
               <br /> 교육기관으로서 사회적 책임을 다하며, 더 나은 세상을 위한
               실천을 끊임없이 이어가고 있습니다.

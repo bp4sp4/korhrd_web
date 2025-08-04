@@ -65,8 +65,6 @@ export default function StickyScrollSplit() {
               className={styles.widthedu}
               src={item.image}
               alt="Step Image"
-              width={800}
-              height={300}
             />
           </div>
         ))}

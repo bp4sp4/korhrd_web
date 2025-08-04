@@ -34,6 +34,7 @@
     .left {
         width: 50%;
         padding-top: 320px;
+        margin-top: 40px;
         position: sticky;
         top: 0;
         height: 100vh;
@@ -151,7 +152,5 @@
     margin-bottom: 100px;
     object-fit: contain;
     width: 100%;
-    /* 이미지 너비 100% */
     height: auto;
-    /* 높이 자동 조정 */
 }

@@ -132,10 +132,10 @@ const ExampleContent = () => (
     </h2>
     <div className="col-span-1 md:col-span-8">
       <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-        각종 교육제도를 이용하여 평생교육을 전문적으로 받을 수 있게
+        각종 교육제도와 자격증 과정을 보다 쉽게 편리하게 이수할 수 있도록
       </p>
       <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-        컨설팅해 주는 사업을 꾸준하게 진행하고 있습니다.
+        고객 맞춤형 컨설팅 서비스를 지속적으로 편리하게 제공하고 있습니다.
       </p>
     </div>
   </div>
@@ -150,10 +150,10 @@ const ExampleContent2 = () => (
     </h2>
     <div className="col-span-1 md:col-span-8">
       <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-        평생교육과정의 다양한 콘텐츠와 전문 인력을 함께 양성하여,
+        다양한 교육 콘텐츠와 전문 인력을 체계적으로 연계하여,
       </p>
       <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-        양질의 평생교육을 제공하는 전문가 플랫폼을 구축하였습니다.
+        브랜드 가치에 걸맞는 고품질 평생교육 플랫폼을 구축하였습니다.
       </p>
     </div>
   </div>
