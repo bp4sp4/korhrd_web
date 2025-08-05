@@ -8,6 +8,7 @@ import styles from "./Business.module.css";
 import RecruitSection from "../recruitSection/recruitSection";
 
 interface BusinessArea {
+  id: string;
   title: string;
   description: string;
   image: string;
@@ -22,6 +23,7 @@ interface BusinessAreasSectionProps {
 
 const defaultAreas: BusinessArea[] = [
   {
+    id: "eduvisors",
     title: "에듀바이저스",
     description:
       "한평생교육그룹은 파편화된 교육 시장을 통합하고, '에듀바이저스' 플랫폼을 통해 교육의 접근성과 안정성을 획기적으로 개선하며, 교육 산업의 새로운 표준을 제시하고 있습니다.",
@@ -35,6 +37,7 @@ const defaultAreas: BusinessArea[] = [
     link: "https://www.eduvisor.kr/",
   },
   {
+    id: "lifelong-training",
     title: "한평생직업훈련센터",
     description:
       "국무총리산하 국책연구기관인 한국직업능력연구원에 정식 등록된 약 50여 종 자격증 과정을 운영하며, 최고의 콘텐츠 전문가들이 모여 참신한 교육과 미디어 사업을 실현합니다.",
@@ -48,6 +51,7 @@ const defaultAreas: BusinessArea[] = [
     link: "https://korhrd.co.kr/",
   },
   {
+    id: "practice-support",
     title: "한평생실습지원센터",
     description:
       "실습을 준비하는 학습자들이 최적의 환경에서 실습을 진행할 수 있도록, 실습기관 안내부터 서류 준비, 일정 관리까지 전 과정을 꼼꼼히 지원합니다.",
@@ -76,16 +80,44 @@ export default function BusinessAreasSection({
           transition={{ duration: 0.6 }}
           className="text-center mb-16 mt-15"
         >
-          <h2 className="text-3xl md:text-[36px] lg:text-5xl font-bold text-foreground mb-4">
-            사업분야{" "}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            평생교육 진흥의 사명감을가지고
-            <br className="md:hidden block" /> 사업을 진행하고 있습니다.
-            <br />
-            한평생교육그룹이 진행하고 있는 <br className="md:hidden block" />{" "}
-            교육사업을 소개합니다.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center justify-center px-6 py-2 bg-gradient-to-r from-blue-500/10 to-blue-600/10 rounded-full border border-blue-200/50 mb-6"
+          >
+            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></div>
+            <span className="text-blue-600 font-semibold text-sm tracking-wide uppercase">
+              Our Business
+            </span>
+          </motion.div>
+
+          <motion.h2
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            사업분야
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative"
+          >
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              평생교육 진흥의 사명감을 가지고
+              <br className="md:hidden block" /> 사업을 진행하고 있습니다.
+              <br />
+              한평생교육그룹이 진행하고 있는 <br className="md:hidden block" />{" "}
+              교육사업을 소개합니다.
+            </p>
+          </motion.div>
         </motion.div>
 
         <div className="space-y-24 md:space-y-32 mb-20">
@@ -130,71 +162,69 @@ export default function BusinessAreasSection({
                   className="flex-1 flex flex-col justify-center"
                 >
                   <div className="space-y-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.8 }}
-                    >
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                        {area.title}
-                      </h3>
+                    <div>
+                      <div className="mb-6">
+                        <div className="inline-flex items-center mb-3">
+                          <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full mr-4"></div>
+                          <span className="text-sm font-medium text-blue-600 tracking-wide uppercase">
+                            {area.id === "eduvisors"
+                              ? "Education Platform"
+                              : area.id === "lifelong-training"
+                              ? "Training Center"
+                              : "Practice Support"}
+                          </span>
+                        </div>
+                        <div className="mb-4">
+                          <div className="inline-block">
+                            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent mb-3">
+                              {area.title}
+                            </h3>
+                            <div className="h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full w-full"></div>
+                          </div>
+                        </div>
+                      </div>
                       <p className="text-lg text-muted-foreground leading-relaxed">
                         {area.description}
                       </p>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 1.0 }}
-                      className="space-y-3"
-                    >
-                      <h4 className="text-lg font-semibold text-foreground">
-                        핵심 서비스
-                      </h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-6">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full"></div>
+                        <h4 className="text-xl font-bold text-foreground">
+                          핵심 서비스
+                        </h4>
+                      </div>
+                      <div className="space-y-4">
                         {area.features.map((feature, featureIndex) => (
-                          <motion.div
+                          <div
                             key={featureIndex}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{
-                              duration: 0.5,
-                              delay: 1.2 + featureIndex * 0.1,
-                            }}
-                            className="flex items-center space-x-3 p-3 bg-gray-100 rounded-lg"
+                            className="flex items-start space-x-4 p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200/50 hover:border-blue-200/50 hover:shadow-md transition-all duration-300"
                           >
-                            <svg
-                              className="w-6 h-6 text-primary flex-shrink-0"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                              />
-                            </svg>
-                            <span className="text-muted-foreground font-medium">
+                            <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                              <svg
+                                className="w-4 h-4 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2.5}
+                                  d="M5 13l4 4L19 7"
+                                />
+                              </svg>
+                            </div>
+                            <span className="text-gray-700 font-medium leading-relaxed">
                               {feature}
                             </span>
-                          </motion.div>
+                          </div>
                         ))}
                       </div>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 1.4 }}
-                      className="pt-4"
-                    >
+                    <div className="pt-4">
                       <Link
                         href={area.link}
                         target="_blank"
@@ -216,7 +246,7 @@ export default function BusinessAreasSection({
                           />
                         </svg>
                       </Link>
-                    </motion.div>
+                    </div>
                   </div>
                 </motion.div>
               </motion.div>

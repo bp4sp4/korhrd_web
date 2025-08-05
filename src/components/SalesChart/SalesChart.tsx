@@ -25,8 +25,8 @@ const data = [
 ];
 
 const statsData: StatsItem[] = [
-  { value: "13억원+", label: "2023년도" },
-  { value: "35억원+", label: "2024년도" },
+  { value: "13억원", label: "2023년도" },
+  { value: "35억원", label: "2024년도" },
   { value: "200%", label: "회사성장률" },
 ];
 
