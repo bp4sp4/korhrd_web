@@ -199,7 +199,7 @@ export default function BusinessAreasSection({
                         {area.features.map((feature, featureIndex) => (
                           <div
                             key={featureIndex}
-                            className="flex items-start space-x-4 p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200/50 hover:border-blue-200/50 hover:shadow-md transition-all duration-300"
+                            className="flex items-center space-x-4 p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200/50 hover:border-blue-200/50 hover:shadow-md transition-all duration-300"
                           >
                             <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                               <svg
