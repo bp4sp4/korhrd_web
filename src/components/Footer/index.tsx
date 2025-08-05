@@ -32,7 +32,7 @@ export default function Footer() {
                 원격평생교육시설신고 (제 원격20-6호)
               </p>
               <p>주소 : 서울시 방학로 174, 4층 | 개인정보관리책임자 : 유현모</p>
-              <p>이메일 : korhrdpartners@naver.com</p>
+              <p>문의 : korhrdpartners@naver.com</p>
             </div>
           </div>
           <div className={styles.familySiteContainer}>
