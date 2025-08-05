@@ -29,7 +29,7 @@ export default function AboutPage() {
         >
           <h1 className={styles.title}>
             한평생교육그룹
-            <br className="block md:hidden" /> 당신 곁의 배움이 되다
+            <br className="block md:hidden" /> 당신곁의 배움이 되다
             <br /> 한평생교육그룹&nbsp;
             <br className="block md:hidden" />
             함께하는 성장이 되다

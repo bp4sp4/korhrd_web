@@ -32,6 +32,7 @@ export default function Faq() {
   return (
     <section className={styles.faqSection}>
       <div className={styles.container}>
+        <div className={styles.tag}>Question</div>
         <h2 className={styles.title}>자주 묻는 질문</h2>
         <div className={styles.faqList}>
           {faqData.map((item, index) => (

@@ -1,17 +1,23 @@
 .faqSection {
     padding: 5rem 1rem;
-    background-color: #f9fafb;
+}
+
+.tag {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    color: #2B7FFF;
+    margin-bottom: 0.5rem;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .title {
     font-size: 2.5rem;
     font-weight: 700;
-    text-align: center;
     margin-bottom: 3rem;
     color: #111827;
 }
@@ -33,10 +39,14 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #111827;
     text-align: left;
+}
+
+.question:hover {
+    color: #2B7FFF;
 }
 
 .answer {
@@ -53,7 +63,7 @@
 .answer p {
     padding-bottom: 1.5rem;
     color: #374151;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.6;
 }
 
