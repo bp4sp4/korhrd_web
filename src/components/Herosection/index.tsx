@@ -5,7 +5,7 @@ const Herosection = () => {
   return (
     <div className="bg-white">
       <TextParallaxContent
-        imgUrl="/images/main/main__banner003.png
+        imgUrl="/images/main/main__banner003.jpg
         "
         subheading="품질"
         heading="완벽을 기준으로."
@@ -13,7 +13,7 @@ const Herosection = () => {
         <ExampleContent />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="/images/main/main__banner004.png"
+        imgUrl="/images/main/main__banner004.jpg"
         subheading="브랜딩"
         heading="최고를 위한 준비."
       >
