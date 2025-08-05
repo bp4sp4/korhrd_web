@@ -30,11 +30,7 @@ export default function Home() {
             <span
               className="relative z-10 px-2 py-1 rounded"
               style={{
-                backgroundImage:
-                  "linear-gradient(70.83deg, rgb(43, 127, 255) 40%, rgb(1, 79, 196) 60%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                color: "#2B7FFF",
               }}
             >
               방향
