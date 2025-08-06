@@ -124,7 +124,7 @@ export default function EduvisorsPage() {
                 새로운 도전 앞에서 망설이기보다는 시도하고, 변화에 적응하기보다
                 변화를 만드는 학습자들과 함께하고 싶다면,
                 <br />
-                지금 당신의 '다음'을 에듀바이저스에서 시작해보세요.
+                지금 당신의 &apos;다음&apos;을 에듀바이저스에서 시작해보세요.
               </p>
             </motion.div>
           </motion.div>
