@@ -1,7 +1,6 @@
 "use client";
 
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { motion } from "framer-motion";
 import Herosection from "@/components/Herosection/index";
 import StickyScrollSplit from "@/components/StickyScrollSection/index";
 import Faq from "@/components/Faq/index";
@@ -12,16 +11,7 @@ export default function Home() {
   return (
     <div>
       <AuroraBackground>
-        <motion.div
-          initial={{ opacity: 0.0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.1,
-            ease: "easeInOut",
-          }}
-          className="gap-4  md:w-[1200px] max-xl-6  mx-auto px-10"
-        >
+        <div className="gap-4  md:w-[1200px] max-xl-6  mx-auto px-10">
           <div className="text-3xl tracking-[-1.5px] md:text-[70px] font-medium dark:text-white ">
             대한민국 교육의
           </div>
@@ -37,14 +27,14 @@ export default function Home() {
             </span>
             을 제시하다.
           </div>
-        </motion.div>
+        </div>
       </AuroraBackground>
-      <motion.section>
+      <AnimatedSection>
         <Herosection />
-      </motion.section>
-      <motion.section>
+      </AnimatedSection>
+      <AnimatedSection>
         <StickyScrollSplit />
-      </motion.section>
+      </AnimatedSection>
       <AnimatedSection>
         <Faq />
       </AnimatedSection>

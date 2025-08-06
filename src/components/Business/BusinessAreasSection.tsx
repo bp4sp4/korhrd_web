@@ -161,7 +161,7 @@ export default function BusinessAreasSection({
                               {area.title}
                             </h3>
                             <motion.div
-                              className="h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
+                              className="h-1  to-blue-600 rounded-full"
                               initial={{ width: 0 }}
                               whileInView={{ width: "100%" }}
                               viewport={{ once: true }}

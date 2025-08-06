@@ -1,10 +1,13 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Globe, Target, Recycle, Heart, Award } from "lucide-react";
-import { motion } from "framer-motion";
+import React, { useRef, useLayoutEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Globe, Target, Recycle, Heart } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ESGInitiative {
   category: string;
@@ -13,38 +16,62 @@ interface ESGInitiative {
   image: string;
 }
 
+const AnimatedElement = ({ children, delay = 0 }) => {
+  const el = useRef(null);
+
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      el.current,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay,
+        scrollTrigger: {
+          trigger: el.current,
+          start: 'top 95%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }, []);
+
+  return <div ref={el}>{children}</div>;
+};
+
 const ESG: React.FC = () => {
   const initiatives: ESGInitiative[] = [
     {
-      category: "Environmental",
-      title: "환경보존",
+      category: 'Environmental',
+      title: '환경보존',
       description:
-        "기후 변화 대응과 자원 절약을 위한 친환경 경영을 실천하며, 지속 가능한 미래를 위한 환경 보호에 앞장서고 있습니다.",
-      image: "/images/esg/environment.jpg",
+        '기후 변화 대응과 자원 절약을 위한 친환경 경영을 실천하며, 지속 가능한 미래를 위한 환경 보호에 앞장서고 있습니다.',
+      image: '/images/esg/environment.jpg',
     },
     {
-      category: "Social",
-      title: "사회공헌",
+      category: 'Social',
+      title: '사회공헌',
       description:
         "'나눔, 채움, 배움, 이룸'이라는 철학 아래 지역사회와의 상생을 도모하며, 모두가 함께 성장할 수 있는 건강한 사회를 만들어가고 있습니다.",
-      image: "/images/esg/giver.jpg",
+      image: '/images/esg/giver.jpg',
     },
     {
-      category: "Governance",
-      title: "기업가치",
+      category: 'Governance',
+      title: '기업가치',
       description:
-        "투명한 경영과 책임 있는 의사결정을 통해 기업의 지속가능성과 신뢰도를 높이며, 장기적인 가치 창출에 기여합니다.",
-      image: "/images/esg/social.jpg",
+        '투명한 경영과 책임 있는 의사결정을 통해 기업의 지속가능성과 신뢰도를 높이며, 장기적인 가치 창출에 기여합니다.',
+      image: '/images/esg/social.jpg',
     },
   ];
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case "Environmental":
+      case 'Environmental':
         return <Recycle className="w-5 h-5" />;
-      case "Social":
+      case 'Social':
         return <Heart className="w-5 h-5" />;
-      case "Governance":
+      case 'Governance':
         return <Target className="w-5 h-5" />;
       default:
         return <Globe className="w-5 h-5" />;
@@ -53,20 +80,19 @@ const ESG: React.FC = () => {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "Environmental":
-        return "bg-green-100 text-green-800 border-green-200";
-      case "Social":
-        return "bg-blue-100 text-blue-800 border-blue-200";
-      case "Governance":
-        return "bg-purple-100 text-purple-800 border-purple-200";
+      case 'Environmental':
+        return 'bg-green-100 text-green-800 border-green-200';
+      case 'Social':
+        return 'bg-blue-100 text-blue-800 border-blue-200';
+      case 'Governance':
+        return 'bg-purple-100 text-purple-800 border-purple-200';
       default:
-        return "bg-gray-100 text-gray-800 border-gray-200";
+        return 'bg-gray-100 text-gray-800 border-gray-200';
     }
   };
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
       <section className="relative h-[70vh] bg-black/50 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -75,56 +101,38 @@ const ESG: React.FC = () => {
           />
         </div>
 
-        <motion.div
-          className="relative z-10 text-center max-w-4xl mx-auto px-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.p
-            className="md:text-[60px] text-[35px] text-white font-bold md:leading-[80px] leading-[45px]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            책임 있는 교육을 위한
-            <br />
-            한평생교육그룹의 실천
-          </motion.p>
-        </motion.div>
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+          <AnimatedElement>
+            <p className="md:text-[60px] text-[35px] text-white font-bold md:leading-[80px] leading-[45px]">
+              책임 있는 교육을 위한
+              <br />
+              한평생교육그룹의 실천
+            </p>
+          </AnimatedElement>
+        </div>
       </section>
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-bold text-[36px] mb-4 leading-[45px]">
-              한평생교육그룹은
-              <br className="block md:hidden" /> 환경보존과 사회공헌,
-              <br /> 사회적 가치를
-              <br className="block md:hidden" /> 함께 가르칩니다.
-            </h2>
-            <p className="md:text-[20px] text-[16px] text-muted-foreground">
-              한평생교육그룹은 지속 가능한 미래를 위해 ESG 가치를 교육의 중심에
-              두고 있습니다.
-              <br /> 교육기관으로서 사회적 책임을 다하며, 더 나은 세상을 위한
-              실천을 끊임없이 이어가고 있습니다.
-            </p>
-          </motion.div>
+          <AnimatedElement>
+            <div className="text-center mb-16">
+              <h2 className="font-bold text-[36px] mb-4 leading-[45px]">
+                한평생교육그룹은
+                <br className="block md:hidden" /> 환경보존과 사회공헌,
+                <br /> 사회적 가치를
+                <br className="block md:hidden" /> 함께 가르칩니다.
+              </h2>
+              <p className="md:text-[20px] text-[16px] text-muted-foreground">
+                한평생교육그룹은 지속 가능한 미래를 위해 ESG 가치를 교육의 중심에
+                두고 있습니다.
+                <br /> 교육기관으로서 사회적 책임을 다하며, 더 나은 세상을 위한
+                실천을 끊임없이 이어가고 있습니다.
+              </p>
+            </div>
+          </AnimatedElement>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {initiatives.map((initiative, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
+              <AnimatedElement key={index} delay={index * 0.2}>
                 <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 border-border group h-full">
                   <div className="relative h-64 overflow-hidden">
                     <img
@@ -152,23 +160,15 @@ const ESG: React.FC = () => {
                     </p>
                   </div>
                 </Card>
-              </motion.div>
+              </AnimatedElement>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Initiatives Section */}
-
-      {/* Call to Action Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600 flex items-center justify-center min-h-[20vh]">
         <div className="max-w-4xl mx-auto text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <AnimatedElement>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               지속가능한 미래를 함께 만들어가요
             </h2>
@@ -176,7 +176,7 @@ const ESG: React.FC = () => {
               한평생교육그룹과 함께 ESG 가치를 실천하며, 더 나은 세상을 위한
               교육을 이어가겠습니다.
             </p>
-          </motion.div>
+          </AnimatedElement>
         </div>
       </section>
     </div>

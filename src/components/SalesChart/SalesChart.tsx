@@ -1,7 +1,9 @@
-"use client";
+'use client';
 
-import React, { useRef, useState, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useRef, useState, useEffect } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   ComposedChart,
   Line,
@@ -10,8 +12,10 @@ import {
   Legend,
   ResponsiveContainer,
   LabelList,
-} from "recharts";
-import "./sale.css";
+} from 'recharts';
+import './sale.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface StatsItem {
   value: string;
@@ -19,15 +23,15 @@ interface StatsItem {
 }
 
 const data = [
-  { name: "2023년", 매출: 130000, 성장률: 5 },
-  { name: "2024년", 매출: 350000, 매출성장액: 220000, 성장률: 35 },
-  { name: "2025~진행중", 매출: 550000, 성장률: 55 },
+  { name: '2023년', 매출: 130000, 성장률: 5 },
+  { name: '2024년', 매출: 350000, 매출성장액: 220000, 성장률: 35 },
+  { name: '2025~진행중', 매출: 550000, 성장률: 55 },
 ];
 
 const statsData: StatsItem[] = [
-  { value: "13억원", label: "2023년도" },
-  { value: "35억원", label: "2024년도" },
-  { value: "200%", label: "회사성장률" },
+  { value: '13억원', label: '2023년도' },
+  { value: '35억원', label: '2024년도' },
+  { value: '200%', label: '회사성장률' },
 ];
 
 interface CustomLabelProps {
@@ -39,7 +43,6 @@ interface CustomLabelProps {
 
 const SalesChart = () => {
   const chartRef = useRef(null);
-  const isInView = useInView(chartRef, { once: true });
   const [hasChartAnimated, setHasChartAnimated] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -48,15 +51,27 @@ const SalesChart = () => {
       setIsMobile(window.innerWidth < 768);
     };
     checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  useEffect(() => {
-    if (isInView) {
-      setHasChartAnimated(true);
-    }
-  }, [isInView]);
+  useGSAP(
+    () => {
+      gsap.from(chartRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: chartRef.current,
+          start: 'top 95%',
+          toggleActions: 'play none none none',
+          onEnter: () => setHasChartAnimated(true),
+        },
+      });
+    },
+    { scope: chartRef }
+  );
 
   const CustomLabel = (props: CustomLabelProps) => {
     const { x, y, value, index } = props;
@@ -70,21 +85,21 @@ const SalesChart = () => {
       return null;
     }
 
-    const numericX = typeof x === "string" ? parseFloat(x) : x;
-    const numericY = typeof y === "string" ? parseFloat(y) : y;
-    const numericValue = typeof value === "string" ? parseFloat(value) : value;
+    const numericX = typeof x === 'string' ? parseFloat(x) : x;
+    const numericY = typeof y === 'string' ? parseFloat(y) : y;
+    const numericValue = typeof value === 'string' ? parseFloat(value) : value;
 
     if (isNaN(numericX) || isNaN(numericY) || isNaN(numericValue)) {
       return null;
     }
 
     const dataPoint = data[index];
-    const name = dataPoint ? dataPoint.name : "";
+    const name = dataPoint ? dataPoint.name : '';
 
     const formattedValue = `${numericValue / 10000}억`;
     let textToDisplay = formattedValue;
 
-    if (name === "2025~진행중") {
+    if (name === '2025~진행중') {
       textToDisplay = `예상 ${formattedValue}`;
     }
 
@@ -106,16 +121,10 @@ const SalesChart = () => {
   return (
     <section className="bg-white py-[100px]">
       <div className="max-w-5xl mx-auto px-4">
-        <motion.h3
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-[35px] md:text-4xl font-bold mb-12 text-center text-[#1e1e1e]"
-        >
+        <h3 className="text-[35px] md:text-4xl font-bold mb-12 text-center text-[#1e1e1e]">
           <span className="text-[#2B7FFF] ">한평생교육</span>은 빠르게
           <br className="md:hidden block" /> 성장하고 있습니다.
-        </motion.h3>
+        </h3>
 
         {/* 통계 수치 */}
         <div className="flex justify-around text-center py-10">
@@ -128,13 +137,7 @@ const SalesChart = () => {
         </div>
 
         {/* 차트 영역 */}
-        <motion.div
-          ref={chartRef}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
+        <div ref={chartRef}>
           <ResponsiveContainer width="100%" height={500}>
             <ComposedChart
               data={data}
@@ -171,7 +174,7 @@ const SalesChart = () => {
                 <LabelList
                   dataKey="매출"
                   position="top"
-                  style={{ fontSize: "1.2em", fontWeight: "700" }}
+                  style={{ fontSize: '1.2em', fontWeight: '700' }}
                   offset={30}
                   content={CustomLabel}
                 />
@@ -185,16 +188,16 @@ const SalesChart = () => {
                 strokeWidth={7}
                 activeDot={{ r: 8 }}
                 label={{
-                  position: "top",
+                  position: 'top',
                   style: {
-                    fontSize: "1.2em",
-                    fill: "#f94239",
-                    fontWeight: "700",
+                    fontSize: '1.2em',
+                    fill: '#f94239',
+                    fontWeight: '700',
                   },
                   offset: 50, // Adjusted offset
                   dx: 50, // Adjusted dx
                   formatter: (value: React.ReactNode) => {
-                    return "";
+                    return '';
                   },
                 }}
                 isAnimationActive={hasChartAnimated}
@@ -202,10 +205,11 @@ const SalesChart = () => {
               />
             </ComposedChart>
           </ResponsiveContainer>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default SalesChart;
+
