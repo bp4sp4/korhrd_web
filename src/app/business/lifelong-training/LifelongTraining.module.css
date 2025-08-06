@@ -1,0 +1,322 @@
+/* Hero Section */
+@keyframes visualAni {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heroSection {
+  position: relative;
+  height: 100vh;
+  background-image: url("/images/business/korhrd/korhrd001.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  padding: 16rem;
+  overflow: hidden;
+  animation: visualAni 1.2s ease-out forwards;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  text-align: left;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.heroTitle {
+  font-size: 8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroSubtitleDate {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.heroDescription {
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.6;
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+/* Main Content */
+.mainSection {
+  padding: 5rem 3rem;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Service Preview Section */
+.servicePreview {
+  margin-bottom: 5rem;
+}
+
+.previewGrid {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.leftSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  flex-direction: column;
+}
+
+.imageContainer {
+  width: 650px;
+  height: 600px;
+  aspect-ratio: 4/5;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/business/korhrd/korhr001.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.imagePlaceholder2 {
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/business/korhrd/korhrd002.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.imageTextContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.imageText {
+  color: #000;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Right Section - Image Container */
+.rightSection {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1rem;
+  flex-direction: column;
+}
+
+/* Description Section */
+.descriptionSection {
+  display: flex;
+  margin-top: 15rem;
+  flex-direction: column;
+}
+
+.descriptionTitle {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #1E1E1E;
+  line-height: 6.2rem;
+  letter-spacing: -0.02em;
+}
+
+.descriptionText {
+  font-size: 18px;
+  color: #1E1E1E;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.descriptionText2 {
+  font-size: 24px;
+  color: #1E1E1E;
+  line-height: 3rem;
+  font-weight: 500;
+  margin-top: 3rem;
+}
+
+/* Action Buttons Section */
+.actionButtonsSection {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.listButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.listButton:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+}
+
+.joinButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 500;
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.joinButton:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 8rem 1rem;
+  }
+
+  .heroContent {
+    padding: 0 1rem;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroSubtitleDate {
+    font-size: 1.25rem;
+  }
+
+  .heroDescription {
+    font-size: 1.25rem;
+  }
+
+  .mainSection {
+    padding: 3rem 1rem;
+  }
+
+  .previewGrid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .leftSection {
+    margin-top: 0;
+  }
+
+  .imageContainer {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 1rem;
+  }
+
+  .imageText {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .rightSection {
+    padding-top: 0;
+  }
+
+  .descriptionTitle {
+    font-size: 1.5rem;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .heroContent {
+    padding: 0 4rem;
+  }
+}

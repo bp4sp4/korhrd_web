@@ -181,9 +181,7 @@ export default function BusinessAreasSection({
 
                     <div className="pt-4">
                       <Link
-                        href={area.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={`/business/${area.id}`}
                         className={styles.button}
                       >
                         자세히 보기
