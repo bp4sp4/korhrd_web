@@ -18,9 +18,7 @@ export default function PracticeSupportPage() {
           transition={{ duration: 0.8 }}
         >
           <motion.p className={styles.heroSubtitle}>
-            <span className={styles.heroSubtitleDate}>
-              실습을 준비하는 학습자들을 위한
-            </span>
+            <span className={styles.heroSubtitleDate}>2023년 12월 출시</span>
           </motion.p>
           <motion.h1
             className={styles.heroTitle}
