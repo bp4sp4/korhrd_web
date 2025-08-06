@@ -13,21 +13,76 @@ import CeoMessage from "@/components/CeoMessage/CeoMessage";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutPage() {
-  const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    // 기존 요소들은 독립적으로 애니메이션
+    const titleElement = contentRef.current?.querySelector(
+      `.${styles.overlayContent}`
+    );
+    if (titleElement) {
+      const titleTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: titleElement,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: 1,
+        },
+      });
+
+      titleTl.fromTo(
+        titleElement,
+        {
+          opacity: 0,
+          y: 100,
+          scale: 0.8,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1.5,
+          ease: "power2.out",
+        }
+      );
+    }
+
+    // 차트 애니메이션
+    const chartElement = contentRef.current?.querySelector(
+      `.${styles.chart__wrap}`
+    );
+    if (chartElement) {
+      const chartTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: chartElement,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: 1,
+        },
+      });
+
+      chartTl.fromTo(
+        chartElement,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
     <>
-      {/* 화면을 덮는 오버레이 */}
-      <div ref={overlayRef} className={styles.pageOverlay}>
-        <div className={styles.overlayContent}>
-          <h1 className={styles.overlayTitle}>한평생교육그룹</h1>
-          <div className={styles.loadingBar}>
-            <div className={styles.loadingProgress}></div>
-          </div>
-        </div>
-      </div>
-
       {/* 메인 콘텐츠 */}
       <div ref={contentRef} className={styles.mainContent}>
         <div className={styles.container}>
