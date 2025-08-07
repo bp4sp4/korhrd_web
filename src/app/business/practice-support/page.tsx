@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 
 import Link from "next/link";
 import styles from "./PracticeSupport.module.css";
+import HorizontalScrollCarousel, {
+  practiceCards,
+} from "@/components/ScrollCarousel/HorizontallScrollCarousel";
 
 export default function PracticeSupportPage() {
   return (
@@ -26,7 +29,7 @@ export default function PracticeSupportPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            한평생실습지원센터
+            한평생 실습지원
           </motion.h1>
           <motion.p
             className={styles.heroDescription}
@@ -36,6 +39,52 @@ export default function PracticeSupportPage() {
           >
             종합적인 실습 지원 서비스
           </motion.p>
+
+          {/* Hero CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-8"
+          >
+            <Link
+              href="https://pf.kakao.com/_inxaTn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all duration-300 hover:scale-105"
+            >
+              <span>채널가기</span>
+              <svg
+                className="ml-2 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <div className={styles.scrollIndicator}>
+            <div className={styles.mouse}>
+              <div className={styles.wheel}></div>
+            </div>
+            <div className={styles.arrowDown}>
+              <span>스크롤</span>
+            </div>
+          </div>
         </motion.div>
       </section>
 
@@ -97,11 +146,55 @@ export default function PracticeSupportPage() {
                     실습 전 필요한 기본 지식과 실무 역량을 기를 수 있는 사전
                     교육을 제공합니다.
                     <br /> 실습 중 발생할 수 있는 문제들을 해결하고 실습 완료 후
-                    평가와 피드백을 통해 학습 성과를 극대화합니다.
+                    평가와 피드백을 통해
+                    <br /> 학습 성과를 극대화합니다.
                   </p>
                 </div>
               </motion.div>
             </div>
+
+            {/* Enhanced Features Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="my-0"
+            >
+              <div className="text-center mb-0">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="mb-0"
+                ></motion.div>
+                <motion.h3
+                  className="text-4xl md:text-[32px] font-bold text-gray-900 mb-2 mt-50 leading-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  한평생실습지원의 주요 서비스
+                </motion.h3>
+                <motion.p
+                  className="text-[18px] text-[#1e1e1e] max-w-3xl mx-auto leading-relaxed mb-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  스크롤하여 한평생실습지원의 다양한 지원 서비스들을
+                  확인해보세요
+                </motion.p>
+              </div>
+
+              {/* Interactive Scroll Carousel */}
+              <div className="relative -mt-8">
+                <HorizontalScrollCarousel cards={practiceCards} />
+              </div>
+            </motion.div>
 
             {/* Description Text */}
             <motion.div
@@ -116,9 +209,8 @@ export default function PracticeSupportPage() {
                 <br /> 한평생실습지원센터와 함께하세요.
               </h3>
               <p className={styles.descriptionText2}>
-                우리는 체계적인 실습 지원 시스템으로
-                <br />
-                학습자들의 실무 역량 개발을 돕습니다.
+                우리는 체계적인 실습 지원 시스템으로 학습자들의 실무 역량 개발을
+                돕습니다.
                 <br />
                 지금 당신의 실습 여정을 한평생실습지원센터에서 시작해보세요.
               </p>
@@ -143,7 +235,7 @@ export default function PracticeSupportPage() {
                 rel="noopener noreferrer"
                 className={styles.joinButton}
               >
-                사이트방문
+                채널방문
               </Link>
             </div>
           </motion.div>

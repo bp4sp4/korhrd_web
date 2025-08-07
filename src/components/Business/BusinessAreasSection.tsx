@@ -23,7 +23,7 @@ interface BusinessAreasSectionProps {
 const defaultAreas: BusinessArea[] = [
   {
     id: "eduvisors",
-    title: "에듀바이저스",
+    title: "Eduvisors",
     description:
       "한평생교육그룹은 파편화된 교육 시장을 통합하고, '에듀바이저스' 플랫폼을 통해 교육의 접근성과 안정성을 획기적으로 개선하며, 교육 산업의 새로운 표준을 제시하고 있습니다.",
     image: "/images/business/bn003.png",
@@ -31,7 +31,7 @@ const defaultAreas: BusinessArea[] = [
   },
   {
     id: "lifelong-training",
-    title: "한평생직업훈련센터",
+    title: "한평생 직업훈련",
     description:
       "국무총리산하 국책연구기관인 한국직업능력연구원에 정식 등록된 약 50여 종 자격증 과정을 운영하며, 최고의 콘텐츠 전문가들이 모여 참신한 교육과 미디어 사업을 실현합니다.",
     image: "/images/business/bn001.png",
@@ -39,7 +39,7 @@ const defaultAreas: BusinessArea[] = [
   },
   {
     id: "practice-support",
-    title: "한평생실습지원센터",
+    title: "한평생 실습지원",
     description:
       "실습을 준비하는 학습자들이 최적의 환경에서 실습을 진행할 수 있도록, 실습기관 안내부터 서류 준비, 일정 관리까지 전 과정을 꼼꼼히 지원합니다.",
     image: "/images/business/bn002.png",
@@ -145,9 +145,8 @@ export default function BusinessAreasSection({
                   <div className="space-y-6">
                     <div>
                       <div className="mb-6">
-                        <div className="inline-flex items-center mb-3">
-                          <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full mr-4"></div>
-                          <span className="text-sm font-medium text-blue-600 tracking-wide uppercase">
+                        <div className="mb-3">
+                          <span className="inline-flex items-center text-xs font-medium text-blue-700">
                             {area.id === "eduvisors"
                               ? "Education Platform"
                               : area.id === "lifelong-training"
@@ -205,7 +204,9 @@ export default function BusinessAreasSection({
                         rel="noopener noreferrer"
                         className={styles.buttonSecondary}
                       >
-                        바로가기
+                        {area.id === "practice-support"
+                          ? "채널가기"
+                          : "바로가기"}
                         <svg
                           className="ml-3 w-5 h-5"
                           fill="none"

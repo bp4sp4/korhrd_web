@@ -1,3 +1,89 @@
+/* Scroll Indicator Styles */
+.scrollIndicator {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bounce 2s infinite;
+  opacity: 0.7;
+  z-index: 10;
+}
+
+.mouse {
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.wheel {
+  width: 6px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wheel 1.5s infinite;
+}
+
+.arrowDown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrowDown span {
+  font-size: 0.7rem;
+  margin-bottom: 5px;
+  color: rgb(255, 255, 255);
+}
+
+.arrowDown::after {
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: rgb(255, 255, 255);
+}
+
+@keyframes wheel {
+  0% {
+    top: 10px;
+    opacity: 1;
+  }
+
+  to {
+    top: 30px;
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  to {
+    transform: translateY(0) translateX(-50%);
+  }
+
+  40% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+
+  60% {
+    transform: translateY(-5px) translateX(-50%);
+  }
+}
+
 /* Action Buttons Section */
 .actionButtonsSection {
   margin-top: 4rem;
@@ -96,7 +182,7 @@
 }
 
 .heroTitle {
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 1.5rem;
@@ -194,7 +280,7 @@
 .imagePlaceholder {
   width: 100%;
   height: 100%;
-  background-image: url("/images/business/eduvisor/AAA_4388.jpg");
+  background-image: url("/images/business/eduvisor/edu001.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -207,7 +293,7 @@
 .imagePlaceholder2 {
   width: 100%;
   height: 100%;
-  background-image: url("/images/business/eduvisor/AAA_4471.jpg");
+  background-image: url("/images/business/eduvisor/edu002.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -248,7 +334,7 @@
 /* Description Section */
 .descriptionSection {
   display: flex;
-  margin-top: 15rem;
+
   flex-direction: column;
 }
 
@@ -351,8 +437,4 @@
   .heroContent {
     padding: 0 4rem;
   }
-
-
-
-
 }

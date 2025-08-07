@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 
 import Link from "next/link";
 import styles from "./LifelongTraining.module.css";
+import HorizontalScrollCarousel, {
+  trainingCards,
+} from "@/components/ScrollCarousel/HorizontallScrollCarousel";
 
 export default function LifelongTrainingPage() {
   return (
@@ -28,7 +31,7 @@ export default function LifelongTrainingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            한평생직업훈련센터
+            한평생 직업훈련
           </motion.h1>
           <motion.p
             className={styles.heroDescription}
@@ -38,6 +41,52 @@ export default function LifelongTrainingPage() {
           >
             전문 자격증 과정 운영의 선두주자
           </motion.p>
+
+          {/* Hero CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-8"
+          >
+            <Link
+              href="https://korhrd.co.kr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all duration-300 hover:scale-105"
+            >
+              <span>사이트 방문하기</span>
+              <svg
+                className="ml-2 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <div className={styles.scrollIndicator}>
+            <div className={styles.mouse}>
+              <div className={styles.wheel}></div>
+            </div>
+            <div className={styles.arrowDown}>
+              <span>스크롤</span>
+            </div>
+          </div>
         </motion.div>
       </section>
 
@@ -104,6 +153,49 @@ export default function LifelongTrainingPage() {
                 </div>
               </motion.div>
             </div>
+
+            {/* Enhanced Features Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="my-0"
+            >
+              <div className="text-center mb-0">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="mb-0"
+                ></motion.div>
+                <motion.h3
+                  className="text-4xl md:text-[32px] font-bold text-gray-900 mb-2 mt-50 leading-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  한평생직업훈련의 주요 과정
+                </motion.h3>
+                <motion.p
+                  className="text-[18px] text-[#1e1e1e] max-w-3xl mx-auto leading-relaxed mb-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  스크롤하여 한평생직업훈련의 다양한 자격증 과정들을
+                  확인해보세요
+                </motion.p>
+              </div>
+
+              {/* Interactive Scroll Carousel */}
+              <div className="relative -mt-8">
+                <HorizontalScrollCarousel cards={trainingCards} />
+              </div>
+            </motion.div>
 
             {/* Description Text */}
             <motion.div
