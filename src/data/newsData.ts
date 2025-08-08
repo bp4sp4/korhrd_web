@@ -52,6 +52,14 @@ export const newsData: NewsItem[] = [
     thumbnail: "/images/main/news6.jpg",
     source: "시민일보",
   },
+  {
+    title:
+      "6개이상되야 버튼나와서 억지로 끼어넣은 데이터 삭제될 말줄임 테스트 말줄임 테스트 말줄임 테스트 ",
+    date: "2024.07.23",
+    link: "",
+    thumbnail: "/images/main/news6.jpg",
+    source: "시민일보",
+  },
 ];
 
 // 메인 페이지에서 보여줄 뉴스 개수 (최신 4개)

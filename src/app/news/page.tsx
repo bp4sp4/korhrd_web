@@ -1,12 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import styles from "./news.module.css";
 import Image from "next/image";
 import { getSortedNews } from "@/data/newsData";
 
 const newsData = getSortedNews();
+const initialCount = 6;
 
 export default function News() {
+  const [showAll, setShowAll] = useState(false);
+  const displayedNews = showAll ? newsData : newsData.slice(0, initialCount);
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -17,7 +22,7 @@ export default function News() {
       </div>
 
       <div className={styles.newsGrid}>
-        {newsData.map((item, index) => (
+        {displayedNews.map((item, index) => (
           <a
             key={index}
             href={item.link}
@@ -44,6 +49,31 @@ export default function News() {
           </a>
         ))}
       </div>
+
+      {!showAll && newsData.length > initialCount && (
+        <div className={styles.loadMoreContainer}>
+          <button
+            onClick={() => setShowAll(true)}
+            className={styles.loadMoreButton}
+          >
+            더보기
+            <svg
+              className={styles.arrowIcon}
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 5v14" />
+              <path d="M5 12h14" />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
