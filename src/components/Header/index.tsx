@@ -91,6 +91,11 @@ export default function Header() {
               ESG경영
             </span>
           </Link>
+          <Link href="/news" className="group">
+            <span className="header__nav-link text-[15px] px-4 py-2 rounded-[8px] transition-colors duration-150 group-hover:bg-[rgba(0,0,0,0.05)]">
+              뉴스
+            </span>
+          </Link>
         </nav>
         <button
           className={`header__menu-btn md:hidden ${textColorClass}`}
