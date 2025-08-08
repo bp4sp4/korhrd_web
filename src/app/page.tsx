@@ -12,10 +12,10 @@ export default function Home() {
     <div>
       <AuroraBackground>
         <div className="gap-4  md:w-[1200px] max-xl-6  mx-auto px-10">
-          <div className="text-3xl tracking-[-1.5px] md:text-[70px] font-medium dark:text-white ">
+          <div className="text-[30px] tracking-[-1.5px] md:text-[70px] font-medium dark:text-white ">
             대한민국 교육의
           </div>
-          <div className="text-3xl tracking-[-1.5px] md:text-[70px] font-bold dark:text-white">
+          <div className="text-[30px] tracking-[-1.5px] md:text-[70px] font-bold dark:text-white">
             새로운&nbsp;&lsquo;
             <span
               className="relative z-10 px-2 py-1 rounded"
