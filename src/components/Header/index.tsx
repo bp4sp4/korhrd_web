@@ -155,6 +155,13 @@ export default function Header() {
                 >
                   ESG경영
                 </Link>
+                <Link
+                  href="/news"
+                  className="w-full py-3 text-lg font-normal text-black hover:bg-gray-100 rounded transition"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  뉴스
+                </Link>
               </nav>
             </div>
           </div>
