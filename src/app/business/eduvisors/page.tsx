@@ -173,7 +173,7 @@ export default function EduvisorsPage() {
                   className="mb-0"
                 ></motion.div>
                 <motion.h3
-                  className="text-4xl md:text-[32px] font-bold text-gray-900 mb-2 mt-50 leading-tight"
+                  className="text-3xl md:text-[32px] font-bold text-gray-900 mb-2 mt-50 leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
