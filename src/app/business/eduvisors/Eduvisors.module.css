@@ -87,6 +87,7 @@
 /* Action Buttons Section */
 .actionButtonsSection {
   margin-top: 4rem;
+
   text-align: center;
 }
 
@@ -165,77 +166,6 @@
   animation: visualAni 1.2s ease-out forwards;
 }
 
-@media (max-width: 768px) {
-  .heroSection {
-    background-image: url("/images/business/eduvisor/main__mobile__banner.png") !important;
-    background-position: 50% 50% !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    padding: 1rem !important;
-    display: flex;
-    align-items: flex-end;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .heroContent {
-    padding: 0 1rem;
-    margin-bottom: 4rem;
-    width: 100%;
-  }
-
-  .heroTitle {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .heroSubtitle {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .heroSubtitleDate {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .heroDescription {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Hide CTA button on mobile */
-  .heroContent>div:last-child {
-    display: none !important;
-  }
-
-  .scrollIndicator {
-    bottom: 0px !important;
-    transform: translateX(-50%) scale(0.75) !important;
-    opacity: 0.9 !important;
-  }
-
-  .mouse {
-    width: 22px;
-    height: 38px;
-    margin-bottom: 6px;
-  }
-
-  .wheel {
-    width: 4px;
-    height: 8px;
-    top: 8px;
-  }
-
-  .arrowDown span {
-    display: none;
-  }
-
-  .arrowDown::after {
-    font-size: 0.6rem;
-  }
-}
-
 .heroOverlay {
   position: absolute;
   inset: 0;
@@ -267,14 +197,12 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-
 }
 
 .heroSubtitleDate {
   font-size: 2.5rem;
   font-weight: 600;
   color: #fff;
-
 }
 
 .heroDescription {
@@ -374,14 +302,12 @@
 }
 
 .imageTextContainer {
-
   width: 100%;
   height: 100%;
   display: flex;
   align-items: left;
   justify-content: left;
   flex-direction: column;
-
 }
 
 .imageText {
@@ -397,7 +323,7 @@
 .rightSection {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 1rem;
   flex-direction: column;
 }
@@ -405,7 +331,6 @@
 /* Description Section */
 .descriptionSection {
   display: flex;
-
   flex-direction: column;
 }
 
@@ -415,7 +340,6 @@
   color: #1E1E1E;
   line-height: 6.2rem;
   letter-spacing: -0.02em;
-
 }
 
 .descriptionText {
@@ -423,43 +347,63 @@
   color: #1E1E1E;
   line-height: 1.75;
   font-weight: 500;
-
 }
 
 .descriptionText2 {
-  font-size: 24px;
+  font-size: 16px;
   color: #1E1E1E;
-  line-height: 3rem;
+  line-height: 2rem;
   font-weight: 500;
   margin-top: 3rem;
 }
 
 
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .heroSection {
-    padding: 8rem 1rem;
+    background-image: url("/images/business/eduvisor/main__mobile__banner.png") !important;
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    padding: 1rem !important;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    overflow: hidden;
   }
 
   .heroContent {
-    padding: 4rem 1rem !important;
+    padding: 2rem 1rem !important;
+    width: 100%;
   }
 
   .heroTitle {
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
   }
 
   .heroSubtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 
   .heroSubtitleDate {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
   }
 
   .heroDescription {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.8px;
+  }
+
+  /* Hide CTA button on mobile */
+  .heroContent>div:last-child {
+    display: none !important;
+  }
+
+  .scrollIndicator {
+    display: none;
   }
 
   .mainSection {
@@ -495,11 +439,12 @@
   }
 
   .descriptionTitle {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
   }
 
   .actionButtons {
-    flex-direction: column;
+
     align-items: center;
   }
 }

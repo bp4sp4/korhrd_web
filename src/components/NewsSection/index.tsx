@@ -52,9 +52,7 @@ export default function NewsSection() {
     <section className={styles.newsSection}>
       <div className={styles.container}>
         <div className={styles.tag}>PR</div>
-        <h2 className={styles.title}>
-          언론 속 <span className={styles.subtitle}>한평생교육그룹</span>
-        </h2>
+        <h2 className={styles.title}>언론 속 한평생교육그룹</h2>
         <div className={styles.newsGrid}>
           {newsData.map((item, index) => (
             <a

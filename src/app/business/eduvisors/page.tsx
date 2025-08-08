@@ -39,7 +39,8 @@ export default function EduvisorsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            교육의 새로운 패러다임을 제시하는 통합 교육 플랫폼
+            교육의 새로운 패러다임을
+            <br className="md:hidden" /> 제시하는 통합 교육 플랫폼
           </motion.p>
 
           {/* Hero CTA Button */}

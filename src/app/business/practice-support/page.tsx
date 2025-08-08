@@ -37,7 +37,9 @@ export default function PracticeSupportPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            종합적인 실습 지원 서비스
+            종합적인 실습 지원 서비스로
+            <br />
+            최적의 실습 환경을 제공합니다
           </motion.p>
 
           {/* Hero CTA Button */}
@@ -147,7 +149,7 @@ export default function PracticeSupportPage() {
                     교육을 제공합니다.
                     <br /> 실습 중 발생할 수 있는 문제들을 해결하고 실습 완료 후
                     평가와 피드백을 통해
-                    <br /> 학습 성과를 극대화합니다.
+                    <br className="hidden md:block" /> 학습 성과를 극대화합니다.
                   </p>
                 </div>
               </motion.div>
@@ -176,7 +178,7 @@ export default function PracticeSupportPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                 >
-                  한평생실습지원의 주요 서비스
+                  한평생 실습지원의 서비스
                 </motion.h3>
                 <motion.p
                   className="text-[18px] text-[#1e1e1e] max-w-3xl mx-auto leading-relaxed mb-0"
@@ -185,7 +187,7 @@ export default function PracticeSupportPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  스크롤하여 한평생실습지원의 다양한 지원 서비스들을
+                  스크롤하여 한평생 실습지원의 다양한 지원 서비스들을
                   확인해보세요
                 </motion.p>
               </div>
@@ -212,7 +214,8 @@ export default function PracticeSupportPage() {
                 우리는 체계적인 실습 지원 시스템으로 학습자들의 실무 역량 개발을
                 돕습니다.
                 <br />
-                지금 당신의 실습 여정을 한평생실습지원센터에서 시작해보세요.
+                지금 당신의 실습 여정을 한평생 실습지원센터에서
+                <br className="block md:hidden" /> 시작해보세요.
               </p>
             </motion.div>
           </motion.div>

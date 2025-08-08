@@ -39,6 +39,8 @@ export default function LifelongTrainingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+            한국직업능력연구원 정식 기관으로서
+            <br />
             전문 자격증 과정 운영의 선두주자
           </motion.p>
 
@@ -177,7 +179,7 @@ export default function LifelongTrainingPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                 >
-                  한평생직업훈련의 주요 과정
+                  한평생직업훈련 주요 과정
                 </motion.h3>
                 <motion.p
                   className="text-[18px] text-[#1e1e1e] max-w-3xl mx-auto leading-relaxed mb-0"
