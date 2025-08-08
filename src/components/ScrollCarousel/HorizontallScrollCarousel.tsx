@@ -24,15 +24,15 @@ const HorizontalScrollCarousel = ({
     offset: ["start start", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-120%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-140%"]);
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
 
   return (
     <section
       ref={targetRef}
-      className={`relative h-[180vh] ${className || ""}`}
+      className={`relative h-[200vh] ${className || ""}`}
     >
-      <div className="sticky top-0 flex h-[80vh] items-center overflow-hidden">
+      <div className="sticky top-0 flex h-[90vh] items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4 will-change-transform">
           {cards.map((card, index) => {
             return (
