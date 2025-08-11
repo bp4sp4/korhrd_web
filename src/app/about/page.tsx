@@ -7,7 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import styles from "./About.module.css";
 import TimelineSection from "@/components/Timeline/Timeline";
-import SalesChart from "@/components/SalesChart/SalesChart";
+import ESGChart from "@/components/ESGChart/ESGChart";
+import GrowthRateCard from "@/components/GrowthRateCard/GrowthRateCard";
 import CeoMessage from "@/components/CeoMessage/CeoMessage";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -111,7 +112,10 @@ export default function AboutPage() {
         <div className={styles.wrap}>
           <div className={styles.chart__wrap}>
             <TimelineSection />
-            <SalesChart />
+            <div className="py-12">
+              <GrowthRateCard />
+            </div>
+            <ESGChart />
           </div>
         </div>
 

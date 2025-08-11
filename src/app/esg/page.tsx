@@ -36,7 +36,6 @@ const ESG: React.FC = () => {
           </motion.p>
         </motion.div>
       </section>
-
       {/* Main Content - Three Sections */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
@@ -163,8 +162,6 @@ const ESG: React.FC = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Call to Action Section */}
       <section className="py-20 bg-gradient-to-r from-green-600 via-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center px-6">
           <motion.div

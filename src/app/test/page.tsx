@@ -1,0 +1,364 @@
+"use client";
+import React, { useMemo, useRef, useState, useEffect } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { extend } from "@react-three/fiber";
+import { MathUtils, Vector3, Color } from "three";
+import * as THREE from "three";
+import { Environment } from "@react-three/drei";
+import { motion } from "framer-motion";
+extend({ IcosahedronGeometry: THREE.IcosahedronGeometry });
+
+const vertexShader = `
+uniform float u_intensity;
+uniform float u_time;
+
+varying vec2 vUv;
+varying float vDisplacement;
+
+// Classic Perlin 3D Noise functions
+vec4 permute(vec4 x) {
+    return mod(((x*34.0)+1.0)*x, 289.0);
+}
+
+vec4 taylorInvSqrt(vec4 r) {
+    return 1.79284291400159 - 0.85373472095314 * r;
+}
+
+vec3 fade(vec3 t) {
+    return t*t*t*(t*(t*6.0-15.0)+10.0);
+}
+
+float cnoise(vec3 P) {
+    vec3 Pi0 = floor(P);
+    vec3 Pi1 = Pi0 + vec3(1.0);
+    Pi0 = mod(Pi0, 289.0);
+    Pi1 = mod(Pi1, 289.0);
+    vec3 Pf0 = fract(P);
+    vec3 Pf1 = Pf0 - vec3(1.0);
+    vec4 ix = vec4(Pi0.x, Pi1.x, Pi0.x, Pi1.x);
+    vec4 iy = vec4(Pi0.yy, Pi1.yy);
+    vec4 iz0 = Pi0.zzzz;
+    vec4 iz1 = Pi1.zzzz;
+
+    vec4 ixy = permute(permute(ix) + iy);
+    vec4 ixy0 = permute(ixy + iz0);
+    vec4 ixy1 = permute(ixy + iz1);
+
+    vec4 gx0 = ixy0 / 7.0;
+    vec4 gy0 = fract(floor(gx0) / 7.0) - 0.5;
+    gx0 = fract(gx0);
+    vec4 gz0 = vec4(0.5) - abs(gx0) - abs(gy0);
+    vec4 sz0 = step(gz0, vec4(0.0));
+    gx0 -= sz0 * (step(0.0, gx0) - 0.5);
+    gy0 -= sz0 * (step(0.0, gy0) - 0.5);
+
+    vec4 gx1 = ixy1 / 7.0;
+    vec4 gy1 = fract(floor(gx1) / 7.0) - 0.5;
+    gx1 = fract(gx1);
+    vec4 gz1 = vec4(0.5) - abs(gx1) - abs(gy1);
+    vec4 sz1 = step(gz1, vec4(0.0));
+    gx1 -= sz1 * (step(0.0, gx1) - 0.5);
+    gy1 -= sz1 * (step(0.0, gy1) - 0.5);
+
+    vec3 g000 = vec3(gx0.x,gy0.x,gz0.x);
+    vec3 g100 = vec3(gx0.y,gy0.y,gz0.y);
+    vec3 g010 = vec3(gx0.z,gy0.z,gz0.z);
+    vec3 g110 = vec3(gx0.w,gy0.w,gz0.w);
+    vec3 g001 = vec3(gx1.x,gy1.x,gz1.x);
+    vec3 g101 = vec3(gx1.y,gy1.y,gz1.y);
+    vec3 g011 = vec3(gx1.z,gy1.z,gz1.z);
+    vec3 g111 = vec3(gx1.w,gy1.w,gz1.w);
+
+    vec4 norm0 = taylorInvSqrt(vec4(dot(g000, g000), dot(g010, g010), dot(g100, g100), dot(g110, g110)));
+    g000 *= norm0.x;
+    g010 *= norm0.y;
+    g100 *= norm0.z;
+    g110 *= norm0.w;
+    vec4 norm1 = taylorInvSqrt(vec4(dot(g001, g001), dot(g011, g011), dot(g101, g101), dot(g111, g111)));
+    g001 *= norm1.x;
+    g011 *= norm1.y;
+    g101 *= norm1.z;
+    g111 *= norm1.w;
+
+    float n000 = dot(g000, Pf0);
+    float n100 = dot(g100, vec3(Pf1.x, Pf0.yz));
+    float n010 = dot(g010, vec3(Pf0.x, Pf1.y, Pf0.z));
+    float n110 = dot(g110, vec3(Pf1.xy, Pf0.z));
+    float n001 = dot(g001, vec3(Pf0.xy, Pf1.z));
+    float n101 = dot(g101, vec3(Pf1.x, Pf0.y, Pf1.z));
+    float n011 = dot(g011, vec3(Pf0.x, Pf1.yz));
+    float n111 = dot(g111, Pf1);
+
+    vec3 fade_xyz = fade(Pf0);
+    vec4 n_z = mix(vec4(n000, n100, n010, n110), vec4(n001, n101, n011, n111), fade_xyz.z);
+    vec2 n_yz = mix(n_z.xy, n_z.zw, fade_xyz.y);
+    float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x); 
+    return 2.2 * n_xyz;
+}
+
+void main() {
+    vUv = uv;
+
+    vDisplacement = cnoise(position + vec3(2.0 * u_time));
+  
+    vec3 newPosition = position + normal * (u_intensity * vDisplacement);
+  
+    vec4 modelPosition = modelMatrix * vec4(newPosition, 1.0);
+    vec4 viewPosition = viewMatrix * modelPosition;
+    vec4 projectedPosition = projectionMatrix * viewPosition;
+  
+    gl_Position = projectedPosition;
+}
+`;
+
+const fragmentShader = `
+uniform float u_intensity;
+uniform float u_time;
+uniform vec3 u_color;
+
+varying vec2 vUv;
+varying float vDisplacement;
+
+// Function to generate random noise
+float random(vec2 st) {
+  return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+}
+
+void main() {
+  float distort = 2.0 * vDisplacement * u_intensity * sin(vUv.y * 10.0 + u_time);
+  vec3 color = mix(u_color, vec3(1.0, 1.0, 1.0), distort);
+
+  // Add screen-space random noise
+  float noise = random(gl_FragCoord.xy * u_time * 0.05) * 0.05; // tweak strength
+  color += noise;
+
+  gl_FragColor = vec4(color, 1.0);
+}
+`;
+
+interface BlobProps {
+  color?: string;
+}
+
+const Blob: React.FC<BlobProps> = ({ color = "#ffd717" }) => {
+  const mesh = useRef<THREE.Mesh>(null);
+  const hover = useRef(false);
+
+  const uniforms = useMemo(
+    () => ({
+      u_time: { value: 0 },
+      u_intensity: { value: 0.3 },
+      u_color: { value: new Color(color) },
+    }),
+    []
+  );
+
+  const targetPosition = useRef(new Vector3(0, 0, 0));
+  const currentPosition = useRef(new Vector3(0, 0, 0));
+
+  useFrame((state) => {
+    const { clock, mouse } = state;
+
+    if (mesh.current) {
+      const material = mesh.current.material as THREE.ShaderMaterial;
+
+      material.uniforms.u_time.value = 0.4 * clock.getElapsedTime();
+
+      material.uniforms.u_intensity.value = MathUtils.lerp(
+        material.uniforms.u_intensity.value,
+        hover.current ? 0.7 : 1,
+        0.02
+      );
+
+      // Update target position based on mouse
+      targetPosition.current.set(mouse.x * 0.3, mouse.y * 0.3, 0);
+      currentPosition.current.lerp(targetPosition.current, 0.1);
+
+      mesh.current.position.copy(currentPosition.current);
+    }
+  });
+
+  return (
+    <mesh
+      ref={mesh}
+      scale={1.5}
+      position={[0, 0, 0]}
+      onPointerOver={() => (hover.current = true)}
+      onPointerOut={() => (hover.current = false)}
+    >
+      <icosahedronGeometry args={[2, 20]} />
+      <shaderMaterial
+        vertexShader={vertexShader}
+        fragmentShader={fragmentShader}
+        uniforms={uniforms}
+      />
+    </mesh>
+  );
+};
+
+const Home: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  return (
+    <div className="h-screen w-screen flex justify-center items-center bg-gradient-to-br from-slate-800 via-blue-900 to-slate-700 relative overflow-hidden">
+      {/* Background Canvas */}
+      <div className="absolute inset-0 z-0 opacity-50">
+        <Canvas camera={{ position: [0.0, 0.0, 8.0], fov: 15 }}>
+          <Environment preset="studio" environmentIntensity={0.3} />
+          <Blob color="#3B82F6" />
+        </Canvas>
+      </div>
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/30 to-slate-800/50 z-1" />
+
+      {/* Floating Flags Animation */}
+      <div className="absolute top-0 left-0 w-full h-32 z-5">
+        <motion.div
+          className="absolute top-8 left-1/4 w-2 h-16 bg-gradient-to-b from-blue-400 to-blue-600"
+          animate={{
+            rotate: [0, 5, -5, 0],
+            y: [0, -2, 2, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute top-8 right-1/4 w-2 h-16 bg-gradient-to-b from-slate-400 to-slate-600"
+          animate={{
+            rotate: [0, -3, 3, 0],
+            y: [0, 1, -1, 0],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
+        />
+        <motion.div
+          className="absolute top-12 left-1/3 w-2 h-12 bg-gradient-to-b from-cyan-400 to-blue-500"
+          animate={{
+            rotate: [0, 4, -4, 0],
+            y: [0, -1, 1, 0],
+          }}
+          transition={{
+            duration: 3.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
+        <motion.div
+          className="absolute top-10 right-1/3 w-2 h-14 bg-gradient-to-b from-slate-300 to-slate-500"
+          animate={{
+            rotate: [0, -2, 2, 0],
+            y: [0, 2, -2, 0],
+          }}
+          transition={{
+            duration: 2.8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1.5,
+          }}
+        />
+      </div>
+
+      {/* Content Overlay */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-8">
+        <motion.div
+          className="text-center space-y-8"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          {/* Main Headline */}
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            <h1 className="text-6xl md:text-8xl font-black text-transparent bg-gradient-to-r from-blue-300 via-cyan-300 to-slate-200 bg-clip-text leading-tight tracking-tight drop-shadow-2xl">
+              변함없던 교육 업계에
+            </h1>
+          </motion.div>
+
+          {/* Sub Headline */}
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <h3 className="text-5xl md:text-7xl font-black text-transparent bg-gradient-to-r from-slate-200 via-blue-200 to-cyan-300 bg-clip-text leading-tight tracking-tight drop-shadow-2xl">
+              새로운 흐름을 주도하다
+            </h3>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Floating Particles */}
+      <motion.div
+        className="absolute top-1/4 left-10 w-2 h-2 bg-blue-300 rounded-full shadow-lg"
+        animate={{
+          y: [0, -20, 0],
+          opacity: [0.3, 1, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute top-1/3 right-20 w-1 h-1 bg-cyan-300 rounded-full shadow-lg"
+        animate={{
+          y: [0, -15, 0],
+          opacity: [0.5, 1, 0.5],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      />
+      <motion.div
+        className="absolute bottom-1/3 left-20 w-1.5 h-1.5 bg-slate-300 rounded-full shadow-lg"
+        animate={{
+          y: [0, -25, 0],
+          opacity: [0.4, 1, 0.4],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+      />
+      <motion.div
+        className="absolute top-1/2 right-1/4 w-1 h-1 bg-blue-200 rounded-full shadow-lg"
+        animate={{
+          y: [0, -18, 0],
+          opacity: [0.6, 1, 0.6],
+        }}
+        transition={{
+          duration: 3.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.8,
+        }}
+      />
+    </div>
+  );
+};
+
+export default Home;

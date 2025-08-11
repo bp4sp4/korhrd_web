@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useRef, useState, useEffect } from 'react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useRef, useState, useEffect } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   ComposedChart,
   Line,
@@ -12,8 +12,8 @@ import {
   Legend,
   ResponsiveContainer,
   LabelList,
-} from 'recharts';
-import './sale.css';
+} from "recharts";
+import "./sale.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,15 +23,15 @@ interface StatsItem {
 }
 
 const data = [
-  { name: '2023년', 매출: 130000, 성장률: 5 },
-  { name: '2024년', 매출: 350000, 매출성장액: 220000, 성장률: 35 },
-  { name: '2025~진행중', 매출: 550000, 성장률: 55 },
+  { name: "2023년", 매출: 130000, 성장률: 5 },
+  { name: "2024년", 매출: 350000, 매출성장액: 220000, 성장률: 35 },
+  { name: "2025~진행중", 매출: 550000, 성장률: 55 },
 ];
 
 const statsData: StatsItem[] = [
-  { value: '13억원', label: '2023년도' },
-  { value: '35억원', label: '2024년도' },
-  { value: '200%', label: '회사성장률' },
+  { value: "13억원", label: "2023년도" },
+  { value: "35억원", label: "2024년도" },
+  { value: "200%", label: "회사성장률" },
 ];
 
 interface CustomLabelProps {
@@ -51,8 +51,8 @@ const SalesChart = () => {
       setIsMobile(window.innerWidth < 768);
     };
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useGSAP(
@@ -64,8 +64,8 @@ const SalesChart = () => {
         delay: 0.5,
         scrollTrigger: {
           trigger: chartRef.current,
-          start: 'top 95%',
-          toggleActions: 'play none none none',
+          start: "top 95%",
+          toggleActions: "play none none none",
           onEnter: () => setHasChartAnimated(true),
         },
       });
@@ -85,21 +85,21 @@ const SalesChart = () => {
       return null;
     }
 
-    const numericX = typeof x === 'string' ? parseFloat(x) : x;
-    const numericY = typeof y === 'string' ? parseFloat(y) : y;
-    const numericValue = typeof value === 'string' ? parseFloat(value) : value;
+    const numericX = typeof x === "string" ? parseFloat(x) : x;
+    const numericY = typeof y === "string" ? parseFloat(y) : y;
+    const numericValue = typeof value === "string" ? parseFloat(value) : value;
 
     if (isNaN(numericX) || isNaN(numericY) || isNaN(numericValue)) {
       return null;
     }
 
     const dataPoint = data[index];
-    const name = dataPoint ? dataPoint.name : '';
+    const name = dataPoint ? dataPoint.name : "";
 
     const formattedValue = `${numericValue / 10000}억`;
     let textToDisplay = formattedValue;
 
-    if (name === '2025~진행중') {
+    if (name === "2025~진행중") {
       textToDisplay = `예상 ${formattedValue}`;
     }
 
@@ -122,7 +122,7 @@ const SalesChart = () => {
     <section className="bg-white py-[100px]">
       <div className="max-w-5xl mx-auto px-4">
         <h3 className="text-[35px] md:text-4xl font-bold mb-12 text-center text-[#1e1e1e]">
-          <span className="text-[#2B7FFF] ">한평생교육</span>은 빠르게
+          <span className="text-[#2B7FFF] ">한평생교육그룹</span>은 빠르게
           <br className="md:hidden block" /> 성장하고 있습니다.
         </h3>
 
@@ -174,7 +174,7 @@ const SalesChart = () => {
                 <LabelList
                   dataKey="매출"
                   position="top"
-                  style={{ fontSize: '1.2em', fontWeight: '700' }}
+                  style={{ fontSize: "1.2em", fontWeight: "700" }}
                   offset={30}
                   content={CustomLabel}
                 />
@@ -188,16 +188,16 @@ const SalesChart = () => {
                 strokeWidth={7}
                 activeDot={{ r: 8 }}
                 label={{
-                  position: 'top',
+                  position: "top",
                   style: {
-                    fontSize: '1.2em',
-                    fill: '#f94239',
-                    fontWeight: '700',
+                    fontSize: "1.2em",
+                    fill: "#f94239",
+                    fontWeight: "700",
                   },
                   offset: 50, // Adjusted offset
                   dx: 50, // Adjusted dx
                   formatter: (value: React.ReactNode) => {
-                    return '';
+                    return "";
                   },
                 }}
                 isAnimationActive={hasChartAnimated}
@@ -212,4 +212,3 @@ const SalesChart = () => {
 };
 
 export default SalesChart;
-
