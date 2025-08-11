@@ -9,10 +9,12 @@ const ESG: React.FC = () => {
     <div className="min-h-screen bg-white">
       <section className="relative h-[70vh] bg-black/50 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/images/esg/image001.png"
             className="h-full w-full object-cover blur-[5px]"
             alt="ESG Banner"
+            fill
+            priority
           />
         </div>
 
@@ -99,9 +101,9 @@ const ESG: React.FC = () => {
                 함께 성장하는 사회
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                '나눔, 채움, 배움, 이룸'이라는 철학 아래 지역사회와의 상생을
-                도모합니다. 모든 학습자가 차별 없이 양질의 교육을 받을 수 있도록
-                지원하며, 교육을 통해 사회적 가치를 창출합니다.
+                &apos;나눔, 채움, 배움, 이룸&apos;이라는 철학 아래 지역사회와의
+                상생을 도모합니다. 모든 학습자가 차별 없이 양질의 교육을 받을 수
+                있도록 지원하며, 교육을 통해 사회적 가치를 창출합니다.
               </p>
             </div>
 
