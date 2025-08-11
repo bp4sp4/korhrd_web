@@ -16,7 +16,7 @@ export default function Home() {
             대한민국 교육의
           </div>
           <div className="text-[30px] tracking-[-1.5px] md:text-[70px] font-extrabold md:font-bold dark:text-white">
-            새로운&nbsp;&lsquo;
+            새로운
             <span
               className="relative z-10 px-2 py-1 rounded"
               style={{
@@ -25,7 +25,7 @@ export default function Home() {
             >
               방향
             </span>
-            &rsquo;을 제시하다.
+            을 제시하다.
           </div>
         </div>
       </AuroraBackground>
