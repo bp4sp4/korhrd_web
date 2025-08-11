@@ -216,61 +216,6 @@ const Home: React.FC = () => {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/30 to-slate-800/50 z-1" />
 
-      {/* Floating Flags Animation */}
-      <div className="absolute top-0 left-0 w-full h-32 z-5">
-        <motion.div
-          className="absolute top-8 left-1/4 w-2 h-16 bg-gradient-to-b from-blue-400 to-blue-600"
-          animate={{
-            rotate: [0, 5, -5, 0],
-            y: [0, -2, 2, 0],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-8 right-1/4 w-2 h-16 bg-gradient-to-b from-slate-400 to-slate-600"
-          animate={{
-            rotate: [0, -3, 3, 0],
-            y: [0, 1, -1, 0],
-          }}
-          transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5,
-          }}
-        />
-        <motion.div
-          className="absolute top-12 left-1/3 w-2 h-12 bg-gradient-to-b from-cyan-400 to-blue-500"
-          animate={{
-            rotate: [0, 4, -4, 0],
-            y: [0, -1, 1, 0],
-          }}
-          transition={{
-            duration: 3.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-        />
-        <motion.div
-          className="absolute top-10 right-1/3 w-2 h-14 bg-gradient-to-b from-slate-300 to-slate-500"
-          animate={{
-            rotate: [0, -2, 2, 0],
-            y: [0, 2, -2, 0],
-          }}
-          transition={{
-            duration: 2.8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1.5,
-          }}
-        />
-      </div>
-
       {/* Content Overlay */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-8">
         <motion.div
@@ -304,59 +249,6 @@ const Home: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Floating Particles */}
-      <motion.div
-        className="absolute top-1/4 left-10 w-2 h-2 bg-blue-300 rounded-full shadow-lg"
-        animate={{
-          y: [0, -20, 0],
-          opacity: [0.3, 1, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute top-1/3 right-20 w-1 h-1 bg-cyan-300 rounded-full shadow-lg"
-        animate={{
-          y: [0, -15, 0],
-          opacity: [0.5, 1, 0.5],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
-      <motion.div
-        className="absolute bottom-1/3 left-20 w-1.5 h-1.5 bg-slate-300 rounded-full shadow-lg"
-        animate={{
-          y: [0, -25, 0],
-          opacity: [0.4, 1, 0.4],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2,
-        }}
-      />
-      <motion.div
-        className="absolute top-1/2 right-1/4 w-1 h-1 bg-blue-200 rounded-full shadow-lg"
-        animate={{
-          y: [0, -18, 0],
-          opacity: [0.6, 1, 0.6],
-        }}
-        transition={{
-          duration: 3.5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 0.8,
-        }}
-      />
     </div>
   );
 };
