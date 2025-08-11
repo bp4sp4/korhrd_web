@@ -32,8 +32,15 @@ const ESGChart: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const CustomBar = (props: any) => {
-    const { x, y, width, height, index } = props;
+  const CustomBar = (props: {
+    x?: number;
+    y?: number;
+    width?: number;
+    height?: number;
+    index?: number;
+    [key: string]: unknown;
+  }) => {
+    const { x = 0, y = 0, width = 0, height = 0, index = 0 } = props;
     const isLast = index === data.length - 1;
 
     // 긴 동그라미(캡슐 모양) 그리기
