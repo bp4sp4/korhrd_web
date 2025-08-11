@@ -1,0 +1,275 @@
+.container {
+    min-height: 100vh;
+    background: white;
+}
+
+.heroSection {
+    position: relative;
+    height: 70vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.heroBackground {
+    position: absolute;
+    inset: 0;
+}
+
+.heroImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.heroTitle {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: bold;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .heroTitle {
+        font-size: 4rem;
+        line-height: 1.1;
+    }
+}
+
+.mainSection {
+    padding: 5rem 1.5rem;
+}
+
+.mainContainer {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.sectionGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+
+@media (min-width: 1024px) {
+    .sectionGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
+
+.imageContainer {
+    position: relative;
+}
+
+.imageWrapper {
+    position: relative;
+    height: 500px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badgeEnvironment {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.badgeSocial {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badgeGovernance {
+    background-color: #f3e8ff;
+    color: #7c3aed;
+}
+
+.badgeIcon {
+    font-size: 1.125rem;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #111827;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    .sectionTitle {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sectionTitle {
+        font-size: 3.5rem;
+    }
+}
+
+.sectionDescription {
+    font-size: 1.25rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.statCard {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.statCardEnvironment {
+    background-color: #f0fdf4;
+}
+
+.statCardSocial {
+    background-color: #eff6ff;
+}
+
+.statCardGovernance {
+    background-color: #faf5ff;
+}
+
+.statNumber {
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+.statNumberEnvironment {
+    color: #16a34a;
+}
+
+.statNumberSocial {
+    color: #2563eb;
+}
+
+.statNumberGovernance {
+    color: #9333ea;
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+.ctaSection {
+    padding: 5rem 1.5rem;
+    background: linear-gradient(to right, #16a34a, #2563eb, #9333ea);
+}
+
+.ctaContainer {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.ctaTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .ctaTitle {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ctaTitle {
+        font-size: 3.5rem;
+    }
+}
+
+.ctaDescription {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.ctaButton {
+    padding: 1rem 2rem;
+    background: white;
+    color: #111827;
+    font-weight: 600;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: #f3f4f6;
+}
+
+.fadeInUp {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fadeInUp.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1023px) {
+    .orderFirst {
+        order: 1;
+    }
+
+    .orderSecond {
+        order: 2;
+    }
+
+}
