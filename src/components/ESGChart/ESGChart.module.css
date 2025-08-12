@@ -5,6 +5,7 @@
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
+    flex: 0 0 50%;
 }
 
 .chartContainer * {
@@ -57,4 +58,202 @@
 .chartContainer *:hover {
     outline: none !important;
     border: none !important;
+}
+
+/* 컨테이너 레이아웃 */
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        max-width: 768px;
+        margin: 0 auto;
+    }
+}
+
+/* 메인 컨텐츠 영역 */
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    height: 100%;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+}
+
+/* 텍스트 섹션 */
+.textSection {
+    order: 2;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 2rem;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .textSection {
+        order: 1;
+        width: 100%;
+        gap: 1rem;
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+/* 차트 섹션 */
+.chartSection {
+    order: 1;
+    width: 40%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 40%;
+}
+
+@media (max-width: 768px) {
+    .chartSection {
+        order: 2;
+        width: 100%;
+    }
+}
+
+/* 차트 컨테이너 */
+.chartWrapper {
+    width: 100%;
+    max-width: 24rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .chartWrapper {
+        max-width: 20rem;
+    }
+}
+
+/* 차트 높이 */
+.chartHeight {
+    height: 550px;
+}
+
+@media (max-width: 768px) {
+    .chartHeight {
+        height: 400px;
+    }
+}
+
+/* 55억 텍스트 */
+.valueText {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    transform: translateX(-50%);
+    font-size: 2.8125rem;
+    font-weight: bold;
+    color: #2563eb;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+    .valueText {
+        top: 0;
+        font-size: 1.875rem;
+    }
+}
+
+/* 텍스트 스타일 */
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+.titleText {
+    color: #1e1e1e;
+}
+
+.titleText br {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .titleText br {
+        display: none;
+    }
+
+
+}
+
+.description {
+    font-size: 1.5rem;
+    color: #374151;
+    letter-spacing: 0.025em;
+    line-height: 1.4;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .description {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+
+
+
+.caption {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #6b7280;
+    font-style: italic;
+    text-align: left;
+    margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+    .caption {
+        font-size: 0.875rem;
+        font-style: normal;
+        text-align: center;
+        margin: 10px 0 20px
+    }
 }

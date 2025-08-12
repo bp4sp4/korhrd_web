@@ -111,11 +111,11 @@ export default function AboutPage() {
         </div>
         <div className={styles.wrap}>
           <div className={styles.chart__wrap}>
-            <TimelineSection />
             <div className="py-12">
               <GrowthRateCard />
             </div>
             <ESGChart />
+            <TimelineSection />
           </div>
         </div>
 

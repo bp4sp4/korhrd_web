@@ -14,6 +14,16 @@ const data = [
 const ESGChart: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,15 +86,36 @@ const ESGChart: React.FC = () => {
   };
 
   return (
-    <div
-      ref={chartRef}
-      className={`w-full h-screen p-8 ${styles.chartContainer}`}
-    >
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 h-full ">
-        {/* 왼쪽 - 차트 */}
+    <div ref={chartRef} className={styles.container}>
+      <div className={styles.content}>
+        {/* 텍스트 섹션 */}
+        <div className={styles.textSection}>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 30 }}
+            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+          >
+            <h3 className={styles.title}>
+              <span className={styles.titleText}>
+                한평생교육그룹
+                <br />
+                성장과 도약의 발자취
+              </span>
+            </h3>
+            <div className={styles.descriptionSection}>
+              <p className={styles.description}>
+                빠르게 성장하고 있습니다
+                <br />
+                교육의 미래를 선도합니다
+              </p>
+              <p className={styles.caption}>2025년 예상 기준</p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* 차트 섹션 */}
         <motion.div
-          className="w-full lg:w-1/2 h-full relative"
-          style={{ height: "80%" }}
+          className={styles.chartSection}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{
             opacity: isVisible ? 1 : 0,
@@ -92,63 +123,45 @@ const ESGChart: React.FC = () => {
           }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={data}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          <div className={styles.chartWrapper}>
+            <ResponsiveContainer
+              width="100%"
+              height={isMobile ? 350 : 500}
+              className={styles.chartHeight}
             >
-              <XAxis
-                dataKey="date"
-                axisLine={false}
-                tickLine={false}
-                tick={{ fontSize: 12, fill: "#6B7280" }}
-              />
-              <YAxis
-                axisLine={false}
-                tickLine={false}
-                tick={{ fontSize: 12, fill: "#6B7280" }}
-                hide
-              />
-              <Bar
-                dataKey="value"
-                shape={<CustomBar />}
-                isAnimationActive={isVisible}
-                animationDuration={800}
-                animationEasing="ease-out"
-                animationBegin={0}
-              />
-            </BarChart>
-          </ResponsiveContainer>
+              <BarChart
+                data={data}
+                margin={{ top: 20, right: 20, left: 20, bottom: 10 }}
+              >
+                <XAxis
+                  dataKey="date"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fontSize: 14, fill: "#6B7280", fontWeight: 500 }}
+                />
+                <YAxis
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fontSize: 12, fill: "#6B7280" }}
+                  hide
+                />
+                <Bar
+                  dataKey="value"
+                  shape={<CustomBar />}
+                  isAnimationActive={isVisible}
+                  animationDuration={800}
+                  animationEasing="ease-out"
+                  animationBegin={0}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
 
-          {/* 1200만 텍스트 */}
-          <div className="absolute top-4 right-[30px] transform -translate-x-1/2">
-            <span className="text-2xl font-bold text-blue-600">55억원+</span>
+          {/* 55억원+ 텍스트 */}
+          <div className={styles.valueText}>
+            <span>55억</span>
           </div>
         </motion.div>
-
-        {/* 오른쪽 - 텍스트 */}
-        <div
-          className="w-full lg:w-1/2 flex flex-col justify-center space-y-6 pl-20"
-          style={{ height: "80%" }}
-        >
-          <div>
-            <h3 className="text-5xl font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
-              <span className="text-[#1e1e1e] font-bold">한평생교육그룹</span>
-            </h3>
-            <p className="text-3xl font-semibold tracking-wide">
-              빠르게 성장하고 있습니다
-            </p>
-            <p className="text-3xl font-semibold tracking-wide">
-              교육의 미래를 선도합니다
-            </p>
-          </div>
-
-          <div className="mt-2">
-            <p className="text-base font-medium text-gray-500 italic">
-              2025년 예상 기준
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
