@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 import SlotCounter from "react-slot-counter";
 import styles from "./GrowthRateCard.module.css";
 
-interface GrowthRateCardProps {}
-
-const GrowthRateCard: React.FC<GrowthRateCardProps> = () => {
+const GrowthRateCard: React.FC = () => {
   const [isInView, setIsInView] = useState(false);
   const [showSlotCounter, setShowSlotCounter] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
