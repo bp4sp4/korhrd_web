@@ -6,7 +6,6 @@ export interface NewsItem {
   thumbnail: string;
   source?: string;
   content?: string; // 뉴스 내용 요약
-  rssUrl?: string; // RSS 피드 URL
 }
 
 export const newsData: NewsItem[] = [
@@ -20,7 +19,6 @@ export const newsData: NewsItem[] = [
     source: "경상일보",
     content:
       "한평생교육이 교육컨설팅 전문 브랜드 '에듀바이저스'를 공식 출범시켰다. 이번 출범으로 커리어 설계 중심의 교육 서비스를 강화할 예정이다.",
-    rssUrl: "https://www.ksilbo.co.kr/rss/rss.xml",
   },
   {
     id: "2",
@@ -31,7 +29,6 @@ export const newsData: NewsItem[] = [
     source: "내외경제TV",
     content:
       "한평생교육이 교육컨설팅 전문 브랜드 '에듀바이저스'를 출범시켜 교육 시장에서의 입지를 강화했다.",
-    rssUrl: "https://www.nbntv.co.kr/rss/rss.xml",
   },
   {
     id: "3",
@@ -42,7 +39,6 @@ export const newsData: NewsItem[] = [
     source: "데일리경제",
     content:
       "한평생교육이 교육컨설팅 전문 브랜드 '에듀바이저스'를 공식 출범시켜 교육 서비스 영역을 확장했다.",
-    rssUrl: "http://www.kdpress.co.kr/rss/rss.xml",
   },
   {
     id: "4",
@@ -53,7 +49,6 @@ export const newsData: NewsItem[] = [
     source: "공감신문",
     content:
       "한평생교육이 교육컨설팅 브랜드 '에듀바이저스'를 공식 출범시켜 교육 시장에서의 경쟁력을 강화했다.",
-    rssUrl: "https://www.gokorea.kr/rss/rss.xml",
   },
   {
     id: "5",
@@ -65,7 +60,6 @@ export const newsData: NewsItem[] = [
     source: "시민일보",
     content:
       "한평생교육이 교육컨설팅 브랜드 '에듀바이저스'를 출범시켜 커리어 설계 중심의 교육 서비스를 강화할 예정이다.",
-    rssUrl: "https://www.siminilbo.co.kr/rss/rss.xml",
   },
   {
     id: "6",
@@ -77,7 +71,17 @@ export const newsData: NewsItem[] = [
     source: "시민일보",
     content:
       "한평생교육이 '에듀바이저스'를 공식 출범시켜 교육 서비스에 커리어 컨설팅을 접목한 새로운 서비스를 제공한다.",
-    rssUrl: "https://www.siminilbo.co.kr/rss/rss.xml",
+  },
+  {
+    id: "7",
+    title:
+      "한평생교육 에듀바이저스, 수강생 등록 데이터 분석 결과 발표… 50대가 가장 많이 선택한 자격증은 ‘사회복지사’",
+    date: "2024.08.13",
+    link: "https://www.dailysecu.com/news/articleView.html?idxno=168743",
+    thumbnail: "/images/main/news7.png",
+    source: "데일리시큐",
+    content:
+      "한평생교육이 '에듀바이저스'를 공식 출범시켜 교육 서비스에 커리어 컨설팅을 접목한 새로운 서비스를 제공한다.",
   },
 ];
 
