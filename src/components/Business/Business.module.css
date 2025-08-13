@@ -313,6 +313,7 @@
   text-align: left;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  white-space: pre-line;
 }
 
 /* Right Section - Image Container */

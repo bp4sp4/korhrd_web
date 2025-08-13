@@ -1,7 +1,7 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 
-type CardType = {
+export type CardType = {
   url: string;
   title: string;
   id: number;

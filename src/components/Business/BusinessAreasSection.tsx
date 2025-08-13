@@ -9,6 +9,7 @@ import HorizontalScrollCarousel, {
   eduvisorsCards,
   trainingCards,
   practiceCards,
+  CardType,
 } from "@/components/ScrollCarousel/HorizontallScrollCarousel";
 
 interface BusinessArea {
@@ -25,7 +26,7 @@ interface BusinessArea {
   rightImage: string;
   featuresTitle: string;
   featuresDescription: string;
-  cards: any[];
+  cards: CardType[];
   descriptionTitle: string;
   descriptionText: string;
 }
@@ -49,7 +50,7 @@ const businessAreas: BusinessArea[] = [
     cards: eduvisorsCards,
     descriptionTitle: "서로의 목표를 존중하고,\n유연한 교육 방식을 추구합니다.",
     descriptionText:
-      "우리는 실험하고, 설계하고, 실행하며 성장합니다.\n새로운 도전 앞에서 망설이기보다는 시도하고, 변화에 적응하기보다\n변화를 만드는 학습자들과 함께하고 싶다면,\n지금 당신의 '다음'을 에듀바이저스에서 시작해보세요.",
+      "우리는 실험하고, 설계하고, 실행하며 성장합니다.\n새로운 도전 앞에서 망설이기보다는 시도하고, 변화에 적응하기보다 변화를 만드는 학습자들과 함께하고 싶다면,\n지금 당신의 '다음'을 에듀바이저스에서 시작해보세요.",
   },
   {
     id: "lifelong-training",
@@ -243,11 +244,11 @@ export default function BusinessAreasSection() {
                       </h2>
                       <p className={styles.descriptionText}>
                         {area.id === "eduvisors" &&
-                          "한평생교육그룹은 파편화된 교육시장을 통합하고 교육 산업의\n새로운 표준을 제시하고 있습니다.\n전문 상담사가 개인별 맞춤 학습 계획을 수립하고\n실시간으로 학습을 지원합니다."}
+                          "한평생교육그룹은 파편화된 교육시장을 통합하고 교육 산업의 새로운 표준을 제시하고 있습니다.\n전문 상담사가 개인별 맞춤 학습 계획을 수립하고 실시간으로 학습을 지원합니다."}
                         {area.id === "lifelong-training" &&
-                          "국무총리산하 국책연구기관인 한국직업능력연구원에 정식 등록된\n기관으로 신뢰할 수 있는 자격증 과정을 제공합니다.\n최고의 콘텐츠 전문가들이 모여 참신한 교육과 미디어\n사업을 실현합니다."}
+                          "최고의 콘텐츠 전문가들이 모여 혁신적인 교육과 미디어 사업을 펼칩니다.\n 국무총리 산하 국책연구기관인 한국직업능력연구원에 정식 등록된 기관으로서,\n 신뢰할 수 있는 자격증 과정을 제공합니다."}
                         {area.id === "practice-support" &&
-                          "실습을 준비하는 학습자들이 최적의 환경에서 실습을 진행할 수\n있도록,\n실습기관 안내부터 서류 준비, 일정 관리까지 전 과정을 꼼꼼히\n지원합니다."}
+                          "실습을 준비하는 학습자들이 최적의 환경에서 실습을 진행할 수 있도록,\n실습기관 안내부터 서류 준비, 일정 관리까지 전 과정을 꼼꼼히 지원합니다."}
                       </p>
                     </div>
                   </motion.div>
@@ -279,11 +280,11 @@ export default function BusinessAreasSection() {
                       </h2>
                       <p className={styles.descriptionText}>
                         {area.id === "eduvisors" &&
-                          "전문 에듀바이저들이 상시 대기하여 학습자들의 모든 질문과\n요구사항에 즉시 응답합니다.\n개인별 학습 수준과 목표를 정확히 파악하여 최적화된\n학습 계획을 수립하니다."}
+                          "전문 에듀바이저들이 상시 대기하여 학습자들의 모든 질문과 요구사항에 즉시 응답합니다.\n개인별 학습 수준과 목표를 정확히 파악하여 최적화된 학습 계획을 수립하니다."}
                         {area.id === "lifelong-training" &&
-                          "이론과 실습을 균형있게 제공하여 실제 업무에 바로 적용할 수\n있는 실무 능력을 기릅니다.\n온라인 학습 시스템을 통해 언제 어디서나 편리하게\n학습할 수 있습니다."}
+                          "이론과 실습을 균형있게 제공하여 실제 업무에 바로 적용할 수 있는 실무 능력을 기릅니다.\n온라인 학습 시스템을 통해 언제 어디서나 편리하게 학습할 수 있습니다."}
                         {area.id === "practice-support" &&
-                          "실습 전 필요한 기본 지식과 실무 역량을 기를 수 있는 사전\n교육을 제공합니다.\n실습 중 발생할 수 있는 문제들을 해결하고 실습 완료 후\n평가와 피드백을 통해 학습 성과를 극대화합니다."}
+                          "실습 전 필요한 기본 지식과 실무 역량을 기를 수 있는 사전 교육을 제공합니다.\n실습 중 발생할 수 있는 문제들을 해결하고 실습 완료 후평가와 피드백을 통해\n 학습 성과를 극대화합니다."}
                       </p>
                     </div>
                   </motion.div>
