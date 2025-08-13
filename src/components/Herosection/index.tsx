@@ -125,16 +125,16 @@ const OverlayCopy = ({ subheading, heading }: OverlayCopyProps) => {
 
 const ExampleContent = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-    <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
+    <h2 className="col-span-1 text-3xl font-bold md:col-span-4 text-[#1E1E1E]">
       평생교육
       <br className="hidden md:block" />
       컨설팅
     </h2>
     <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
+      <p className="mb-4 text-xl text-[#1E1E1E] md:text-2xl">
         각종 교육제도와 자격증 과정을 보다 쉽게 편리하게 이수할 수 있도록
       </p>
-      <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
+      <p className="mb-8 text-xl text-[#1E1E1E] md:text-2xl">
         고객 맞춤형 컨설팅 서비스를 지속적으로 편리하게 제공하고 있습니다.
       </p>
     </div>
@@ -149,10 +149,10 @@ const ExampleContent2 = () => (
       플랫폼 구축
     </h2>
     <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
+      <p className="mb-4 text-xl text-[#1E1E1E] md:text-2xl">
         다양한 교육 콘텐츠와 전문 인력을 체계적으로 연계하여,
       </p>
-      <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
+      <p className="mb-8 text-xl text-[#1E1E1E] md:text-2xl">
         브랜드 가치에 걸맞는 고품질 평생교육 플랫폼을 구축하였습니다.
       </p>
     </div>

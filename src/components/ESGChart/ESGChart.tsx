@@ -55,7 +55,7 @@ const ESGChart: React.FC = () => {
 
     // 긴 동그라미(캡슐 모양) 그리기
     const radius = width / 2; // 상단/하단 둥근 부분의 반지름
-    const rectHeight = height - width; // 직사각형 부분의 높이
+    const rectHeight = Math.max(0, height - width); // 직사각형 부분의 높이 (음수 방지)
 
     return (
       <g>

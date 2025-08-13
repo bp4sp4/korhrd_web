@@ -109,16 +109,18 @@ export default function AboutPage() {
             </h1>
           </motion.div>
         </div>
+
         <div className={styles.wrap}>
           <div className={styles.chart__wrap}>
-            <div className="py-12">
-              <GrowthRateCard />
-            </div>
             <ESGChart />
-            <TimelineSection />
           </div>
         </div>
-
+        <div className="w-full bg-gray-100">
+          <div className={styles.wrap}>
+            <GrowthRateCard />
+          </div>
+        </div>
+        <TimelineSection />
         <CeoMessage />
       </div>
     </>

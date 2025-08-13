@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import "./Header.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,9 +51,9 @@ export default function Header() {
 
   const textColorClass = isHome
     ? scrolled || menuOpen
-      ? "text-black"
+      ? "text-[#1e1e1e]"
       : "text-white"
-    : "text-black";
+    : "text-[#1e1e1e]";
 
   return (
     <header
@@ -68,7 +69,7 @@ export default function Header() {
             className="header__logo-img w-[23px] h-[23px] md:w-[28px] md:h-[28px]"
           />
           <span
-            className={`font-bold text-[20px] md:text-[28px] ${textColorClass}`}
+            className={`font-semibold color text-[20px] md:text-[30px] ${textColorClass}`}
           >
             한평생교육그룹
           </span>
