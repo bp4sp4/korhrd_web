@@ -66,7 +66,7 @@ const ESG: React.FC = () => {
                 <span className="text-lg">🌱</span>
                 Environment
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#1E1E1E] leading-tight">
                 지구를 위한 교육,
                 <br />
                 미래를 위한 투자
@@ -94,7 +94,7 @@ const ESG: React.FC = () => {
                 <span className="text-lg">🤝</span>
                 Social
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#1E1E1E] leading-tight">
                 모든 이에게 열린 교육,
                 <br />
                 함께 성장하는 사회
@@ -147,7 +147,7 @@ const ESG: React.FC = () => {
                 <span className="text-lg">⚖️</span>
                 Governance
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#1E1E1E] leading-tight">
                 투명한 경영,
                 <br />
                 지속가능한 가치 창출
@@ -177,13 +177,6 @@ const ESG: React.FC = () => {
               한평생교육그룹과 함께 ESG 가치를 실천하며, 더 나은 세상을 위한
               교육을 이어가겠습니다.
             </p>
-            <motion.button
-              className="px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              ESG 보고서 보기
-            </motion.button>
           </motion.div>
         </div>
       </section>

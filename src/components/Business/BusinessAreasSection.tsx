@@ -99,6 +99,7 @@ const businessAreas: BusinessArea[] = [
 
 export default function BusinessAreasSection() {
   const [isMobile, setIsMobile] = useState(false);
+  const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -111,8 +112,62 @@ export default function BusinessAreasSection() {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll(`.${styles.businessSection}`);
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      let currentSection = 0;
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top + window.scrollY;
+        const sectionBottom = sectionTop + rect.height;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          currentSection = index;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    // 초기 상태 설정
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (index: number) => {
+    const sections = document.querySelectorAll(`.${styles.businessSection}`);
+    if (sections[index]) {
+      sections[index].scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background w-full">
+      {/* Scroll Progress Indicator */}
+      <div className={styles.scrollIndicator}>
+        <div className={styles.indicatorContainer}>
+          {businessAreas.map((area, index) => (
+            <button
+              key={area.id}
+              className={`${styles.indicatorDot} ${
+                activeSection === index ? styles.activeDot : ""
+              }`}
+              onClick={() => scrollToSection(index)}
+              title={area.title}
+            >
+              <span className={styles.dotLabel}>{area.title}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       {businessAreas.map((area, index) => (
         <div key={area.id} className={styles.businessSection}>
           {/* Hero Section */}
@@ -194,7 +249,7 @@ export default function BusinessAreasSection() {
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <div className={styles.scrollIndicator}>
+              <div className={styles.heroScrollIndicator}>
                 <div className={styles.mouse}>
                   <div className={styles.wheel}></div>
                 </div>
@@ -300,7 +355,7 @@ export default function BusinessAreasSection() {
                 >
                   <div className="text-center mb-0">
                     <motion.h3
-                      className="text-3xl md:text-[32px] font-bold text-gray-900 mb-2 mt-50 leading-tight"
+                      className="text-3xl md:text-[32px] font-bold text-[#1E1E1E] mb-2 mt-50 leading-tight"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -351,9 +406,6 @@ export default function BusinessAreasSection() {
                 transition={{ duration: 0.6 }}
               >
                 <div className={styles.actionButtons}>
-                  <Link href="/business" className={styles.listButton}>
-                    목록보기
-                  </Link>
                   <Link
                     href={area.link}
                     target="_blank"
