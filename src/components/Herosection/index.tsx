@@ -6,8 +6,8 @@ const Herosection = () => {
   // 이미지 프리로딩
   useEffect(() => {
     const preloadImages = [
-      "/images/main/main__banner003.jpg",
-      "/images/main/main__banner004.jpg",
+      "/images/main/main__banner003.webp",
+      "/images/main/main__banner004.webp",
     ];
 
     preloadImages.forEach((src) => {
@@ -19,14 +19,14 @@ const Herosection = () => {
   return (
     <div className="bg-white">
       <TextParallaxContent
-        imgUrl="/images/main/main__banner003.jpg"
+        imgUrl="/images/main/main__banner003.webp"
         subheading="품질"
         heading="완벽을 기준으로."
       >
         <ExampleContent />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="/images/main/main__banner004.jpg"
+        imgUrl="/images/main/main__banner004.webp"
         subheading="브랜딩"
         heading="최고를 위한 준비."
       >
