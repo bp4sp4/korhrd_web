@@ -1,12 +1,25 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const Herosection = () => {
+  // 이미지 프리로딩
+  useEffect(() => {
+    const preloadImages = [
+      "/images/main/main__banner003.jpg",
+      "/images/main/main__banner004.jpg",
+    ];
+
+    preloadImages.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
   return (
     <div className="bg-white">
       <TextParallaxContent
-        imgUrl="/images/main/main__banner003.jpg
-        "
+        imgUrl="/images/main/main__banner003.jpg"
         subheading="품질"
         heading="완벽을 기준으로."
       >
@@ -60,6 +73,8 @@ interface StickyImageProps {
 
 const StickyImage = ({ imgUrl }: StickyImageProps) => {
   const targetRef = useRef<HTMLDivElement | null>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["end end", "end start"],
@@ -70,23 +85,40 @@ const StickyImage = ({ imgUrl }: StickyImageProps) => {
 
   return (
     <motion.div
+      ref={targetRef}
+      className="sticky z-0 overflow-hidden"
       style={{
-        backgroundImage: `url(${imgUrl})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         height: `calc(100vh - ${IMG_PADDING * 2}px)`,
         top: IMG_PADDING,
         scale,
+        willChange: "transform",
+        transform: "translateZ(0)", // 하드웨어 가속 활성화
       }}
-      ref={targetRef}
-      className="sticky z-0 overflow-hidden "
     >
-      <motion.div
-        className="absolute inset-0 bg-neutral-950/70"
-        style={{
-          opacity,
-        }}
-      />
+      <div className="relative w-full h-full">
+        <Image
+          src={imgUrl}
+          alt="Hero background"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+          onLoad={() => setImageLoaded(true)}
+          className={`transition-opacity duration-500 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        <motion.div
+          className="absolute inset-0 bg-neutral-950/70"
+          style={{
+            opacity,
+          }}
+        />
+      </div>
     </motion.div>
   );
 };
@@ -143,7 +175,7 @@ const ExampleContent = () => (
 
 const ExampleContent2 = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-    <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
+    <h2 className="col-span-1 text-3xl font-bold text-[#1E1E1E] md:col-span-4">
       평생교육&nbsp;
       <br className="hidden md:block" />
       플랫폼 구축

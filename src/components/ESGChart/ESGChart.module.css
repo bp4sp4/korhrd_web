@@ -184,6 +184,7 @@
 @media (max-width: 768px) {
     .valueText {
         top: 0;
+        right: 10px;
         font-size: 1.875rem;
     }
 }
