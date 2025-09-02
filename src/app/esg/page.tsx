@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://korhrd.com/esg",
+    canonical: "https://www.korhrdcorp.co.kr/esg",
   },
 };
 

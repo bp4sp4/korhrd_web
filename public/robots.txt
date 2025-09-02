@@ -10,4 +10,4 @@ User-agent: Googlebot
 Allow: /
 
 # 사이트맵 위치
-Sitemap: https://korhrd.com/sitemap.xml
+Sitemap: https://www.korhrdcorp.co.kr/sitemap.xml
