@@ -136,14 +136,14 @@ export default function Header() {
               <nav className="w-full flex flex-col items-center gap-2 px-4 py-4">
                 <Link
                   href="/about"
-                  className="w-full py-3 text-lg font-normal text-black hover:bg-gray-100 rounded transition"
+                  className="w-full py-3 text-lg font-normal text-[#1e1e1e] hover:bg-gray-100 rounded transition"
                   onClick={() => setMenuOpen(false)}
                 >
                   회사소개
                 </Link>
                 <Link
                   href="/business"
-                  className="w-full py-3 text-lg font-normal text-black hover:bg-gray-100 rounded transition"
+                  className="w-full py-3 text-lg font-normal text-[#1e1e1e] hover:bg-gray-100 rounded transition"
                   onClick={() => setMenuOpen(false)}
                 >
                   사업분야
@@ -151,14 +151,14 @@ export default function Header() {
 
                 <Link
                   href="/esg"
-                  className="w-full py-3 text-lg font-normal text-black hover:bg-gray-100 rounded transition"
+                  className="w-full py-3 text-lg font-normal text-[#1e1e1e] hover:bg-gray-100 rounded transition"
                   onClick={() => setMenuOpen(false)}
                 >
                   ESG경영
                 </Link>
                 <Link
                   href="/news"
-                  className="w-full py-3 text-lg font-normal text-black hover:bg-gray-100 rounded transition"
+                  className="w-full py-3 text-lg font-normal text-[#1e1e1e] hover:bg-gray-100 rounded transition"
                   onClick={() => setMenuOpen(false)}
                 >
                   뉴스

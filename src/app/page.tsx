@@ -32,9 +32,9 @@ export default function Home() {
       <AnimatedSection>
         <Herosection />
       </AnimatedSection>
-      <AnimatedSection>
+      {/* <AnimatedSection>
         <StickyScrollSplit />
-      </AnimatedSection>
+      </AnimatedSection> */}
       <AnimatedSection>
         <Faq />
       </AnimatedSection>

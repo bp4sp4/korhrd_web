@@ -41,7 +41,7 @@ const ESG: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           {/* Environment Section */}
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32"
+            className="grid grid-cols-1 lg:grid-cols-2 md:gap-16 gap-8 items-center mb-32"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -49,7 +49,7 @@ const ESG: React.FC = () => {
           >
             {/* Left - Image */}
             <div className="relative">
-              <div className="relative h-[500px] rounded-2xl overflow-hidden">
+              <div className="relative md:h-[500px] h-[311px] rounded-2xl overflow-hidden">
                 <Image
                   src="/images/esg/environment.jpg"
                   alt="환경보존"
@@ -71,7 +71,7 @@ const ESG: React.FC = () => {
                 <br />
                 미래를 위한 투자
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-[18px] md:text-xl text-gray-600 leading-relaxed">
                 한평생교육그룹은 친환경 교육 플랫폼을 통해 탄소 중립을 실현하고
                 있습니다. 디지털 교육으로 종이 사용을 최소화하고, 클라우드 기반
                 학습 시스템으로 에너지 효율성을 극대화하여 지속가능한 교육
@@ -82,7 +82,7 @@ const ESG: React.FC = () => {
 
           {/* Social Section */}
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32"
+            className="grid grid-cols-1 lg:grid-cols-2 md:gap-16 gap-8 items-center mb-32"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -99,7 +99,7 @@ const ESG: React.FC = () => {
                 <br />
                 함께 성장하는 사회
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-[18px] md:text-xl text-gray-600 leading-relaxed">
                 &apos;나눔, 채움, 배움, 이룸&apos;이라는 철학 아래 지역사회와의
                 상생을 도모합니다. 모든 학습자가 차별 없이 양질의 교육을 받을 수
                 있도록 지원하며, 교육을 통해 사회적 가치를 창출합니다.
@@ -108,7 +108,7 @@ const ESG: React.FC = () => {
 
             {/* Right - Image */}
             <div className="relative lg:order-2 order-1">
-              <div className="relative h-[500px] rounded-2xl overflow-hidden">
+              <div className="relative md:h-[500px] h-[311px] rounded-2xl overflow-hidden">
                 <Image
                   src="/images/esg/giver.jpg"
                   alt="사회공헌"
@@ -122,7 +122,7 @@ const ESG: React.FC = () => {
 
           {/* Governance Section */}
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 md:gap-16 gap-8 items-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -130,7 +130,7 @@ const ESG: React.FC = () => {
           >
             {/* Left - Image */}
             <div className="relative">
-              <div className="relative h-[500px] rounded-2xl overflow-hidden">
+              <div className="relative md:h-[500px] h-[311px] rounded-2xl overflow-hidden">
                 <Image
                   src="/images/esg/social.jpg"
                   alt="기업가치"
@@ -152,7 +152,7 @@ const ESG: React.FC = () => {
                 <br />
                 지속가능한 가치 창출
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-[18px] md:text-xl text-gray-600 leading-relaxed">
                 투명한 경영과 책임 있는 의사결정을 통해 기업의 지속가능성과
                 신뢰도를 높입니다. 윤리적이고 책임 있는 경영을 통해 장기적인
                 가치 창출에 기여하며, 모든 이해관계자와의 신뢰 관계를
