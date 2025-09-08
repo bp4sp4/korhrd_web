@@ -62,7 +62,7 @@ export default function Header() {
       <div className="w-full max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
         <Link href="/" className="header__logo flex items-center gap-2">
           <Image
-            src="/logo2.png"
+            src="/logo.png"
             alt="로고"
             width={28}
             height={28}
