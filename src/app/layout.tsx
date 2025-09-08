@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1.0",
   keywords: "한평생교육, 평생교육, 교육, 컨텐츠, 환경, 지속가능한 교육",
   verification: {
+    google: "bM_lXvzzR3BjfHKr52PNYNwV2vVb3KtVeC6oSVQSbJ8",
     other: {
       "naver-site-verification": "5c68a471755f4863ad5618c8de89c5b05df13aed",
     },
