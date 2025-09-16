@@ -122,7 +122,7 @@ const SalesChart = () => {
     <section className="bg-white py-[100px]">
       <div className="max-w-5xl mx-auto px-4">
         <h3 className="text-[35px] md:text-4xl font-bold mb-12 text-center text-[#1e1e1e]">
-          <span className="text-[#2B7FFF] ">한평생교육그룹</span>은 빠르게
+          <span className="text-[#2B7FFF] ">한평생교육</span>은 빠르게
           <br className="md:hidden block" /> 성장하고 있습니다.
         </h3>
 
