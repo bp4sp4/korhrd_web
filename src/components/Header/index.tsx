@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./Header.css";
+import Image from "next/image";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,24 +55,26 @@ export default function Header() {
       : "text-white"
     : "text-[#1e1e1e]";
 
+  // 로고 이미지 결정
+  const logoSrc = isHome
+    ? scrolled || menuOpen
+      ? "/logo_black.png"
+      : "/logo_white.png"
+    : "/logo_black.png";
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${headerBgClass} ${headerBorderClass}`}
     >
-      <div className="w-full max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-        <Link href="/" className="header__logo flex items-center gap-2">
+      <div className="w-full max-w-6xl mx-auto flex items-center justify-between px-4 py-5">
+        <Link href="/" className="header__logo flex items-center gap-2 ">
           <Image
-            src="/logo.png"
-            alt="로고"
-            width={28}
-            height={28}
-            className="header__logo-img w-[23px] h-[23px] md:w-[28px] md:h-[28px]"
+            src={logoSrc}
+            alt="한평생교육"
+            width={200}
+            height={200}
+            className="header__logo-img w-[auto] h-[25px] md:w-[auto] md:h-[35px]"
           />
-          <span
-            className={`font-semibold color text-[20px] md:text-[30px] ${textColorClass}`}
-          >
-            한평생교육그룹
-          </span>
         </Link>
         <nav
           className={`header__nav hidden md:flex gap-3 items-center ${textColorClass}`}

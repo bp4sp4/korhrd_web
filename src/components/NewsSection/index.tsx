@@ -59,7 +59,7 @@ export default function NewsSection() {
       <div className={styles.container}>
         <div className={styles.tag}>PR</div>
         <div className={styles.titleContainer}>
-          <h2 className={styles.title}>언론 속 한평생교육그룹</h2>
+          <h2 className={styles.title}>언론 속 한평생교육</h2>
           <a href="/news" className={styles.moreButton}>
             더보기
             <svg

@@ -56,7 +56,7 @@ const GrowthRateCard: React.FC = () => {
         <div className={styles.textSection}>
           <div>
             <h2 className={styles.title}>
-              한평생교육그룹
+              한평생교육
               <br />
               회사 성장률
             </h2>

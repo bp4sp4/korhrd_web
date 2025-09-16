@@ -18,13 +18,12 @@ export default function Footer() {
           <div className={styles.footerMain}>
             <div className={styles.brandContainer}>
               <Image
-                src="/logo2.png"
-                alt="한평생교육그룹 로고"
+                src="/logo_black.png"
+                alt="한평생교육"
                 width={100}
                 height={100}
                 className={styles.logo}
               />
-              <h2 className={styles.brandName}>한평생교육그룹</h2>
             </div>
             <div className={styles.companyInfo}>
               <p>

@@ -33,7 +33,7 @@ const ESGClient: React.FC = () => {
           >
             지속가능한 미래를 위한
             <br />
-            한평생교육그룹의 실천
+            한평생교육의 실천
           </motion.p>
         </motion.div>
       </section>
@@ -73,7 +73,7 @@ const ESGClient: React.FC = () => {
                 미래를 위한 투자
               </h2>
               <p className="text-[18px] md:text-xl text-gray-600 leading-relaxed">
-                한평생교육그룹은 친환경 교육 플랫폼을 통해 탄소 중립을 실현하고
+                한평생교육은 친환경 교육 플랫폼을 통해 탄소 중립을 실현하고
                 있습니다. 디지털 교육으로 종이 사용을 최소화하고, 클라우드 기반
                 학습 시스템으로 에너지 효율성을 극대화하여 지속가능한 교육
                 환경을 조성합니다.
@@ -175,8 +175,8 @@ const ESGClient: React.FC = () => {
               지속가능한 미래를 함께 만들어가요
             </h2>
             <p className="text-xl text-white/90 leading-relaxed mb-8">
-              한평생교육그룹과 함께 ESG 가치를 실천하며, 더 나은 세상을 위한
-              교육을 이어가겠습니다.
+              한평생교육과 함께 ESG 가치를 실천하며, 더 나은 세상을 위한 교육을
+              이어가겠습니다.
             </p>
           </motion.div>
         </div>
