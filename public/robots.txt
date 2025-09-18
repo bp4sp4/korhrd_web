@@ -5,6 +5,13 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
+# 네이버 추가 크롤러들
+User-agent: NaverBot
+Allow: /
+
+User-agent: YetiBot
+Allow: /
+
 # 구글 크롤러
 User-agent: Googlebot
 Allow: /
