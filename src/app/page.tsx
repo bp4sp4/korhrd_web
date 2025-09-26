@@ -35,9 +35,9 @@ export default function Home() {
       {/* <AnimatedSection>
         <StickyScrollSplit />
       </AnimatedSection> */}
-      <AnimatedSection>
+      {/* <AnimatedSection>
         <Faq />
-      </AnimatedSection>
+      </AnimatedSection> */}
       <AnimatedSection>
         <NewsSection />
       </AnimatedSection>
