@@ -38,9 +38,9 @@ export default function Home() {
       {/* <AnimatedSection>
         <Faq />
       </AnimatedSection> */}
-      <AnimatedSection>
+      {/* <AnimatedSection>
         <NewsSection />
-      </AnimatedSection>
+      </AnimatedSection> */}
     </div>
   );
 }

@@ -94,11 +94,11 @@ export default function Header() {
               ESG경영
             </span>
           </Link>
-          <Link href="/news" className="group">
+          {/* <Link href="/news" className="group">
             <span className="header__nav-link text-[15px] px-4 py-2 rounded-[8px] transition-colors duration-150 group-hover:bg-[rgba(0,0,0,0.05)]">
               뉴스
             </span>
-          </Link>
+          </Link> */}
         </nav>
         <button
           className={`header__menu-btn md:hidden ${textColorClass}`}
@@ -158,13 +158,13 @@ export default function Header() {
                 >
                   ESG경영
                 </Link>
-                <Link
+                {/* <Link
                   href="/news"
                   className="w-full py-3 text-lg font-normal text-[#1e1e1e] hover:bg-gray-100 rounded transition"
                   onClick={() => setMenuOpen(false)}
                 >
                   뉴스
-                </Link>
+                </Link> */}
               </nav>
             </div>
           </div>
