@@ -27,8 +27,7 @@ export default function Footer() {
             </div>
             <div className={styles.companyInfo}>
               <p>
-                대표이사 : 양병웅 | 사업자등록번호 : 227-88-03196 |
-                원격평생교육시설신고 (제 원격20-6호)
+                대표이사 : 양병웅 | 사업자등록번호 : 392-88-03618
               </p>
               <p>주소 : 서울시 방학로 174, 4층 | 개인정보관리책임자 : 유현모</p>
               <p>문의 : korhrdpartners@naver.com</p>
