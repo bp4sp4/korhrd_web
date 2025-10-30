@@ -27,9 +27,9 @@ export default function Footer() {
             </div>
             <div className={styles.companyInfo}>
               <p>
-                대표이사 : 양병웅 | 사업자등록번호 : 392-88-03618
+                대표자 : 양병웅 | 사업자등록번호 : 392-88-03618
               </p>
-              <p>주소 : 서울시 도봉구 창동 마들로13길 61 씨드큐브 905호| 개인정보관리책임자 : 유현모</p>
+              <p>주소 : 서울특별시 도봉구 도봉로 150 다길 64, 601호 (방학동, 여산빌딩)| 개인정보관리책임자 : 유현모</p>
               <p>문의 : korhrdpartners@naver.com</p>
             </div>
           </div>
