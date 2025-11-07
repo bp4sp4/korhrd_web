@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, Fragment } from "react";
-import NewsSection from "@/components/infomation";
-import Faq from "@/components/Card";
-import ReviewSection from "@/components/reviewSection/reviewSection";
+import NewsSection from "../../components/infomation/index";
+import Faq from "../../components/Card/index";
+import ReviewSection from "../../components/reviewSection/reviewSection";
 
 interface TabData {
   id: string;
