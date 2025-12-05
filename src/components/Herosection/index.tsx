@@ -20,8 +20,8 @@ const tabsData: TabData[] = [
     id: "guhesseo",
     name: "한평생직업훈련",
     image: "/images/main/main__banner004.webp",
-    text1: "직업훈련 전문기관",
-    text2: "한평생직업훈련",
+    text1: "이력서 한줄,<br/>나의 경쟁력이 됩니다",
+    text2: "듣고 끝나는 강의가 아닌 정식 등록 자격증으로<br/> 직무 전문성을 증명해보세요!",
   },
   {
     id: "help",
@@ -132,18 +132,22 @@ const Herosection = () => {
                 >
                   <h3 
                     className="font-medium text-white leading-relaxed" 
-                    style={{ fontSize: '28px', lineHeight: '1.2', fontWeight: 700, letterSpacing: '0.05em'}}
+                    style={{ fontSize: '28px', lineHeight: '1.2', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '10px'}}
                   >
-                    {activeTabData.text1.split(' ').map((word, index, array) => {
-                      // "올티칭이" 또는 "한평생이"로 시작하는 단어 앞에 줄바꿈 추가
-                      if (word.startsWith('올티칭이') || word.startsWith('한평생이')) {
-                        return <React.Fragment key={index}><br/>{word} </React.Fragment>;
-                      }
-                      return <span key={index}>{word} </span>;
-                    })}
+                    {activeTabData.text1.split('<br/>').map((part, index, array) => (
+                      <React.Fragment key={index}>
+                        {part}
+                        {index < array.length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
                   </h3>
                   <p className="font-semibold text-white" style={{ fontSize: '20px', marginTop: '8px', lineHeight: '1.2', fontWeight: 500, letterSpacing: '0.01em' }}>
-                    {activeTabData.text2}
+                    {activeTabData.text2.split('<br/>').map((part, index, array) => (
+                      <React.Fragment key={index}>
+                        {part}
+                        {index < array.length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
                   </p>
                 </div>
               </div>

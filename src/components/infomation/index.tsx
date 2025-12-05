@@ -16,28 +16,28 @@ const startupCards: CardData[] = [
     id: "startup1",
     title: "생활지원사",
     
-    image: "/images/lecture02_visual09.jpg",
+    image: "/images/main/main_img01.jpg",
     bgColor: "#DC2626",
   },
   {
     id: "startup2",
     title: "병원동행매니저",
     
-    image: "/images/lecture04_visual02.jpg",
+    image: "/images/main/main_img02.png",
     bgColor: "#059669",
   },
   {
     id: "startup3",
     title: "심리상담사",
     
-    image: "/images/lecture01_visual01.jpg",
+    image: "/images/main/main_img03.jpg",
     bgColor: "#4F46E5",
   },
   {
     id: "startup4",
     title: "방과후돌봄교실지도사",
     
-    image: "/images/lecture02_visual01.jpg",
+    image: "/images/main/main_img04.jpg",
     bgColor: "#1F2937",
   },
 ];
@@ -65,7 +65,7 @@ const trendCards: CardData[] = [
     id: "trend4",
     title: "취업서비스(취업컨설팅)",
     
-    image: "/images/lecture07_visual01.jpg",
+    image: "/images/main/main_img08.jpg",
   },
 ];
 
