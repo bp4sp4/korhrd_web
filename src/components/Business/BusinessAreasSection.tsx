@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./Business.module.css";
-import RecruitSection from "../recruitSection/recruitSection";
+
 import HorizontalScrollCarousel, {
   eduvisorsCards,
   trainingCards,
@@ -421,7 +421,7 @@ export default function BusinessAreasSection() {
         </div>
       ))}
 
-      <RecruitSection />
+      
     </div>
   );
 }

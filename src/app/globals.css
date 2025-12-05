@@ -69,6 +69,21 @@
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
 @font-face {
   font-family: 'Pretendard';
   src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
@@ -218,4 +233,25 @@
 
 .esgbanner {
   filter: blur(4px);
+}
+
+/* Swiper 프로그레스 바 스타일 - 기본값 (컨테이너 내부에서 오버라이드됨) */
+.swiper-pagination {
+  position: relative !important;
+  width: 100% !important;
+  height: 6px !important;
+  margin: 0 !important;
+}
+
+.swiper-pagination-progressbar {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 3px !important;
+  width: 100% !important;
+  height: 6px !important;
+}
+
+.swiper-pagination-progressbar-fill {
+  background-color: #000 !important;
+  border-radius: 3px !important;
+  height: 6px !important;
 }

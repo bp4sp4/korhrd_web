@@ -1,0 +1,141 @@
+.reviewSection {
+    padding: 3rem 0;
+    background-color: #fff;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1E1E1E;
+    margin-bottom: 10px;
+}
+
+.contentLayout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* 오른쪽 슬라이드 */
+.slideContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.slideCard {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+   width: 400px;
+   height: 350px;
+    min-height: 300px;
+    background: #f3f4f6;
+}
+
+.slideImage {
+    object-fit: cover;
+    
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #D1D5DB;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0;
+}
+
+.dot.active {
+    background-color: #1E1E1E;
+}
+
+/* 왼쪽 정보 카드 그리드 */
+.cardsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.card {
+    position: relative;
+    border-radius: 8px;
+    padding: 24px;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+
+.card.activeCard {
+    background-color: #0c4294;
+    
+}
+
+.card.activeCard .cardQuote,
+.card.activeCard .cardName,
+.card.activeCard .cardPosition {
+    color: #fff;
+}
+
+.cardQuote {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cardInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.cardName {
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.cardPosition {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .contentLayout {
+        flex-direction: column;
+    }
+
+    .cardsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .slideCard {
+        min-height: 300px;
+    }
+}

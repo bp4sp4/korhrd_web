@@ -1,11 +1,70 @@
 .newsSection {
-    padding: 5rem 1rem;
+    padding: 40px 40px;
     background-color: #fff;
+    margin-top: 40px;
 }
 
 .container {
-    max-width: 1200px;
+    width: 1280px;
     margin: 0 auto;
+    
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+.sectionLayout {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.titleWrapper {
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.sectionTitle {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
+    writing-mode: horizontal-tb;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    flex: 1;
+}
+
+.card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.cardContent {
+    height: 100%;
+}
+
+.cardTitle {
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.cardSubtitle {
+    margin: 0;
+}
+
+.cardImage {
+    margin-top: 16px;
+}
+
+.cardImageTop {
+    width: 100%;
 }
 
 .titleContainer {
