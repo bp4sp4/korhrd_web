@@ -36,7 +36,7 @@ const tabsData: TabData[] = [
   },
   {
     id: "lesson",
-    name: "한평생바로취업",
+    name: "한평생바로기업",
     image: "/images/main/main__banner005.png",
   },
   {
