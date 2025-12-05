@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import NewsSection from "@/components/infomation";
 import Faq from "@/components/Card";
 import ReviewSection from "@/components/reviewSection/reviewSection";
@@ -10,8 +10,6 @@ interface TabData {
   id: string;
   name: string; 
   image: string;
-  text1: string;
-  text2: string;
 }
 
 const tabsData: TabData[] = [
@@ -19,59 +17,43 @@ const tabsData: TabData[] = [
   {
     id: "guhesseo",
     name: "한평생직업훈련",
-    image: "/images/main/main__banner004.webp",
-    text1: "이력서 한줄,<br/>나의 경쟁력이 됩니다",
-    text2: "듣고 끝나는 강의가 아닌 정식 등록 자격증으로<br/> 직무 전문성을 증명해보세요!",
+    image: "/images/main/main__banner001.png",
   },
   {
     id: "help",
     name: "한평생요양보호사",
-    image: "/images/main/main__banner004.webp",
-    text1: "요양보호사 전문기관",
-    text2: "한평생헬프",
+    image: "/images/main/main__banner002.png",
   },
   {
     id: "trip",
     name: "한평생유학",
-    image: "/images/main/main__banner004.webp",
-    text1: "유학 전문기관",
-    text2: "한평생트립",
+    image: "/images/main/main__banner003.png",
   },
   {
     id: "campus",
     name: "한평생AI",
-    image: "/images/main/main__banner004.webp",
-    text1: "한평생AI 시스템",
-    text2: "한평생AI",
+    image: "/images/main/main__banner004.png",
   },
   {
     id: "lesson",
     name: "한평생바로취업",
-    image: "/images/main/main__banner004.webp",
-    text1: "바로취업 전문기관",
-    text2: "한평생레슨",
+    image: "/images/main/main__banner005.png",
   },
   {
     id: "corporate-education",
     name: "한평생기업교육",
-    image: "/images/main/main__banner004.webp",
-    text1: "기업교육 전문기관",
-    text2: "한평생기업교육",
+    image: "/images/main/main__banner006.png",
   },
  
   {
     id: "credit",
     name: "한평생실습지원센터",
-    image: "/images/main/main__banner004.webp",
-    text1: "실습지원 전문기관",
-    text2: "한평생실습지원센터",
+    image: "/images/main/main__banner007.png",
   },
   {
     id: "it-school",
     name: "비즈니스제안",
-    image: "/images/main/main__banner004.webp",
-    text1: "비즈니스제안",
-    text2: "비즈니스제안",
+    image: "/images/main/main__banner008.png",
   },
 
 ];
@@ -111,7 +93,7 @@ const Herosection = () => {
                           onMouseEnter={() => setActiveTab(tab.id)}
                           className={`w-full text-left px-6 py-[21px] transition-all duration-200 font-bold ${
                             activeTab === tab.id
-                              ? "bg-blue-600 text-white font-semibold"
+                              ? "bg-blue-500 text-white font-semibold"
                               : "text-white hover:bg-gray-800"
                           }`}
                           style={{ fontSize: '14px' }}
@@ -122,34 +104,6 @@ const Herosection = () => {
                     ))}
                   </ul>
                 </nav>
-              </div>
-
-              {/* title_con - 텍스트 오버레이 */}
-              <div className="absolute text-white z-10" style={{ left: '250px', top: '30%', transform: 'translateY(-50%)' }}>
-                <div
-                  key={activeTab}
-                  className="space-y-2 animate-fade-in"
-                >
-                  <h3 
-                    className="font-medium text-white leading-relaxed" 
-                    style={{ fontSize: '28px', lineHeight: '1.2', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '10px'}}
-                  >
-                    {activeTabData.text1.split('<br/>').map((part, index, array) => (
-                      <React.Fragment key={index}>
-                        {part}
-                        {index < array.length - 1 && <br />}
-                      </React.Fragment>
-                    ))}
-                  </h3>
-                  <p className="font-semibold text-white" style={{ fontSize: '20px', marginTop: '8px', lineHeight: '1.2', fontWeight: 500, letterSpacing: '0.01em' }}>
-                    {activeTabData.text2.split('<br/>').map((part, index, array) => (
-                      <React.Fragment key={index}>
-                        {part}
-                        {index < array.length - 1 && <br />}
-                      </React.Fragment>
-                    ))}
-                  </p>
-                </div>
               </div>
             </div>
           </div>
