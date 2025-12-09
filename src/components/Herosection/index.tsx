@@ -16,38 +16,38 @@ const tabsData: TabData[] = [
 
   {
     id: "guhesseo",
-    name: "한평생직업훈련",
+    name: "한평생교육",
     image: "/images/main/main__banner001.png",
   },
   {
     id: "help",
-    name: "한평생요양보호사",
+    name: "한평생직업훈련",
     image: "/images/main/main__banner002.png",
   },
   {
     id: "trip",
-    name: "한평생유학",
+    name: "한평생요양보호사",
     image: "/images/main/main__banner003.png",
   },
   {
     id: "campus",
-    name: "한평생AI",
+    name: "한평생유학",
     image: "/images/main/main__banner004.png",
   },
   {
     id: "lesson",
-    name: "한평생바로기업",
+    name: "한평생AI",
     image: "/images/main/main__banner005.png",
   },
   {
     id: "corporate-education",
-    name: "한평생기업교육",
+    name: "한평생실습지원센터",
     image: "/images/main/main__banner006.png",
   },
  
   {
     id: "credit",
-    name: "한평생실습지원센터",
+    name: "한평생키즈",
     image: "/images/main/main__banner007.png",
   },
   {
