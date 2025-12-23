@@ -39,8 +39,8 @@ export default function Footer() {
               onChange={handleFamilySiteChange}
             >
               <option value="">패밀리 사이트</option>
-              <option value="https://korhrd.co.kr/">한평생직업훈련센터</option>
-              <option value="http://www.korhrdsup.kr/">한국실습지원센터</option>
+              <option value="https://korhrd.co.kr/">한평생 직업훈련센터</option>
+              <option value="https://pf.kakao.com/_inxaTn">한평생 학습지원</option>
               <option value="https://www.eduvisor.kr/">에듀바이저스</option>
             </select>
           </div>
