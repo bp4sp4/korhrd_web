@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import NewsSection from "@/components/infomation";
 import Faq from "@/components/Card";
-import ReviewSection from "@/components/reviewSection/reviewSection";
+// import ReviewSection from "@/components/reviewSection/reviewSection";
 
 
 interface TabData {
@@ -111,7 +111,7 @@ const Herosection = () => {
       </div>
       <NewsSection />
       <Faq />
-      <ReviewSection />
+      {/* <ReviewSection /> */}
       
     </div>
 
