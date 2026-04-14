@@ -16,7 +16,7 @@ const tabsData: TabData[] = [
 
   {
     id: "guhesseo",
-    name: "한평생교육",
+    name: "한평생그룹",
     image: "/images/main/main__banner001.png",
   },
   {

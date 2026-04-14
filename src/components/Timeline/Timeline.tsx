@@ -35,7 +35,7 @@ const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <section className="bg-white py-[30px]">
       <div className="max-w-4xl mx-auto">
         <h3 className="tm__title text-[20px] md:text-5xl font-bold mb-12 mt-12 text-center text-[#1e1e1e]">
-          <span>한평생교육</span>
+          <span>한평생그룹</span>
           은 빠르게
           <br className="block md:hidden" /> 변화하고 있습니다.
         </h3>
@@ -113,16 +113,16 @@ const TimelineSection = () => {
       year: "2025",
       title: "교육플랫폼의 새로운 기준",
       description:
-        "한평생교육은 파편화된 교육 시장을 통합하고, '한평생에듀바이저스' 플랫폼으로 교육 접근성과 안정성을 획기적으로 개선하며, 교육 산업의 새로운 표준을 제시하고 있습니다.",
+        "한평생그룹은 파편화된 교육 시장을 통합하고, '한평생에듀바이저스' 플랫폼으로 교육 접근성과 안정성을 획기적으로 개선하며, 교육 산업의 새로운 표준을 제시하고 있습니다.",
       achievements: ["한평생 에듀바이저스 정식출범"],
     },
     {
       year: "2024",
       title: "교육플랫폼으로의 도약",
       description:
-        "한평생교육은 기존 교육의 한계를 넘어서, 학습부터 자격 취득, 취업 연계까지 아우르는 종합 교육 플랫폼으로 진화하며 업계 내 확고한 지위를 확보하였습니다.",
+        "한평생그룹은 기존 교육의 한계를 넘어서, 학습부터 자격 취득, 취업 연계까지 아우르는 종합 교육 플랫폼으로 진화하며 업계 내 확고한 지위를 확보하였습니다.",
       achievements: [
-        "(주)한평생교육 법인 설립",
+        "(주)한평생그룹 법인 설립",
         "교육브랜드 정식 플랫폼화 실시",
         "취업연계 서비스 구축",
       ],

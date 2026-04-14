@@ -100,7 +100,7 @@ export const eduvisorsCards: CardType[] = [
   {
     url: "/images/business/eduvisor/edu003.png",
     title: "검증된 에듀바이저 1:1 매칭",
-    description: "한평생교육 정식 소속",
+    description: "한평생그룹 정식 소속",
     id: 1,
   },
   {

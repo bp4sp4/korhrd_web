@@ -299,7 +299,7 @@ export default function BusinessAreasSection() {
                       </h2>
                       <p className={styles.descriptionText}>
                         {area.id === "eduvisors" &&
-                          "한평생교육은 파편화된 교육시장을 통합하고 교육 산업의 새로운 표준을 제시하고 있습니다.\n전문 상담사가 개인별 맞춤 학습 계획을 수립하고 실시간으로 학습을 지원합니다."}
+                          "한평생그룹은 파편화된 교육시장을 통합하고 교육 산업의 새로운 표준을 제시하고 있습니다.\n전문 상담사가 개인별 맞춤 학습 계획을 수립하고 실시간으로 학습을 지원합니다."}
                         {area.id === "lifelong-training" &&
                           "최고의 콘텐츠 전문가들이 모여 혁신적인 교육과 미디어 사업을 펼칩니다.\n 국무총리 산하 국책연구기관인 한국직업능력연구원에 정식 등록된 기관으로서,\n 신뢰할 수 있는 자격증 과정을 제공합니다."}
                         {area.id === "practice-support" &&

@@ -25,19 +25,19 @@ const cards: CardData[] = [
     id: "expert1",
     quote: "평생교육은 단순한 학습이 아니라 삶의 변화를 만드는 힘입니다",
     name: "김평생 학생",
-    position: "한평생교육 평생교육연구소",
+    position: "한평생그룹 평생교육연구소",
   },
   {
     id: "expert2",
     quote: "언제 어디서나 배울 수 있는 환경이 진정한 평생교육의 시작입니다",
     name: "이평생 학생",
-    position: "한평생교육 온라인교육센터",
+    position: "한평생그룹 온라인교육센터",
   },
   {
     id: "expert3",
     quote: "양질의 교육 콘텐츠는 학습자의 성장을 이끄는 가장 중요한 요소입니다",
     name: "박평생 학생",
-    position: "한평생교육 콘텐츠개발팀",
+    position: "한평생그룹 콘텐츠개발팀",
   },
 ];
 

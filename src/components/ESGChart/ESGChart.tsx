@@ -97,7 +97,7 @@ const ESGChart: React.FC = () => {
           >
             <h3 className={styles.title}>
               <span className={styles.titleText}>
-                한평생교육의
+                한평생그룹의
                 <br />
                 성장과 도약의 발자취
               </span>

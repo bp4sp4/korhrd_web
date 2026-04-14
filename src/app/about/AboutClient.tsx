@@ -98,9 +98,9 @@ export default function AboutClient() {
             className={styles.overlayContent}
           >
             <h1 className={styles.title}>
-              한평생교육,
+              한평생그룹,
               <br className="block md:hidden" /> 당신곁의 배움이 되다
-              <br /> 한평생교육,&nbsp;
+              <br /> 한평생그룹,&nbsp;
               <br className="block md:hidden" />
               함께하는 성장이 되다
             </h1>

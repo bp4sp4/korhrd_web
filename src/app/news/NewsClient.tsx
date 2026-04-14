@@ -15,9 +15,9 @@ export default function NewsClient() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.title}>언론 속 한평생교육</h1>
+        <h1 className={styles.title}>언론 속 한평생그룹</h1>
         <p className={styles.subtitle}>
-          한평생교육의 다양한 소식과 업적을 확인하세요
+          한평생그룹의 다양한 소식과 업적을 확인하세요
         </p>
       </div>
 

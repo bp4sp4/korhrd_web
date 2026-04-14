@@ -25,7 +25,7 @@ export default function Header() {
       <div className={styles.mainHeader}>
         <div className={styles.mainHeaderContainer}>
           <div className={styles.logoSection}>
-            <img src="/logo_black.png" alt="한평생교육" className={styles.logo} />
+            <img src="/logo_black.png" alt="한평생그룹" className={styles.logo} />
           </div>
         </div>
       </div>
