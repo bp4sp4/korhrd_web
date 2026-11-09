@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
         <div className={styles.footerBottom}>
           <p className={styles.copyright}>
-            COPYRIGHT (C) korhrdedugroup. ALL RIGHT RESERVED.
+            COPYRIGHT (C) KorhrdGroup. ALL RIGHT RESERVED.
           </p>
         </div>
       </div>
