@@ -143,7 +143,7 @@ export default function BusinessPage() {
               <div className="biz-step">FOR PARTNERS</div>
               <h2 className="bz-name">한평생 에듀바이저스</h2>
               <p className="bz-tagline">교육 전문가를 위한 파트너 플랫폼</p>
-              <div className="bz-facts"><span>2025년 7월 정식 출범</span><span>매출의 50% 지급</span><span>초기 비용 없음</span></div>
+              <div className="bz-facts"><span>2025년 7월 정식 출범</span><span>전용 CRM 제공</span><span>초기 비용 없음</span></div>
               <div className="bz-cta">
                 <a className="pill" href="https://www.eduvisor.kr/" target="_blank" rel="noopener">사이트 바로가기 <span className="arr">→</span></a>
               </div>
@@ -152,8 +152,8 @@ export default function BusinessPage() {
           </div>
           <div className="bz-points rv">
             <div>
-              <h3>중간 단계 없이,<br />매출의 50%를 바로</h3>
-              <p>불필요한 중간 마진과 조직 운영 구조를 줄여, 성과를 만든 교육 컨설턴트에게 매출의 50%를 바로 지급합니다.</p>
+              <h3>상담에 집중하는,<br />전문가 중심 구조</h3>
+              <p>복잡한 조직 구조 없이, 교육 컨설턴트가 학습자 상담과 맞춤 과정 안내에 집중할 수 있도록 운영합니다.</p>
             </div>
             <div>
               <h3>출퇴근 없이,<br />나만의 방식으로</h3>
@@ -162,10 +162,10 @@ export default function BusinessPage() {
           </div>
           <div className="bz-sub rv">PARTNER SUPPORT</div>
           <div className="bz-feat rv">
-            <div><b>매출의 50% 보장</b><p>최소 매출 조건 없이 같은 비율로 지급합니다.</p></div>
-            <div><b>개별 CRM 제공</b><p>학습자 신규·가망 관리와 매출 기록을 한 곳에서 합니다.</p></div>
+            <div><b>체계적인 교육 지원</b><p>과정·제도 교육과 상담 자료를 꾸준히 제공합니다.</p></div>
+            <div><b>개별 CRM 제공</b><p>학습자 상담 이력과 진행 상황을 한 곳에서 관리합니다.</p></div>
             <div><b>조직 컨설팅</b><p>조직 운영을 원하면 운영 컨설팅을 함께 진행합니다.</p></div>
-            <div><b>부담 없는 상담</b><p>업무 방식과 수익 구조를 충분히 안내받은 뒤 결정합니다.</p></div>
+            <div><b>부담 없는 상담</b><p>업무 방식과 활동 내용을 충분히 안내받은 뒤 결정합니다.</p></div>
           </div>
         </div>
       </section>

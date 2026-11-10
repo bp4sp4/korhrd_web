@@ -105,7 +105,7 @@ export default function SiteChrome() {
         <p className="sub">제휴·협업 제안을 남겨주시면 담당자가 검토 후 연락드립니다.</p>
         {/* 접수 연동 전: 시안과 같이 안내만 띄움 */}
         <form method="dialog" onSubmit={() => alert("제안 접수 기능은 준비 중입니다. korhrdpartners@naver.com 으로 보내주세요.")}>
-          <div className="field-row">
+          <div className="field-row pair">
             <div className="field"><label htmlFor="f-company">회사명 <span className="req" aria-hidden="true">*</span></label><input id="f-company" required /></div>
             <div className="field"><label htmlFor="f-name">담당자명 <span className="req" aria-hidden="true">*</span></label><input id="f-name" required /></div>
           </div>
