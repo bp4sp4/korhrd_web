@@ -51,6 +51,19 @@ export default function SiteChrome() {
 
   const close = () => setMenuOpen(false);
 
+  // 모바일 시트는 내려가는 애니메이션 후 닫기 (애니메이션이 없는 PC·동작 줄이기에선 바로 닫힘)
+  const closeForm = () => {
+    const d = formRef.current;
+    if (!d) return;
+    d.classList.add("closing");
+    if (getComputedStyle(d).animationName === "sheet-down") {
+      d.addEventListener("animationend", () => { d.classList.remove("closing"); d.close(); }, { once: true });
+    } else {
+      d.classList.remove("closing");
+      d.close();
+    }
+  };
+
   return (
     <>
       <header id="hd" className={solid ? "solid" : undefined}>
@@ -100,7 +113,7 @@ export default function SiteChrome() {
       </div>
 
       <dialog id="form" ref={formRef}>
-        <button className="x" aria-label="닫기" onClick={() => formRef.current?.close()}>×</button>
+        <button className="x" aria-label="닫기" onClick={closeForm}>×</button>
         <h3>비즈니스 제안</h3>
         <p className="sub">제휴·협업 제안을 남겨주시면 담당자가 검토 후 연락드립니다.</p>
         {/* 접수 연동 전: 시안과 같이 안내만 띄움 */}
