@@ -73,19 +73,22 @@ section.block.esg-end { background: linear-gradient(180deg, #F7FAFF 0%, #E4EEFF 
   .bz-top, .esg-row { grid-template-columns: 1fr; gap: 48px; }
   .esg-row.rev .bz-art { order: 0; }
   .bz-feat { grid-template-columns: 1fr 1fr; }
-  .sub-nav { position: static; transform: none; width: auto; opacity: 1; pointer-events: auto; flex-direction: row; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 20px var(--pad); border-bottom: 1px solid var(--line); }
+  /* 태블릿·모바일: 가로 칩 메뉴를 헤더 아래에 고정 */
+  .sub-nav { position: sticky; top: 72px; left: auto; background: #fff; transform: none; width: auto; opacity: 1; pointer-events: auto; flex-direction: row; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 20px var(--pad); border-bottom: 1px solid var(--line); }
+  section.block[id] { scroll-margin-top: 150px; }
   .sub-nav::-webkit-scrollbar { display: none; }
   .sub-nav p { display: none; }
   .sub-nav a, .sub-nav a.on { flex: none; padding: 8px 16px; border-radius: 999px; background: #F2F4F8; font-size: 14px; font-weight: 600; color: var(--gray-1); }
   .sub-nav a.on::before { display: none; }
+  .sub-nav a.on { background: var(--navy); color: #fff; }
 }
 @media (max-width: 720px) {
   .sub-hero { height: 52vh; min-height: 400px; background-size: auto 42%, 100% 100%, 100% 100%, 100% 100%; background-position: right 16px top 76px, 0 0, 0 0, 0 0; }
   .sub-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,0) 60%); }
   .sub-hero-copy { bottom: 12%; }
   .sub-hero p { font-size: 16px; }
-  .sub-nav { padding-top: 16px; padding-bottom: 16px; }
-  section.block[id] { scroll-margin-top: 60px; }
+  .sub-nav { top: 60px; padding-top: 12px; padding-bottom: 12px; }
+  section.block[id] { scroll-margin-top: 120px; }
   .bz-tagline { font-size: 18px; }
   .bz-art { height: 260px; border-radius: 20px; }
   .bz-art img { width: 200px; height: 200px; }

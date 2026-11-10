@@ -101,8 +101,8 @@ export default function Home() {
             <a className="other" href="https://www.korhrd.co.kr/" target="_blank" rel="noopener"><h4 className="label">무료 자격 과정</h4><p>정식 등록 민간자격 60여 개 과정을<br />수강료 0원으로, 6주 만에 취득합니다.</p><span className="via">한평생직업훈련 ↗</span></a>
             <a className="other" href="https://www.job24.co.kr/" target="_blank" rel="noopener"><h4 className="label">내게 맞는 직업 찾기</h4><p>빅데이터 기반 직업진단으로<br />나에게 맞는 일을 찾아드립니다.</p><span className="via">한평생 바로취업 ↗</span></a>
             <a className="other" href="https://www.job24.co.kr/" target="_blank" rel="noopener"><h4 className="label">취업 지원금 찾기</h4><p>국민내일배움카드, 취업성공패키지 등<br />받을 수 있는 지원을 찾아드립니다.</p><span className="via">한평생 바로취업 ↗</span></a>
-            <a className="other" href="https://www.eduvisor.kr/" target="_blank" rel="noopener"><h4 className="label">교육 컨설턴트 파트너</h4><p>초기 비용 없이 프리랜서로 활동하고<br />매출의 50%를 바로 받습니다.</p><span className="via">한평생 에듀바이저스 ↗</span></a>
-            <a className="other" href="https://www.eduvisor.kr/" target="_blank" rel="noopener"><h4 className="label">파트너 전용 CRM</h4><p>학습자 신규·가망 관리와 매출 기록을<br />파트너별 전용 CRM에서 관리합니다.</p><span className="via">한평생 에듀바이저스 ↗</span></a>
+            <a className="other" href="https://www.eduvisor.kr/" target="_blank" rel="noopener"><h4 className="label">교육 컨설턴트 파트너</h4><p>시간과 장소에 구애받지 않고<br />교육 상담 전문가로 활동합니다.</p><span className="via">한평생 에듀바이저스 ↗</span></a>
+            <a className="other" href="https://www.eduvisor.kr/" target="_blank" rel="noopener"><h4 className="label">파트너 전용 CRM</h4><p>학습자 상담 이력과 진행 상황을<br />파트너별 전용 CRM에서 관리합니다.</p><span className="via">한평생 에듀바이저스 ↗</span></a>
           </div>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function Home() {
         <div className="inner">
           <div className="contact-big">함께 성장할<br />파트너를 기다립니다<span className="dot">.</span></div>
           <div className="contact-row">
-            <p>배움과 일을 잇는 새로운 제안,<br />한평생에 남겨주세요.</p>
+            <p>배움과 일을 잇는 <br className="m-br" />새로운 제안,<br />한평생에 남겨주세요.</p>
             <div className="contact-btns">
               <ContactButton className="pill white">비즈니스 제안 <span className="arr">→</span></ContactButton>
             </div>
