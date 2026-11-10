@@ -1,0 +1,40 @@
+/* intro */
+.intro-title { font-size: clamp(28px, 3.2vw, 44px); font-weight: 700; line-height: 1.45; margin-top: 56px; }
+.intro-title em { font-style: normal; color: var(--blue); }
+
+/* ceo */
+.ceo { background: linear-gradient(180deg, #F7FAFF 0%, #E4EEFF 100%); }
+.ceo-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; margin-top: 72px; }
+.ceo-quote { font-size: 30px; font-weight: 700; line-height: 1.5; }
+.ceo-text p { font-size: 18px; font-weight: 500; color: var(--gray-1); line-height: 1.9; }
+.ceo-text p + p { margin-top: 20px; }
+.ceo-sign { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 40px; font-size: 16px; font-weight: 600; color: var(--gray-2); }
+.ceo-sign img { display: block; width: auto; height: 64px; }
+
+/* history */
+.hist { margin-top: 80px; border-top: 2px solid var(--ink); }
+.hist-row { display: grid; grid-template-columns: 240px 1fr; gap: 48px; padding: 56px 0; border-bottom: 1px solid var(--line); }
+.hist-year { font-size: 64px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.hist-row:first-child .hist-year { color: var(--blue); }
+.hist-title { font-size: 26px; font-weight: 700; }
+.hist-desc { margin-top: 12px; font-size: 17px; font-weight: 500; color: var(--gray-1); max-width: 720px; }
+.hist-list { margin-top: 20px; list-style: none; display: grid; gap: 8px; }
+.hist-list li { font-size: 16px; font-weight: 600; display: flex; gap: 10px; align-items: baseline; }
+.hist-list li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); transform: translateY(-3px); }
+
+.pill.naver { background: #03C75A; }
+.pill.kakao { background: #FEE500; color: #191919; }
+
+@media (max-width: 1100px) {
+  .ceo-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 720px) {
+  .intro-title { margin-top: 36px; }
+  .ceo-grid { margin-top: 48px; }
+  .ceo-quote { font-size: 22px; }
+  .ceo-text p { font-size: 16px; }
+  .hist { margin-top: 48px; }
+  .hist-row { grid-template-columns: 1fr; gap: 16px; padding: 40px 0; }
+  .hist-year { font-size: 44px; }
+  .hist-title { font-size: 21px; }
+}

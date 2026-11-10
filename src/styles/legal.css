@@ -1,0 +1,20 @@
+.policy { padding: 160px 0 140px; }
+.policy h1 { font-size: clamp(36px, 4.4vw, 56px); font-weight: 700; letter-spacing: -0.02em; }
+.policy .meta { margin-top: 16px; font-size: 15px; font-weight: 500; color: var(--gray-2); }
+.policy-tabs { display: flex; gap: 8px; margin-top: 40px; }
+.policy-tabs a { padding: 9px 18px; border-radius: 999px; background: #F2F4F8; font-size: 14px; font-weight: 600; color: var(--gray-1); }
+.policy-tabs a.on { background: var(--ink); color: #fff; }
+.policy-intro { margin-top: 56px; max-width: 860px; font-size: 16px; font-weight: 500; line-height: 1.85; color: var(--gray-1); }
+.policy-body { margin-top: 40px; max-width: 860px; border-top: 2px solid var(--ink); }
+.policy-body section { padding: 32px 0; border-bottom: 1px solid var(--line); }
+.policy-body h2 { font-size: 19px; font-weight: 700; }
+.policy-body p, .policy-body li { font-size: 15px; font-weight: 500; line-height: 1.85; color: var(--gray-1); }
+.policy-body p { margin-top: 12px; }
+.policy-body ol { margin-top: 12px; padding-left: 20px; }
+.policy-body ol ol { margin-top: 4px; list-style: none; padding-left: 4px; }
+.policy-body li + li { margin-top: 4px; }
+@media (max-width: 720px) {
+  .policy { padding: 112px 0 96px; }
+  .policy-intro { margin-top: 40px; }
+  .policy-body section { padding: 24px 0; }
+}
