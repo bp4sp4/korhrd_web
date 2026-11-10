@@ -29,7 +29,7 @@
   .ceo-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 @media (max-width: 720px) {
-  .intro-title { margin-top: 36px; }
+  .intro-title { margin-top: 36px; font-size: 22px; }
   .ceo-grid { margin-top: 48px; }
   .ceo-quote { font-size: 22px; }
   .ceo-text p { font-size: 16px; }

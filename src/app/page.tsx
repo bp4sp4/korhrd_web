@@ -33,8 +33,8 @@ export default function Home() {
             </div>
           </div>
           <div className="about-text rv">
-            <p className="lead-gray">한평생그룹은 <em>학점은행제와 자격 과정, 취업 지원</em>을 하나로 잇는<br />평생교육·취업 그룹입니다.</p>
-            <p className="lead-gray">나이와 경력에 상관없이 누구나 다시 배우고,<br /><em>배운 것으로 일하는 삶</em>을 함께 만듭니다.</p>
+            <p className="lead-gray">한평생그룹은 <em>학점은행제와 자격 과정, 취업 지원</em>을 하나로 잇는 <br />평생교육·취업 그룹입니다.</p>
+            <p className="lead-gray">나이와 경력에 상관없이 누구나 다시 배우고, <br /><em>배운 것으로 일하는 삶</em>을 함께 만듭니다.</p>
           </div>
         </div>
       </section>
@@ -44,7 +44,7 @@ export default function Home() {
         <div className="inner">
           <div className="biz-head rv">
             <h2 className="big-en">Our Business<span className="dot">.</span></h2>
-            <p className="lead-gray" style={{ marginTop: "28px" }}>배우고, 자격을 얻고, 일하기까지.<br />한평생이 직접 운영하는 대표 서비스입니다.</p>
+            <p className="lead-gray" style={{ marginTop: "28px" }}>배우고, 자격을 얻고, 일하기까지. <br />한평생이 직접 운영하는 대표 서비스입니다.</p>
             <Link className="pill line" style={{ marginLeft: "0" }} href="/business">사업 더 알아보기 <span className="arr">→</span></Link>
           </div>
 
@@ -81,7 +81,7 @@ export default function Home() {
             <div>
               <div className="biz-step">STEP 03 · WORK</div>
               <h3 className="biz-name">한평생 바로취업</h3>
-              <p className="biz-desc">중장년 취업을 한 곳에서 준비하는 플랫폼입니다. 직업진단, 전국 일자리, 받을 수 있는 지원금, 이력서·자소서 첨삭까지 이어집니다.</p>
+              <p className="biz-desc">중장년 취업을 한 곳에서 준비하는 플랫폼입니다. 직업진단, 전국 일자리, 받을 수 있는 지원금, <span className="nb">이력서·자소서</span> 첨삭까지 이어집니다.</p>
               <div className="biz-kw"><span>#중장년취업</span><span>#지원금찾기</span><span>#이력서첨삭</span></div>
               <a className="pill" href="https://www.job24.co.kr/" target="_blank" rel="noopener">사이트 바로가기 <span className="arr">→</span></a>
             </div>

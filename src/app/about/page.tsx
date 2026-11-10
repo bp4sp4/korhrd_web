@@ -29,8 +29,8 @@ export default function AboutPage() {
           <h2 className="big-en rv">KORHRD<br />Group<span className="dot">.</span></h2>
           <p className="intro-title rv">한평생그룹, <em>당신 곁의 배움</em>이 되다.<br />한평생그룹, <em>함께하는 성장</em>이 되다.</p>
           <div className="rv" style={{ marginTop: "48px", display: "grid", gap: "24px" }}>
-            <p className="lead-gray">한평생그룹은 <em>학점은행제와 자격 과정, 취업 지원</em>을 하나로 잇는<br />평생교육·취업 그룹입니다.</p>
-            <p className="lead-gray">학습부터 자격 취득, 취업 연계까지 아우르는 종합 교육 플랫폼으로<br />누구나 <em>배운 것으로 일하는 삶</em>을 함께 만듭니다.</p>
+            <p className="lead-gray">한평생그룹은 <em>학점은행제와 자격 과정, 취업 지원</em>을 하나로 잇는 <br />평생교육·취업 그룹입니다.</p>
+            <p className="lead-gray">학습부터 자격 취득, 취업 연계까지 아우르는 종합 교육 플랫폼으로 <br />누구나 <em>배운 것으로 일하는 삶</em>을 함께 만듭니다.</p>
           </div>
         </div>
       </section>
