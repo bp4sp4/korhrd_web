@@ -5,7 +5,7 @@ import "@/styles/sub.css";
 export const metadata: Metadata = {
   title: "ESG 경영 | 한평생그룹",
   description: "지속가능한 미래를 위한 한평생그룹의 ESG 실천을 소개합니다.",
-  openGraph: { title: "ESG 경영 | 한평생그룹", images: "/images/esg/image001.png", siteName: "한평생그룹", locale: "ko_KR", type: "website" },
+  openGraph: { title: "ESG 경영 | 한평생그룹", images: "/img/og/og-esg.png", siteName: "한평생그룹", locale: "ko_KR", type: "website" },
   alternates: { canonical: "https://www.korhrdcorp.co.kr/esg" },
 };
 

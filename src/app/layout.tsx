@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "한평생그룹 | 배움에서 일까지",
     description: "학위·자격·취업, 평생교육의 모든 단계를 잇는 한평생그룹",
-    images: "/images/og-image.png",
+    images: "/img/og/og-main.png",
     siteName: "한평생그룹",
     locale: "ko_KR",
     type: "website",
