@@ -5,7 +5,7 @@ import "@/styles/sub.css";
 export const metadata: Metadata = {
   title: "사업 소개 | 한평생그룹",
   description: "한평생원격교육원, 한평생직업훈련, 한평생 바로취업, 한평생 에듀바이저스 — 한평생그룹이 운영하는 사업을 소개합니다.",
-  openGraph: { title: "사업 소개 | 한평생그룹", images: "/images/business/main__banner002__mobile.png", siteName: "한평생그룹", locale: "ko_KR", type: "website" },
+  openGraph: { title: "사업 소개 | 한평생그룹", images: "/img/og/og-business.png", siteName: "한평생그룹", locale: "ko_KR", type: "website" },
   alternates: { canonical: "https://www.korhrdcorp.co.kr/business" },
 };
 

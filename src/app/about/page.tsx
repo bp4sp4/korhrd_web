@@ -6,7 +6,7 @@ import "@/styles/about.css";
 export const metadata: Metadata = {
   title: "회사소개 | 한평생그룹",
   description: "한평생그룹의 소개, 연혁, CEO 인사말을 안내합니다.",
-  openGraph: { title: "회사소개 | 한평생그룹", images: "/images/about/main.png", siteName: "한평생그룹", locale: "ko_KR", type: "website" },
+  openGraph: { title: "회사소개 | 한평생그룹", images: "/img/og/og-about.png", siteName: "한평생그룹", locale: "ko_KR", type: "website" },
   alternates: { canonical: "https://www.korhrdcorp.co.kr/about" },
 };
 
