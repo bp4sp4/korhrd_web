@@ -23,7 +23,6 @@
   p, li, dd { text-wrap: pretty; }
   h1, h2, h3, .intro-title { text-wrap: balance; }
   .nb { white-space: nowrap; }
-  @media (min-width: 721px) { .m-br { display: none; } } /* 모바일에서만 줄바꿈 */
   a { color: inherit; text-decoration: none; }
   button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
   .inner { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--pad) 0 calc(var(--pad) + var(--side)); }
@@ -158,7 +157,7 @@
   .contact-big .dot { color: #fff; }
   .contact-big, .contact-row p { text-shadow: 0 2px 30px rgba(0,60,180,.28); }
   .contact-row { display: flex; flex-direction: column; align-items: flex-start; gap: 36px; margin-top: 24px; }
-  .contact-row p { font-size: 20px; font-weight: 500; line-height: 1.6; opacity: .92; }
+  .contact-row p { align-self: stretch; font-size: 20px; font-weight: 500; line-height: 1.6; opacity: .92; } /* 내용 폭으로 줄어들면 iOS Safari에서 줄이 더 쪼개짐 */
   .contact-btns { display: flex; gap: 12px; flex-wrap: wrap; }
   .contact .pill.glass { background: var(--navy); border-color: var(--navy); }
   .contact .pill.white { background: var(--navy); color: #fff; box-shadow: 0 10px 30px rgba(0,55,110,.25); }
