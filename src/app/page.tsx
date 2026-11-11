@@ -152,7 +152,7 @@ export default function Home() {
         <div className="inner">
           <div className="contact-big">함께 성장할<br />파트너를 기다립니다<span className="dot">.</span></div>
           <div className="contact-row">
-            <p>배움과 일을 잇는 <br className="m-br" />새로운 제안,<br />한평생에 남겨주세요.</p>
+            <p>배움과 일을 잇는 새로운 제안,<br />한평생에 남겨주세요.</p>
             <div className="contact-btns">
               <ContactButton className="pill white">비즈니스 제안 <span className="arr">→</span></ContactButton>
             </div>

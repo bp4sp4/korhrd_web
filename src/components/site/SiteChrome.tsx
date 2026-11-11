@@ -1,6 +1,6 @@
 "use client";
 
-// 시안(docs/mockup)의 공통 동작: 헤더(스크롤 시 solid), 전체 메뉴, 맨 위로 버튼, 비즈니스 제안 폼, .rv 등장 효과
+// 공통 동작: 헤더(스크롤 시 solid), 전체 메뉴, 맨 위로 버튼, 비즈니스 제안 폼, .rv 등장 효과
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
