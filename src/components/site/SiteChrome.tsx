@@ -64,6 +64,30 @@ export default function SiteChrome() {
     }
   };
 
+  // 제안 접수: /api/contact가 한평생오피스(Supabase business_proposals)에 저장
+  const [sending, setSending] = useState(false);
+  const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const f = e.currentTarget;
+    const fd = new FormData(f);
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...Object.fromEntries(fd), agree: fd.get("agree") === "on" }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      alert("제안이 접수되었습니다. 담당자가 검토 후 연락드리겠습니다.");
+      f.reset();
+      closeForm();
+    } catch {
+      alert("접수 중 문제가 발생했습니다. 잠시 후 다시 시도하시거나 korhrdpartners@naver.com 으로 보내주세요.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <>
       <header id="hd" className={solid ? "solid" : undefined}>
@@ -116,23 +140,22 @@ export default function SiteChrome() {
         <button className="x" aria-label="닫기" onClick={closeForm}>×</button>
         <h3>비즈니스 제안</h3>
         <p className="sub">제휴·협업 제안을 남겨주시면 담당자가 검토 후 연락드립니다.</p>
-        {/* 접수 연동 전: 시안과 같이 안내만 띄움 */}
-        <form method="dialog" onSubmit={() => alert("제안 접수 기능은 준비 중입니다. korhrdpartners@naver.com 으로 보내주세요.")}>
+        <form onSubmit={submitForm}>
           <div className="field-row pair">
-            <div className="field"><label htmlFor="f-company">회사명 <span className="req" aria-hidden="true">*</span></label><input id="f-company" required /></div>
-            <div className="field"><label htmlFor="f-name">담당자명 <span className="req" aria-hidden="true">*</span></label><input id="f-name" required /></div>
+            <div className="field"><label htmlFor="f-company">회사명 <span className="req" aria-hidden="true">*</span></label><input id="f-company" name="company" required /></div>
+            <div className="field"><label htmlFor="f-name">담당자명 <span className="req" aria-hidden="true">*</span></label><input id="f-name" name="name" required /></div>
           </div>
           <div className="field-row">
-            <div className="field"><label htmlFor="f-tel">연락처 <span className="opt">(선택)</span></label><input id="f-tel" type="tel" placeholder="010-0000-0000" /></div>
-            <div className="field"><label htmlFor="f-mail">이메일 <span className="req" aria-hidden="true">*</span></label><input id="f-mail" type="email" required placeholder="name@company.com" /></div>
+            <div className="field"><label htmlFor="f-tel">연락처 <span className="opt">(선택)</span></label><input id="f-tel" name="tel" type="tel" placeholder="010-0000-0000" /></div>
+            <div className="field"><label htmlFor="f-mail">이메일 <span className="req" aria-hidden="true">*</span></label><input id="f-mail" name="email" type="email" required placeholder="name@company.com" /></div>
           </div>
           <div className="field">
             <label htmlFor="f-type">제안 유형 <span className="opt">(선택)</span></label>
-            <select id="f-type"><option>교육 제휴</option><option>기업교육</option><option>마케팅·광고</option><option>기타</option></select>
+            <select id="f-type" name="type"><option>교육 제휴</option><option>기업교육</option><option>마케팅·광고</option><option>기타</option></select>
           </div>
-          <div className="field"><label htmlFor="f-msg">제안 내용 <span className="req" aria-hidden="true">*</span></label><textarea id="f-msg" required rows={4} placeholder="제안하실 내용을 간단히 적어주세요." /></div>
-          <label className="agree"><input type="checkbox" required /><span><Link href="/privacy" target="_blank">개인정보 수집·이용</Link>에 동의합니다. (필수)</span></label>
-          <button className="pill" type="submit">제안하기 <span className="arr">→</span></button>
+          <div className="field"><label htmlFor="f-msg">제안 내용 <span className="req" aria-hidden="true">*</span></label><textarea id="f-msg" name="message" required rows={4} placeholder="제안하실 내용을 간단히 적어주세요." /></div>
+          <label className="agree"><input type="checkbox" name="agree" required /><span><Link href="/privacy" target="_blank">개인정보 수집·이용</Link>에 동의합니다. (필수)</span></label>
+          <button className="pill" type="submit" disabled={sending}>{sending ? "보내는 중…" : <>제안하기 <span className="arr">→</span></>}</button>
         </form>
       </dialog>
     </>
