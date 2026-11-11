@@ -54,7 +54,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="hist-title">교육 전문가를 위한 새로운 기준</h3>
                 <p className="hist-desc">교육 전문가가 학습자 상담에 집중할 수 있는 파트너 플랫폼 &apos;한평생 에듀바이저스&apos;를 출범해, 전문성이 학습자의 성장으로 이어지는 구조를 만들었습니다.</p>
-                <ul className="hist-list"><li>한평생 에듀바이저스 정식 출범 (7월)</li><li>가입비·초기 비용 없는 1인 프리랜서 파트너 제도</li><li>파트너 1인당 개별 CRM 제공 및 조직 운영 컨설팅 지원</li></ul>
+                <ul className="hist-list"><li>한평생 에듀바이저스 정식 출범 (7월)</li><li>가입비·초기 비용 없는 1인 파트너 제도</li><li>파트너 1인당 개별 CRM 제공 및 조직 운영 컨설팅 지원</li></ul>
               </div>
             </div>
             <div className="hist-row rv">
