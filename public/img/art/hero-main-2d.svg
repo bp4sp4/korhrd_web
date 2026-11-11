@@ -2,7 +2,7 @@
   .glow{transform-origin:560px 470px;animation:glow 3.5s ease-in-out infinite alternate}
   .flow{animation:flow 1.6s linear infinite}
   .shapes{animation:rise 3.4s ease-in-out infinite alternate}
-  .ring{transform-origin:600px 440px;animation:spin 40s linear infinite}
+  .ring{transform-origin:620px 500px;animation:spin 40s linear infinite}
   .o1{animation:w1 5.2s ease-in-out infinite -1.2s}
   .o2{animation:w2 6.4s ease-in-out infinite -3.1s}
   .o3{animation:w3 4.6s ease-in-out infinite -.4s}
@@ -27,22 +27,19 @@
 <radialGradient id="sg" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".5" stop-color="#DDE8FF" stop-opacity=".6"/><stop offset="1" stop-color="#9CC0FF" stop-opacity=".7"/></radialGradient>
 <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#3D6FD6" flood-opacity=".16"/></filter>
 </defs><ellipse class="glow" cx="560" cy="470" rx="470" ry="420" fill="url(#glow)"/>
-<circle cx="600" cy="440" r="300" fill="none" stroke="#9DB6EE" stroke-width="2"/>
-<g class="ring"><circle cx="600" cy="440" r="340" fill="none" stroke="#8FA9EA" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.1 11" class="flow"/></g>
+<circle cx="620" cy="500" r="270" fill="none" stroke="#9DB6EE" stroke-width="2"/>
+<g class="ring"><circle cx="620" cy="500" r="310" fill="none" stroke="#8FA9EA" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.1 11" class="flow"/></g>
 <g class="shapes" filter="url(#sh)">
-  <!-- 로고 심볼을 흩어 놓은 형태: 가운데 원, 바깥 곡선 두 조각, 체크 조각 -->
-  <g transform="rotate(-18 640 380) translate(471.4 211.4) scale(8.5)">
-    <circle cx="19.84" cy="19.84" r="13.5" fill="url(#g1)"/>
-    <path transform="translate(2.6 2.2)" fill="url(#g3)" opacity=".7" d="M35.71,7.92c1.28,5.94.38,13.03-4.2,18.58h0c-1.86,2.26-4.34,4.26-7.52,5.82-6.44,3.16-14.1,2.33-19.34.26,3.64,4.34,9.1,7.1,15.21,7.1,10.96,0,19.84-8.88,19.84-19.84,0-4.47-1.48-8.6-3.98-11.92Z"/>
-    <path transform="translate(-2.8 1.8)" fill="url(#g2)" opacity=".75" d="M23.98,32.33c3.19-1.56,5.66-3.56,7.52-5.82-1.73,1.13-3.96,1.87-7.48,2.29-2.98.35-6.18.11-9.04-.94.03.02.05.04.08.06-.03-.02-.05-.04-.08-.06-.55-.2-1.09-.43-1.61-.69-5.23-2.65-9.58-7.85-9.94-13.85-.11-1.76.06-3.73.63-5.51C1.52,11.15,0,15.32,0,19.84c0,4.85,1.74,9.29,4.64,12.74,5.25,2.08,12.9,2.9,19.34-.26Z"/>
-    <polygon transform="translate(4 -4.2)" fill="url(#g3)" opacity=".55" points="30.89 3.43 21.99 20.06 30.89 14.02 30.89 3.43"/>
-  </g>
+  <!-- 로고의 원과 감싸는 곡선만 은은하게: 연한 원 + 오른쪽 아래를 감싸는 초승달, 반원 뒤로 떠오르는 배치 -->
+  <mask id="cres"><circle cx="714" cy="512" r="172" fill="#fff"/><circle cx="686" cy="484" r="160" fill="#000"/></mask>
+  <circle cx="692" cy="492" r="148" fill="url(#g1)"/>
+  <circle cx="714" cy="512" r="172" fill="url(#g3)" opacity=".8" mask="url(#cres)"/>
   <path d="M220 780 A 150 150 0 0 1 520 780 Z" fill="url(#g2)" opacity=".8"/>
   <path d="M470 780 A 190 190 0 0 1 850 780 Z" fill="url(#g3)" opacity=".85"/>
 </g>
 <line x1="140" y1="780" x2="940" y2="780" stroke="url(#base)" stroke-width="2" stroke-linecap="round"/>
-<circle class="o1" cx="850" cy="215" r="34" fill="url(#sb)"/>
-<circle class="o2" cx="372" cy="300" r="18" fill="url(#sn)"/>
+<circle class="o1" cx="830" cy="300" r="34" fill="url(#sb)"/>
+<circle class="o2" cx="420" cy="330" r="18" fill="url(#sn)"/>
 <circle class="o3" cx="250" cy="560" r="22" fill="url(#sg)"/>
 <circle class="o4" cx="880" cy="560" r="12" fill="url(#sb)"/>
 </svg>

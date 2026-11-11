@@ -62,8 +62,7 @@
   /* ---------- Hero ---------- */
   .hero { position: relative; height: 100vh; min-height: 680px; overflow: hidden; color: var(--navy);
     background: #EEF4FB; }
-  .hero-art { position: absolute; z-index: 1; top: 110px; right: calc(max(0px, (100% - var(--wrap)) / 2) + var(--pad)); bottom: 150px; width: 50%;
-    background: url(/img/art/hero-main-2d.svg) right center / contain no-repeat; }
+  .hero-art { position: absolute; z-index: 1; inset: 0; background: url(/img/art/hero-flow.svg) center / cover no-repeat; pointer-events: none; }
   .light-hero header:not(.solid) { color: var(--navy); }
   .sphere { position: absolute; border-radius: 50%; z-index: 1; }
   .sphere.blue { width: 240px; height: 240px; right: 26%; top: 20%;
@@ -97,8 +96,17 @@
   /* 회사 심볼 + 궤도 그래픽을 오른쪽에 크게 깔아 배경처럼 (시안 비교: symbol-samples.html). 화면 끝이 아니라 본문 폭(--wrap) 오른쪽 끝 기준 */
   #about { position: relative; overflow: hidden; }
   #about .inner { position: relative; z-index: 1; }
-  .about-flow { position: absolute; z-index: 0; inset: 0; background: url(/img/art/about-flow.svg) center / cover no-repeat; pointer-events: none; }
   .about-text { margin-top: 64px; display: grid; gap: 28px; }
+  /* 오른쪽 빈 자리에 2.5D 궤도 그래픽 (본문 폭 오른쪽 끝 기준, 세로 가운데) */
+  .about-art { position: absolute; top: 50%; right: 0; width: min(32%, 380px); transform: translateY(-50%); pointer-events: none; }
+  .about-art img { display: block; width: 100%; height: auto; }
+  /* 궤도 그래픽 왼쪽 위 남색 작은 공 */
+  .about-art::after { content: ""; position: absolute; top: 17.5%; left: 17%; width: 7.5%; aspect-ratio: 1; border-radius: 50%;
+    background:
+      radial-gradient(ellipse 26% 16% at 36% 24%, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0)),
+      radial-gradient(circle at 55% 92%, rgba(130, 165, 255, .55), rgba(130, 165, 255, 0) 45%),
+      radial-gradient(circle at 38% 32%, #4A6FD6 0, #1F3F98 42%, #12296E 78%, #0D2160 100%);
+    box-shadow: inset 0 -2px 5px rgba(8, 24, 70, .35), 0 8px 16px rgba(36, 80, 200, .22); }
 
   /* ---------- Business (family sites) ---------- */
   .biz-head { margin-bottom: 120px; }
@@ -215,6 +223,7 @@
     .side-nav { display: none; }
     .hero-copy { right: var(--pad); }
     .about-grid, .biz-row { grid-template-columns: 1fr; gap: 48px; }
+    .about-art { position: relative; top: auto; right: auto; width: min(70%, 360px); margin: 56px auto 0; transform: none; }
     .biz-row.rev .biz-art { order: 0; }
     .val-grid { gap: 80px 64px; }
     .other-grid { grid-template-columns: 1fr 1fr; }
@@ -240,7 +249,6 @@
     section.block { padding: 110px 0; }
     .big-en { font-size: 34px; }
     .lead-gray { font-size: 18px; }
-    .about-flow { background-position: 64% center; opacity: .8; }
     .biz-head { margin-bottom: 56px; }
     .biz-row { padding: 48px 0; gap: 28px; }
     .biz-art { height: 220px; }

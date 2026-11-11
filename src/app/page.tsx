@@ -24,17 +24,19 @@ export default function Home() {
 
       {/* ABOUT */}
       <section className="block" id="about">
-        <div className="about-flow" aria-hidden="true"></div>
         <div className="inner">
           <div className="about-grid">
             <div className="rv">
-              <h2 className="big-en">KORHRD<br />Group<span className="dot">.</span></h2>
+              <h2 className="big-en">한평생그룹<span className="dot">.</span></h2>
               <div className="tags"><span>#평생교육</span><span>#자격취득</span><span>#취업연계</span></div>
             </div>
           </div>
           <div className="about-text rv">
             <p className="lead-gray">한평생그룹은 <em>학점은행제와 자격 과정, 취업 지원</em>을 하나로 잇는 <br />평생교육·취업 그룹입니다.</p>
             <p className="lead-gray">나이와 경력에 상관없이 누구나 다시 배우고, <br /><em>배운 것으로 일하는 삶</em>을 함께 만듭니다.</p>
+          </div>
+          <div className="about-art" aria-hidden="true">
+            <img src="/img/art/about-orbit-25d.webp" alt="" width="800" height="800" />
           </div>
         </div>
       </section>
@@ -43,7 +45,7 @@ export default function Home() {
       <section className="block" id="business" style={{ paddingTop: "60px" }}>
         <div className="inner">
           <div className="biz-head rv">
-            <h2 className="big-en">Our Business<span className="dot">.</span></h2>
+            <h2 className="big-en">사업 소개<span className="dot">.</span></h2>
             <p className="lead-gray" style={{ marginTop: "28px" }}>배우고, 자격을 얻고, 일하기까지. <br />한평생이 직접 운영하는 대표 서비스입니다.</p>
             <Link className="pill line" style={{ marginLeft: "0" }} href="/business">사업 더 알아보기 <span className="arr">→</span></Link>
           </div>
@@ -93,7 +95,7 @@ export default function Home() {
       <section className="block others" id="others">
         <div className="inner">
           <div className="rv">
-            <h2 className="big-en">And More<span className="dot">.</span></h2>
+            <h2 className="big-en">더 많은 서비스<span className="dot">.</span></h2>
             <p className="lead-gray" style={{ marginTop: "28px" }}>지금 바로 이용할 수 있는 한평생의 서비스입니다.</p>
           </div>
           <div className="other-grid rv">
@@ -111,7 +113,7 @@ export default function Home() {
       <section className="block" id="value">
         <div className="inner">
           <div className="rv">
-            <h2 className="big-en">Why KORHRD<span className="dot">.</span></h2>
+            <h2 className="big-en">왜 한평생인가<span className="dot">.</span></h2>
           </div>
           <div className="val-grid">
             <div className="val rv">
