@@ -157,7 +157,7 @@ export default function BusinessPage() {
             </div>
             <div>
               <h3>출퇴근 없이,<br />나만의 방식으로</h3>
-              <p>프리랜서 형태로 시간과 장소에 구애받지 않고 활동합니다. 가입비·교육비 같은 초기 비용은 없습니다.</p>
+              <p>시간과 장소에 구애받지 않고 자유롭게 활동합니다. 가입비·교육비 같은 초기 비용은 없습니다.</p>
             </div>
           </div>
           <div className="bz-sub rv">PARTNER SUPPORT</div>
