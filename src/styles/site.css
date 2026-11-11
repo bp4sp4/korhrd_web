@@ -241,11 +241,12 @@
     .burger { display: grid; }
     /* 모바일 히어로: 문구와 패밀리 박스를 위에서부터 쌓아 화면 높이와 상관없이 간격 고정 */
     .hero { height: auto; min-height: 0; padding-bottom: 28px; }
-    .hero-art { top: 86px; right: var(--pad); left: var(--pad); bottom: auto; width: auto; height: 270px; background-position: center; }
-    .hero-copy { position: relative; top: auto; left: auto; right: auto; transform: none; padding: 390px var(--pad) 0; }
+    .hero-art { top: 90px; bottom: auto; height: 420px; }
+    .hero-copy { position: relative; top: auto; left: auto; right: auto; transform: none; padding: 190px var(--pad) 0; }
     .hero p { margin: 24px 0 0; font-size: 16px; }
     .hero-family { position: relative; left: auto; right: auto; bottom: auto; margin: 64px var(--pad) 0; grid-template-columns: 1fr; gap: 8px; }
     .hero-family a { padding: 14px 18px; }
+    .about-art { display: none; }
     section.block { padding: 110px 0; }
     .big-en { font-size: 34px; }
     .lead-gray { font-size: 18px; }
