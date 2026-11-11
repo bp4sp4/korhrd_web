@@ -62,9 +62,8 @@
   /* ---------- Hero ---------- */
   .hero { position: relative; height: 100vh; min-height: 680px; overflow: hidden; color: var(--navy);
     background: #EEF4FB; }
-  .hero-photo { position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; width: 62%;
-    background: url(/img/photo/hero-model.webp) 75% 30% / cover no-repeat;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, #000 30%); }
+  .hero-art { position: absolute; z-index: 1; top: 110px; right: calc(max(0px, (100% - var(--wrap)) / 2) + var(--pad)); bottom: 150px; width: 50%;
+    background: url(/img/art/hero-main-2d.svg) right center / contain no-repeat; }
   .light-hero header:not(.solid) { color: var(--navy); }
   .sphere { position: absolute; border-radius: 50%; z-index: 1; }
   .sphere.blue { width: 240px; height: 240px; right: 26%; top: 20%;
@@ -98,8 +97,7 @@
   /* 회사 심볼 + 궤도 그래픽을 오른쪽에 크게 깔아 배경처럼 (시안 비교: symbol-samples.html). 화면 끝이 아니라 본문 폭(--wrap) 오른쪽 끝 기준 */
   #about { position: relative; overflow: hidden; }
   #about .inner { position: relative; z-index: 1; }
-  .about-symbol { position: absolute; z-index: 0; right: calc(max(0px, (100% - var(--wrap)) / 2) - 60px); top: 50%; width: min(52vw, 740px); aspect-ratio: 1; transform: translateY(-50%);
-    background: url(/img/art/about-symbol-a.svg) center / contain no-repeat; pointer-events: none; }
+  .about-flow { position: absolute; z-index: 0; inset: 0; background: url(/img/art/about-flow.svg) center / cover no-repeat; pointer-events: none; }
   .about-text { margin-top: 64px; display: grid; gap: 28px; }
 
   /* ---------- Business (family sites) ---------- */
@@ -234,16 +232,15 @@
     .burger { display: grid; }
     /* 모바일 히어로: 문구와 패밀리 박스를 위에서부터 쌓아 화면 높이와 상관없이 간격 고정 */
     .hero { height: auto; min-height: 0; padding-bottom: 28px; }
-    .hero-photo { width: 100%; bottom: auto; height: 440px; background-position: 70% 20%;
-      -webkit-mask-image: linear-gradient(180deg, #000 42%, rgba(0,0,0,.25) 64%, transparent 80%); mask-image: linear-gradient(180deg, #000 42%, rgba(0,0,0,.25) 64%, transparent 80%); }
-    .hero-copy { position: relative; top: auto; left: auto; right: auto; transform: none; padding: 290px var(--pad) 0; }
+    .hero-art { top: 86px; right: var(--pad); left: var(--pad); bottom: auto; width: auto; height: 270px; background-position: center; }
+    .hero-copy { position: relative; top: auto; left: auto; right: auto; transform: none; padding: 390px var(--pad) 0; }
     .hero p { margin: 24px 0 0; font-size: 16px; }
     .hero-family { position: relative; left: auto; right: auto; bottom: auto; margin: 64px var(--pad) 0; grid-template-columns: 1fr; gap: 8px; }
     .hero-family a { padding: 14px 18px; }
     section.block { padding: 110px 0; }
     .big-en { font-size: 34px; }
     .lead-gray { font-size: 18px; }
-    .about-symbol { width: 110vw; right: -45%; top: 40px; transform: none; opacity: .8; background-image: url(/img/art/about-symbol-a-m.svg); }
+    .about-flow { background-position: 64% center; opacity: .8; }
     .biz-head { margin-bottom: 56px; }
     .biz-row { padding: 48px 0; gap: 28px; }
     .biz-art { height: 220px; }

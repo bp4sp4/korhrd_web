@@ -10,7 +10,7 @@ export default function Home() {
       <main id="top">
       {/* HERO */}
       <section className="hero">
-        <div className="hero-photo" aria-hidden="true"></div>
+        <div className="hero-art" aria-hidden="true"></div>
         <div className="hero-copy">
           <h1>배움에서 일까지,<br />한평생<span className="dot">.</span></h1>
           <p>학위와 자격, 그리고 일자리까지<br />평생교육의 모든 단계를 한평생그룹이 잇습니다.</p>
@@ -24,7 +24,7 @@ export default function Home() {
 
       {/* ABOUT */}
       <section className="block" id="about">
-        <div className="about-symbol" aria-hidden="true"></div>
+        <div className="about-flow" aria-hidden="true"></div>
         <div className="inner">
           <div className="about-grid">
             <div className="rv">
