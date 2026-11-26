@@ -144,9 +144,6 @@ export default function BusinessPage() {
               <h2 className="bz-name">한평생 에듀바이저스</h2>
               <p className="bz-tagline">교육 전문가를 위한 파트너 플랫폼</p>
               <div className="bz-facts"><span>2025년 7월 정식 출범</span><span>전용 CRM 제공</span><span>초기 비용 없음</span></div>
-              <div className="bz-cta">
-                <a className="pill" href="https://www.eduvisor.kr/" target="_blank" rel="noopener">사이트 바로가기 <span className="arr">→</span></a>
-              </div>
             </div>
             <div className="bz-art" aria-hidden="true"><img src="/img/art/biz-4-partner-25d.webp" alt="" width="320" height="320" /></div>
           </div>
