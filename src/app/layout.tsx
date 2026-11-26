@@ -7,7 +7,7 @@ import SiteFooter from "@/components/site/SiteFooter";
 export const metadata: Metadata = {
   title: "한평생그룹 | 배움에서 일까지",
   description:
-    "한평생그룹은 한평생원격교육원(학점은행·사회복지사), 한평생직업훈련(민간자격), 한평생 바로취업(중장년 취업), 한평생 에듀바이저스(교육 파트너)를 운영하는 평생교육·취업 그룹입니다.",
+    "한평생그룹은 한평생원격교육원(학점은행·사회복지사), 한평생직업훈련(민간자격), 한평생 바로취업(중장년 취업)을 운영하는 평생교육·취업 그룹입니다.",
   viewport: "width=device-width, initial-scale=1.0",
   keywords: "한평생그룹, 평생교육, 교육, 컨텐츠, 환경, 지속가능한 교육",
   robots:
